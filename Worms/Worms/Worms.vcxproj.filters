@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{b573e67b-0e2e-47d3-b1de-1ec529dfa8c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\H">
+      <UniqueIdentifier>{fa802742-790b-4eae-872a-cef815e9ac52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\CPP">
+      <UniqueIdentifier>{64324044-7e52-4e9f-aa9b-d137bb80ddfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Command">
+      <UniqueIdentifier>{b734fe95-016f-4520-b6d7-a2e386a1b495}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Command\H">
+      <UniqueIdentifier>{29aca271-a303-4494-b04c-5f31cac951dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Command\CPP">
+      <UniqueIdentifier>{38ae196f-3998-43c1-af91-1542dfdc5a7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WindowEntities">
+      <UniqueIdentifier>{ff5ed8d1-8a4c-4b70-b1a1-cd7536f016d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WindowEntities\H">
+      <UniqueIdentifier>{16ceceaa-38fa-4049-9126-c2546d02a4d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WindowEntities\CPP">
+      <UniqueIdentifier>{5a92dfff-8917-45ba-916b-f7dd879ff3fd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Game\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="GameState.cpp">
+      <Filter>Game\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowState.cpp">
+      <Filter>Game\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="InputHandler.cpp">
+      <Filter>Command\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Command.cpp">
+      <Filter>Command\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="AttackCmd.cpp">
+      <Filter>Command\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="DownCmd.cpp">
+      <Filter>Command\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="JumpCmd.cpp">
+      <Filter>Command\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="LeftCmd.cpp">
+      <Filter>Command\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="RightCmd.cpp">
+      <Filter>Command\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="UpCmd.cpp">
+      <Filter>Command\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeGranadeTimeCmd.cpp">
+      <Filter>Command\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="ChoosePlaceCmd.cpp">
+      <Filter>Command\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="ExplodeCmd.cpp">
+      <Filter>Command\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuShowCmd.cpp">
+      <Filter>Command\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="RotLedtCmd.cpp">
+      <Filter>Command\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="RotRightCmd.cpp">
+      <Filter>Command\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="StateButton.cpp">
+      <Filter>WindowEntities\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Layout.cpp">
+      <Filter>WindowEntities\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>WindowEntities\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Singleton.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Game.h">
+      <Filter>Game\H</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>Game\H</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowState.h">
+      <Filter>Game\H</Filter>
+    </ClInclude>
+    <ClInclude Include="InputHandler.h">
+      <Filter>Command\H</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackCmd.h">
+      <Filter>Command\H</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>Command\H</Filter>
+    </ClInclude>
+    <ClInclude Include="DownCmd.h">
+      <Filter>Command\H</Filter>
+    </ClInclude>
+    <ClInclude Include="JumpCmd.h">
+      <Filter>Command\H</Filter>
+    </ClInclude>
+    <ClInclude Include="LeftCmd.h">
+      <Filter>Command\H</Filter>
+    </ClInclude>
+    <ClInclude Include="RightCmd.h">
+      <Filter>Command\H</Filter>
+    </ClInclude>
+    <ClInclude Include="UpCmd.h">
+      <Filter>Command\H</Filter>
+    </ClInclude>
+    <ClInclude Include="RotRightCmd.h">
+      <Filter>Command\H</Filter>
+    </ClInclude>
+    <ClInclude Include="RotLedtCmd.h">
+      <Filter>Command\H</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuShowCmd.h">
+      <Filter>Command\H</Filter>
+    </ClInclude>
+    <ClInclude Include="ExplodeCmd.h">
+      <Filter>Command\H</Filter>
+    </ClInclude>
+    <ClInclude Include="ChoosePlaceCmd.h">
+      <Filter>Command\H</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangeGranadeTimeCmd.h">
+      <Filter>Command\H</Filter>
+    </ClInclude>
+    <ClInclude Include="StateButton.h">
+      <Filter>WindowEntities\H</Filter>
+    </ClInclude>
+    <ClInclude Include="Layout.h">
+      <Filter>WindowEntities\H</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>WindowEntities\H</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
