@@ -1,5 +1,9 @@
 #pragma once
-class StateButton
+
+#include "LayoutObject.h"
+
+class StateButton : public LayoutObject
 {
+
 };
 

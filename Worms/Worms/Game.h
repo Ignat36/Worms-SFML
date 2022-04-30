@@ -4,7 +4,7 @@
 #include <ctime>
 #include <chrono>
 
-#include "WindowState.h"
+#include "UiState.h"
 #include "Singleton.h"
 
 typedef long double ld;
@@ -16,13 +16,14 @@ public:
 	Game();
 
 private:
-	GameState *CurrentState;
+	ApplicationState *CurrentState;
 	Singleton *single;
 
 	int ScreenWidth;
 	int ScreenHeight;
 	sf::RenderWindow *window;
 	long long MKS_PER_UPDATE;
+	long long lag;
 
 private: // logic functions
 	void GameLoop();

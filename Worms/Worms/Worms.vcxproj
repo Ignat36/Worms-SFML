@@ -131,10 +131,11 @@
     <ClCompile Include="DownCmd.cpp" />
     <ClCompile Include="ExplodeCmd.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="ApplicationState.cpp" />
     <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="JumpCmd.cpp" />
     <ClCompile Include="Layout.cpp" />
+    <ClCompile Include="LayoutObject.cpp" />
     <ClCompile Include="LeftCmd.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuShowCmd.cpp" />
@@ -144,7 +145,7 @@
     <ClCompile Include="Singleton.cpp" />
     <ClCompile Include="StateButton.cpp" />
     <ClCompile Include="UpCmd.cpp" />
-    <ClCompile Include="WindowState.cpp" />
+    <ClCompile Include="UiState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AttackCmd.h" />
@@ -155,10 +156,11 @@
     <ClInclude Include="DownCmd.h" />
     <ClInclude Include="ExplodeCmd.h" />
     <ClInclude Include="Game.h" />
-    <ClInclude Include="GameState.h" />
+    <ClInclude Include="ApplicationState.h" />
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="JumpCmd.h" />
     <ClInclude Include="Layout.h" />
+    <ClInclude Include="LayoutObject.h" />
     <ClInclude Include="LeftCmd.h" />
     <ClInclude Include="MenuShowCmd.h" />
     <ClInclude Include="RightCmd.h" />
@@ -167,7 +169,7 @@
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="StateButton.h" />
     <ClInclude Include="UpCmd.h" />
-    <ClInclude Include="WindowState.h" />
+    <ClInclude Include="UiState.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

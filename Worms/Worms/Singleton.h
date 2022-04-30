@@ -3,7 +3,7 @@ class Singleton
 {
 
 protected:
-	Singleton() : lag(0)
+	Singleton()
 	{
 
 	}
@@ -19,6 +19,5 @@ public:
 	static Singleton *GetInstance();
 
 public:
-	long long lag;
 };
 

@@ -1,2 +1,16 @@
-﻿  Game.cpp
-  Worms.vcxproj -> D:\Windows\Worms-SFML\Worms\Debug\Worms.exe
+﻿  Button.cpp
+d:\windows\worms-sfml\worms\worms\layoutobject.h(10): error C3646: Name: неизвестный спецификатор переопределения
+d:\windows\worms-sfml\worms\worms\layoutobject.h(10): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+  Game.cpp
+  ApplicationState.cpp
+  Layout.cpp
+  LayoutObject.cpp
+d:\windows\worms-sfml\worms\worms\layoutobject.h(10): error C3646: Name: неизвестный спецификатор переопределения
+d:\windows\worms-sfml\worms\worms\layoutobject.h(10): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+  main.cpp
+  Singleton.cpp
+  StateButton.cpp
+d:\windows\worms-sfml\worms\worms\layoutobject.h(10): error C3646: Name: неизвестный спецификатор переопределения
+d:\windows\worms-sfml\worms\worms\layoutobject.h(10): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+  UiState.cpp
+  Создание кода...

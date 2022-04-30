@@ -48,12 +48,6 @@
     <ClCompile Include="Game.cpp">
       <Filter>Game\CPP</Filter>
     </ClCompile>
-    <ClCompile Include="GameState.cpp">
-      <Filter>Game\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="WindowState.cpp">
-      <Filter>Game\CPP</Filter>
-    </ClCompile>
     <ClCompile Include="InputHandler.cpp">
       <Filter>Command\CPP</Filter>
     </ClCompile>
@@ -108,15 +102,18 @@
     <ClCompile Include="Singleton.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="ApplicationState.cpp">
+      <Filter>Game\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="UiState.cpp">
+      <Filter>Game\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="LayoutObject.cpp">
+      <Filter>WindowEntities\CPP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
-      <Filter>Game\H</Filter>
-    </ClInclude>
-    <ClInclude Include="GameState.h">
-      <Filter>Game\H</Filter>
-    </ClInclude>
-    <ClInclude Include="WindowState.h">
       <Filter>Game\H</Filter>
     </ClInclude>
     <ClInclude Include="InputHandler.h">
@@ -172,6 +169,15 @@
     </ClInclude>
     <ClInclude Include="Singleton.h">
       <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationState.h">
+      <Filter>Game\H</Filter>
+    </ClInclude>
+    <ClInclude Include="UiState.h">
+      <Filter>Game\H</Filter>
+    </ClInclude>
+    <ClInclude Include="LayoutObject.h">
+      <Filter>WindowEntities\H</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
