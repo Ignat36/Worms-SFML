@@ -2,10 +2,19 @@
 
 #include "ApplicationState.h"
 #include "Layout.h"
+#include "MainMenuLayout.h"
+#include "Singleton.h"
 
 class UiState : public ApplicationState
 {
-private:
-	Layout *CurrentLayout;
-};
+public:
+	UiState();
 
+public:
+	void ProcessInput(sf::RenderWindow *window) override;
+	void UpdateObjects() override;
+	void RenderObjects(sf::RenderWindow *window) override;
+
+private:
+	std::vector<Layout *> CurrentLayout;
+};

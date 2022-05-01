@@ -19,7 +19,6 @@ void Game::Start()
 
 	while (window->isOpen())
 	{
-
 		auto stop = std::chrono::high_resolution_clock::now();
 		long long elapsed = (std::chrono::duration_cast<std::chrono::microseconds>(stop - start)).count();
 		lag += elapsed;
@@ -33,13 +32,13 @@ void Game::Start()
 void Game::GameLoop()
 {
 	//input processing
-	CurrentState->ProcessInput();
+	CurrentState.back()->ProcessInput(window);
 	
 	while (lag >= MKS_PER_UPDATE)
 	{
-		CurrentState->UpdateObjects();
+		CurrentState.back()->UpdateObjects();
 		lag -= MKS_PER_UPDATE;
 	}
 
-	CurrentState->RenderObjects();
+	CurrentState.back()->RenderObjects(window);
 }

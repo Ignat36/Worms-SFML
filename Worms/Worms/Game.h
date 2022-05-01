@@ -16,7 +16,7 @@ public:
 	Game();
 
 private:
-	ApplicationState *CurrentState;
+	std::vector<ApplicationState*> CurrentState;
 	Singleton *single;
 
 	int ScreenWidth;

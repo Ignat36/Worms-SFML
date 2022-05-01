@@ -1,16 +1,48 @@
 ﻿  Button.cpp
-d:\windows\worms-sfml\worms\worms\layoutobject.h(10): error C3646: Name: неизвестный спецификатор переопределения
-d:\windows\worms-sfml\worms\worms\layoutobject.h(10): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
   Game.cpp
+d:\windows\worms-sfml\worms\worms\layout.h(15): error C2059: синтаксическая ошибка: .
+d:\windows\worms-sfml\worms\worms\layout.h(16): error C2238: непредвиденные лексемы перед ";"
   ApplicationState.cpp
+  GameSettingsMenuLayout.cpp
+d:\windows\worms-sfml\worms\worms\layout.h(15): error C2059: синтаксическая ошибка: .
+d:\windows\worms-sfml\worms\worms\layout.h(16): error C2238: непредвиденные лексемы перед ";"
   Layout.cpp
+d:\windows\worms-sfml\worms\worms\layout.h(15): error C2059: синтаксическая ошибка: .
+d:\windows\worms-sfml\worms\worms\layout.h(16): error C2238: непредвиденные лексемы перед ";"
+d:\windows\worms-sfml\worms\worms\layout.cpp(8): error C2039: getNextLayout: не является членом "Layout"
+  d:\windows\worms-sfml\worms\worms\layout.h(8): note:  см. объявление "Layout"
+d:\windows\worms-sfml\worms\worms\layout.cpp(10): error C2065: next: необъявленный идентификатор
+d:\windows\worms-sfml\worms\worms\layout.cpp(11): error C2065: next: необъявленный идентификатор
   LayoutObject.cpp
-d:\windows\worms-sfml\worms\worms\layoutobject.h(10): error C3646: Name: неизвестный спецификатор переопределения
-d:\windows\worms-sfml\worms\worms\layoutobject.h(10): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+  LoadMenuLayout.cpp
+d:\windows\worms-sfml\worms\worms\layout.h(15): error C2059: синтаксическая ошибка: .
+d:\windows\worms-sfml\worms\worms\layout.h(16): error C2238: непредвиденные лексемы перед ";"
   main.cpp
+d:\windows\worms-sfml\worms\worms\layout.h(15): error C2059: синтаксическая ошибка: .
+d:\windows\worms-sfml\worms\worms\layout.h(16): error C2238: непредвиденные лексемы перед ";"
+  MainMenuLayout.cpp
+d:\windows\worms-sfml\worms\worms\layout.h(15): error C2059: синтаксическая ошибка: .
+d:\windows\worms-sfml\worms\worms\layout.h(16): error C2238: непредвиденные лексемы перед ";"
+  MapSettingsMenuLayout.cpp
+d:\windows\worms-sfml\worms\worms\layout.h(15): error C2059: синтаксическая ошибка: .
+d:\windows\worms-sfml\worms\worms\layout.h(16): error C2238: непредвиденные лексемы перед ";"
+  NewGAmeMenuLayout.cpp
+d:\windows\worms-sfml\worms\worms\layout.h(15): error C2059: синтаксическая ошибка: .
+d:\windows\worms-sfml\worms\worms\layout.h(16): error C2238: непредвиденные лексемы перед ";"
   Singleton.cpp
   StateButton.cpp
-d:\windows\worms-sfml\worms\worms\layoutobject.h(10): error C3646: Name: неизвестный спецификатор переопределения
-d:\windows\worms-sfml\worms\worms\layoutobject.h(10): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+  TeamsSettingsMenuLayout.cpp
+d:\windows\worms-sfml\worms\worms\layout.h(15): error C2059: синтаксическая ошибка: .
+d:\windows\worms-sfml\worms\worms\layout.h(16): error C2238: непредвиденные лексемы перед ";"
+  TextLayoutObject.cpp
   UiState.cpp
+d:\windows\worms-sfml\worms\worms\layout.h(15): error C2059: синтаксическая ошибка: .
+d:\windows\worms-sfml\worms\worms\layout.h(16): error C2238: непредвиденные лексемы перед ";"
+d:\windows\worms-sfml\worms\worms\uistate.cpp(5): error C2259: MainMenuLayout: невозможно создать экземпляр абстрактного класса
+  d:\windows\worms-sfml\worms\worms\uistate.cpp(5): note: из-за следующих членов:
+  d:\windows\worms-sfml\worms\worms\uistate.cpp(5): note: void Layout::Update(void): абстрактный
+  d:\windows\worms-sfml\worms\worms\layout.h(14): note:  см. объявление "Layout::Update"
+  WeaponSettingsMenuLayout.cpp
+d:\windows\worms-sfml\worms\worms\layout.h(15): error C2059: синтаксическая ошибка: .
+d:\windows\worms-sfml\worms\worms\layout.h(16): error C2238: непредвиденные лексемы перед ";"
   Создание кода...

@@ -132,20 +132,28 @@
     <ClCompile Include="ExplodeCmd.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="ApplicationState.cpp" />
+    <ClCompile Include="GameSettingsMenuLayout.cpp" />
     <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="JumpCmd.cpp" />
     <ClCompile Include="Layout.cpp" />
     <ClCompile Include="LayoutObject.cpp" />
     <ClCompile Include="LeftCmd.cpp" />
+    <ClCompile Include="LoadMenuLayout.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainMenuLayout.cpp" />
+    <ClCompile Include="MapSettingsMenuLayout.cpp" />
     <ClCompile Include="MenuShowCmd.cpp" />
+    <ClCompile Include="NewGAmeMenuLayout.cpp" />
     <ClCompile Include="RightCmd.cpp" />
     <ClCompile Include="RotLedtCmd.cpp" />
     <ClCompile Include="RotRightCmd.cpp" />
     <ClCompile Include="Singleton.cpp" />
     <ClCompile Include="StateButton.cpp" />
+    <ClCompile Include="TeamsSettingsMenuLayout.cpp" />
+    <ClCompile Include="TextLayoutObject.cpp" />
     <ClCompile Include="UpCmd.cpp" />
     <ClCompile Include="UiState.cpp" />
+    <ClCompile Include="WeaponSettingsMenuLayout.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AttackCmd.h" />
@@ -157,19 +165,27 @@
     <ClInclude Include="ExplodeCmd.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="ApplicationState.h" />
+    <ClInclude Include="GameSettingsMenuLayout.h" />
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="JumpCmd.h" />
     <ClInclude Include="Layout.h" />
     <ClInclude Include="LayoutObject.h" />
     <ClInclude Include="LeftCmd.h" />
+    <ClInclude Include="LoadMenuLayout.h" />
+    <ClInclude Include="MainMenuLayout.h" />
+    <ClInclude Include="MapSettingsMenuLayout.h" />
     <ClInclude Include="MenuShowCmd.h" />
+    <ClInclude Include="NewGameMenuLayout.h" />
     <ClInclude Include="RightCmd.h" />
     <ClInclude Include="RotLedtCmd.h" />
     <ClInclude Include="RotRightCmd.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="StateButton.h" />
+    <ClInclude Include="TeamsSettingsMenuLayout.h" />
+    <ClInclude Include="TextLayoutObject.h" />
     <ClInclude Include="UpCmd.h" />
     <ClInclude Include="UiState.h" />
+    <ClInclude Include="WeaponSettingsMenuLayout.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

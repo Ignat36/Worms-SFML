@@ -40,6 +40,24 @@
     <Filter Include="WindowEntities\CPP">
       <UniqueIdentifier>{5a92dfff-8917-45ba-916b-f7dd879ff3fd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="WindowEntities\Layouts">
+      <UniqueIdentifier>{a14963fa-fcc0-47d8-95a6-0ccce9c5edd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WindowEntities\Layouts\H">
+      <UniqueIdentifier>{ba9497f1-2ffc-48a5-90d0-9cf8b5347e36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WindowEntities\Layouts\CPP">
+      <UniqueIdentifier>{40e3b123-f87b-400b-9c69-74b05e27a84f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GlobalEntities">
+      <UniqueIdentifier>{6f8a6085-fe93-4ab9-aad6-763eae7fafa8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GlobalEntities\H">
+      <UniqueIdentifier>{626b232e-e504-4de1-ad60-88c077e8ebdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GlobalEntities\CPP">
+      <UniqueIdentifier>{feb667b5-27bd-4e72-8689-7ec04ff713bd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -99,9 +117,6 @@
     <ClCompile Include="Button.cpp">
       <Filter>WindowEntities\CPP</Filter>
     </ClCompile>
-    <ClCompile Include="Singleton.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="ApplicationState.cpp">
       <Filter>Game\CPP</Filter>
     </ClCompile>
@@ -109,6 +124,33 @@
       <Filter>Game\CPP</Filter>
     </ClCompile>
     <ClCompile Include="LayoutObject.cpp">
+      <Filter>WindowEntities\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSettingsMenuLayout.cpp">
+      <Filter>WindowEntities\Layouts\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadMenuLayout.cpp">
+      <Filter>WindowEntities\Layouts\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuLayout.cpp">
+      <Filter>WindowEntities\Layouts\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="MapSettingsMenuLayout.cpp">
+      <Filter>WindowEntities\Layouts\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="NewGAmeMenuLayout.cpp">
+      <Filter>WindowEntities\Layouts\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="TeamsSettingsMenuLayout.cpp">
+      <Filter>WindowEntities\Layouts\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponSettingsMenuLayout.cpp">
+      <Filter>WindowEntities\Layouts\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Singleton.cpp">
+      <Filter>GlobalEntities\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="TextLayoutObject.cpp">
       <Filter>WindowEntities\CPP</Filter>
     </ClCompile>
   </ItemGroup>
@@ -167,9 +209,6 @@
     <ClInclude Include="Button.h">
       <Filter>WindowEntities\H</Filter>
     </ClInclude>
-    <ClInclude Include="Singleton.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="ApplicationState.h">
       <Filter>Game\H</Filter>
     </ClInclude>
@@ -177,6 +216,33 @@
       <Filter>Game\H</Filter>
     </ClInclude>
     <ClInclude Include="LayoutObject.h">
+      <Filter>WindowEntities\H</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSettingsMenuLayout.h">
+      <Filter>WindowEntities\Layouts\H</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadMenuLayout.h">
+      <Filter>WindowEntities\Layouts\H</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuLayout.h">
+      <Filter>WindowEntities\Layouts\H</Filter>
+    </ClInclude>
+    <ClInclude Include="MapSettingsMenuLayout.h">
+      <Filter>WindowEntities\Layouts\H</Filter>
+    </ClInclude>
+    <ClInclude Include="NewGameMenuLayout.h">
+      <Filter>WindowEntities\Layouts\H</Filter>
+    </ClInclude>
+    <ClInclude Include="TeamsSettingsMenuLayout.h">
+      <Filter>WindowEntities\Layouts\H</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponSettingsMenuLayout.h">
+      <Filter>WindowEntities\Layouts\H</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>GlobalEntities\H</Filter>
+    </ClInclude>
+    <ClInclude Include="TextLayoutObject.h">
       <Filter>WindowEntities\H</Filter>
     </ClInclude>
   </ItemGroup>

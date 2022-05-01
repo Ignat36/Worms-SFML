@@ -3,7 +3,7 @@ class Singleton
 {
 
 protected:
-	Singleton()
+	Singleton() : WindowClosed(false)
 	{
 
 	}
@@ -19,5 +19,6 @@ public:
 	static Singleton *GetInstance();
 
 public:
+	bool WindowClosed;
 };
 
