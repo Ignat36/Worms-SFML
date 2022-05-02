@@ -149,8 +149,8 @@
     <ClCompile Include="RotRightCmd.cpp" />
     <ClCompile Include="Singleton.cpp" />
     <ClCompile Include="StateButton.cpp" />
+    <ClCompile Include="StaticPicture.cpp" />
     <ClCompile Include="TeamsSettingsMenuLayout.cpp" />
-    <ClCompile Include="TextLayoutObject.cpp" />
     <ClCompile Include="UpCmd.cpp" />
     <ClCompile Include="UiState.cpp" />
     <ClCompile Include="WeaponSettingsMenuLayout.cpp" />
@@ -181,8 +181,8 @@
     <ClInclude Include="RotRightCmd.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="StateButton.h" />
+    <ClInclude Include="StaticPicture.h" />
     <ClInclude Include="TeamsSettingsMenuLayout.h" />
-    <ClInclude Include="TextLayoutObject.h" />
     <ClInclude Include="UpCmd.h" />
     <ClInclude Include="UiState.h" />
     <ClInclude Include="WeaponSettingsMenuLayout.h" />

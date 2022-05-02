@@ -27,6 +27,6 @@ private:
 
 private: // logic functions
 	void GameLoop();
-
+	void CloseGame();
 };
 

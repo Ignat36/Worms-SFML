@@ -24,6 +24,9 @@ void Game::Start()
 		lag += elapsed;
 
 		GameLoop();
+
+		if (single->WindowClosed)
+			CloseGame();
 	}
 }
 
@@ -31,7 +34,7 @@ void Game::Start()
 
 void Game::GameLoop()
 {
-	//input processing
+	
 	CurrentState.back()->ProcessInput(window);
 	
 	while (lag >= MKS_PER_UPDATE)
@@ -41,4 +44,9 @@ void Game::GameLoop()
 	}
 
 	CurrentState.back()->RenderObjects(window);
+}
+
+void Game::CloseGame()
+{
+	window->close();
 }
