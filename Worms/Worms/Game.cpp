@@ -7,14 +7,14 @@ Game::Game()
 	MKS_PER_UPDATE = 16667;
 	single = Singleton::GetInstance();
 	lag = 0;
+
+	window = new sf::RenderWindow(sf::VideoMode(ScreenWidth, ScreenHeight), "WORMS");
+
+	CurrentState.push_back(new UiState(window));
 }
 
 void Game::Start()
 {
-	sf::CircleShape shape(100.f);
-
-	window = new sf::RenderWindow(sf::VideoMode(ScreenWidth, ScreenHeight), "WORMS");
-
 	auto start = std::chrono::high_resolution_clock::now();
 
 	while (window->isOpen())
@@ -41,6 +41,7 @@ void Game::GameLoop()
 	{
 		CurrentState.back()->UpdateObjects();
 		lag -= MKS_PER_UPDATE;
+		StateChangeIfPossible();
 	}
 
 	CurrentState.back()->RenderObjects(window);
@@ -49,4 +50,22 @@ void Game::GameLoop()
 void Game::CloseGame()
 {
 	window->close();
+}
+
+void Game::StateChangeIfPossible()
+{
+	if (CurrentState.back()->ChangeState())
+	{
+		ApplicationState *transition = CurrentState.back()->getNextState();
+		if (transition)
+			CurrentState.push_back(transition);
+		else
+		{
+			CurrentState.pop_back();
+
+			if (CurrentState.empty()) {
+				single->WindowClosed = true;
+			}
+		}
+	}
 }

@@ -1,6 +1,6 @@
 #include "Layout.h"
 
-int ** Layout::getLayoutInIntArray()
+std::vector<std::vector<int> > Layout::getLayoutInIntArray()
 {
 	return LayoutDescription;
 }
@@ -19,8 +19,8 @@ void Layout::Show(sf::RenderWindow *window)
 
 Layout * Layout::getNextLayout()
 {
-	Layout *result = next;
-	next = nullptr;
+	Layout *result = Next;
+	Next = nullptr;
 	return result;
 }
 
@@ -55,7 +55,7 @@ void Layout::AddCharacterToBuffer(char character)
 
 Layout::Layout()
 {
-	next = nullptr;
+	Next = nullptr;
 	LayoutChangeFlag = false;
 	buffer = nullptr;
 	ObjectsMaxId = 0;
@@ -67,7 +67,32 @@ int Layout::IncId()
 	return ++ObjectsMaxId;
 }
 
-void Layout::GenerateDescription()
+void Layout::GenerateDescription(sf::RenderWindow *window)
 {
 	// create LayoutDescription according to LayoutObjeccts list rects
+	int n = window->getSize().x; n += 50;
+	int m = window->getSize().y; m += 50;
+	
+	LayoutDescription.resize(n);
+
+	for (int i = 0; i < n; i++)
+	{
+		LayoutDescription[i].resize(m);
+		for (int j = 0; j < m; j++)
+			LayoutDescription[i][j] = 0;
+	}
+	
+	
+	for (auto obj: ObjectsList)
+	{
+		for (int i = obj->Position.x;
+			i < obj->Position.x + obj->Size.x;
+			i++)
+
+			for (int j = obj->Position.y;
+				j < obj->Position.y + obj->Size.y;
+				j++)
+
+				LayoutDescription[i][j] = obj->HidenFromUser ? 0 : obj->ObjectId;
+	}
 }

@@ -1,48 +1,43 @@
 ﻿  Button.cpp
+d:\windows\worms-sfml\worms\worms\button.cpp(20): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+d:\windows\worms-sfml\worms\worms\button.cpp(22): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
   Game.cpp
-d:\windows\worms-sfml\worms\worms\layout.h(15): error C2059: синтаксическая ошибка: .
-d:\windows\worms-sfml\worms\worms\layout.h(16): error C2238: непредвиденные лексемы перед ";"
-  ApplicationState.cpp
-  GameSettingsMenuLayout.cpp
-d:\windows\worms-sfml\worms\worms\layout.h(15): error C2059: синтаксическая ошибка: .
-d:\windows\worms-sfml\worms\worms\layout.h(16): error C2238: непредвиденные лексемы перед ";"
   Layout.cpp
-d:\windows\worms-sfml\worms\worms\layout.h(15): error C2059: синтаксическая ошибка: .
-d:\windows\worms-sfml\worms\worms\layout.h(16): error C2238: непредвиденные лексемы перед ";"
-d:\windows\worms-sfml\worms\worms\layout.cpp(8): error C2039: getNextLayout: не является членом "Layout"
-  d:\windows\worms-sfml\worms\worms\layout.h(8): note:  см. объявление "Layout"
-d:\windows\worms-sfml\worms\worms\layout.cpp(10): error C2065: next: необъявленный идентификатор
-d:\windows\worms-sfml\worms\worms\layout.cpp(11): error C2065: next: необъявленный идентификатор
-  LayoutObject.cpp
-  LoadMenuLayout.cpp
-d:\windows\worms-sfml\worms\worms\layout.h(15): error C2059: синтаксическая ошибка: .
-d:\windows\worms-sfml\worms\worms\layout.h(16): error C2238: непредвиденные лексемы перед ";"
+d:\windows\worms-sfml\worms\worms\layout.cpp(88): warning C4244: инициализация: преобразование "T" в "int", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+d:\windows\worms-sfml\worms\worms\layout.cpp(92): warning C4244: инициализация: преобразование "T" в "int", возможна потеря данных
+          with
+          [
+              T=float
+          ]
   main.cpp
-d:\windows\worms-sfml\worms\worms\layout.h(15): error C2059: синтаксическая ошибка: .
-d:\windows\worms-sfml\worms\worms\layout.h(16): error C2238: непредвиденные лексемы перед ";"
   MainMenuLayout.cpp
-d:\windows\worms-sfml\worms\worms\layout.h(15): error C2059: синтаксическая ошибка: .
-d:\windows\worms-sfml\worms\worms\layout.h(16): error C2238: непредвиденные лексемы перед ";"
-  MapSettingsMenuLayout.cpp
-d:\windows\worms-sfml\worms\worms\layout.h(15): error C2059: синтаксическая ошибка: .
-d:\windows\worms-sfml\worms\worms\layout.h(16): error C2238: непредвиденные лексемы перед ";"
-  NewGAmeMenuLayout.cpp
-d:\windows\worms-sfml\worms\worms\layout.h(15): error C2059: синтаксическая ошибка: .
-d:\windows\worms-sfml\worms\worms\layout.h(16): error C2238: непредвиденные лексемы перед ";"
-  Singleton.cpp
-  StateButton.cpp
-  TeamsSettingsMenuLayout.cpp
-d:\windows\worms-sfml\worms\worms\layout.h(15): error C2059: синтаксическая ошибка: .
-d:\windows\worms-sfml\worms\worms\layout.h(16): error C2238: непредвиденные лексемы перед ";"
-  TextLayoutObject.cpp
+d:\windows\worms-sfml\worms\worms\mainmenulayout.cpp(8): warning C4018: <=: несоответствие типов со знаком и без знака
+d:\windows\worms-sfml\worms\worms\mainmenulayout.cpp(9): warning C4018: <=: несоответствие типов со знаком и без знака
+d:\windows\worms-sfml\worms\worms\mainmenulayout.cpp(25): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+d:\windows\worms-sfml\worms\worms\mainmenulayout.cpp(30): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+d:\windows\worms-sfml\worms\worms\mainmenulayout.cpp(35): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+d:\windows\worms-sfml\worms\worms\mainmenulayout.cpp(39): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+  StaticPicture.cpp
   UiState.cpp
-d:\windows\worms-sfml\worms\worms\layout.h(15): error C2059: синтаксическая ошибка: .
-d:\windows\worms-sfml\worms\worms\layout.h(16): error C2238: непредвиденные лексемы перед ";"
-d:\windows\worms-sfml\worms\worms\uistate.cpp(5): error C2259: MainMenuLayout: невозможно создать экземпляр абстрактного класса
-  d:\windows\worms-sfml\worms\worms\uistate.cpp(5): note: из-за следующих членов:
-  d:\windows\worms-sfml\worms\worms\uistate.cpp(5): note: void Layout::Update(void): абстрактный
-  d:\windows\worms-sfml\worms\worms\layout.h(14): note:  см. объявление "Layout::Update"
-  WeaponSettingsMenuLayout.cpp
-d:\windows\worms-sfml\worms\worms\layout.h(15): error C2059: синтаксическая ошибка: .
-d:\windows\worms-sfml\worms\worms\layout.h(16): error C2238: непредвиденные лексемы перед ";"
   Создание кода...
+  Worms.vcxproj -> D:\Windows\Worms-SFML\Worms\Debug\Worms.exe

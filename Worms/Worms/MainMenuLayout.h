@@ -4,11 +4,13 @@
 #include "Button.h"
 #include "StaticPicture.h"
 
+#include <iostream>
+
 class MainMenuLayout : public Layout
 {
 public:
 	void Update(sf::RenderWindow *window) override;
-	MainMenuLayout();
+	MainMenuLayout(sf::RenderWindow *window);
 
 private:
 	Button *new_game_button;

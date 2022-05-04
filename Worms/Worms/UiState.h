@@ -8,7 +8,7 @@
 class UiState : public ApplicationState
 {
 public:
-	UiState();
+	UiState(sf::RenderWindow *window);
 
 public:
 	void ProcessInput(sf::RenderWindow *window) override;

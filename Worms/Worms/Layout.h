@@ -7,7 +7,7 @@
 class Layout
 {
 public:
-	int** getLayoutInIntArray(); // LayoutDescription
+	std::vector<std::vector<int> > getLayoutInIntArray(); // LayoutDescription
 
 public:
 	virtual void Update(sf::RenderWindow *window) = 0;
@@ -24,7 +24,7 @@ public:
 	Layout();
 
 protected:
-	int** LayoutDescription;
+	std::vector<std::vector<int> > LayoutDescription;
 	std::vector<LayoutObject*> ObjectsList;
 	std::map<int, LayoutObject*> Objects;
 	LayoutObject *background;
@@ -32,14 +32,14 @@ protected:
 
 	std::string *buffer;
 
-	Layout *next;
+	Layout *Next;
 	bool LayoutChangeFlag;
 
 	int ObjectsMaxId;
 
 protected:
 	int IncId();
-	void GenerateDescription();
+	void GenerateDescription(sf::RenderWindow *window);
 };
 
 // Layout for every window in game

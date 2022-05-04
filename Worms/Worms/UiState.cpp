@@ -1,8 +1,8 @@
 #include "UiState.h"
 
-UiState::UiState()
+UiState::UiState(sf::RenderWindow *window) : ApplicationState()
 {
-	CurrentLayout.push_back(new MainMenuLayout());
+	CurrentLayout.push_back(new MainMenuLayout(window));
 }
 
 void UiState::ProcessInput(sf::RenderWindow * window)
@@ -17,7 +17,8 @@ void UiState::ProcessInput(sf::RenderWindow * window)
 			break;
 		}
 
-		if (event.type == sf::Event::MouseButtonPressed)
+		if (event.type == sf::Event::MouseButtonPressed &&
+			event.mouseButton.button == sf::Mouse::Left)
 		{
 			// Search srough layout description and current mouse position 
 			// Update if exists pressed field LayoutObject id
@@ -26,8 +27,25 @@ void UiState::ProcessInput(sf::RenderWindow * window)
 
 		if (event.type == sf::Event::KeyPressed)
 		{
-			// put symobl into buffer if exists
-			// if enter submit buffer
+			switch (event.key.code)
+			{
+			case sf::Keyboard::BackSpace:
+				CurrentLayout.back()->EraseLastCharacterFromBuffer();
+				break;
+
+			case sf::Keyboard::Enter:
+				CurrentLayout.back()->ConfirmBuffer();
+				break;
+
+			default:
+				break;
+			}
+		}
+
+		if (event.type == sf::Event::TextEntered)
+		{
+			if (event.text.unicode < 128)
+				CurrentLayout.back()->AddCharacterToBuffer(static_cast<char>(event.text.unicode));
 		}
 	}
 }
@@ -45,10 +63,8 @@ void UiState::UpdateObjects()
 		{
 			CurrentLayout.pop_back();
 
-			if (CurrentLayout.empty())
-			{
-				Singleton *single = Singleton::GetInstance();
-				single->WindowClosed = true;
+			if (CurrentLayout.empty()) {
+				StateChangeFlag = true;
 			}
 		}
 	}
