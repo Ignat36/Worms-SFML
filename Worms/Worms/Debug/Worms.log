@@ -1,35 +1,4 @@
-﻿  Button.cpp
-d:\windows\worms-sfml\worms\worms\button.cpp(20): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-d:\windows\worms-sfml\worms\worms\button.cpp(22): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-  Game.cpp
-  Layout.cpp
-d:\windows\worms-sfml\worms\worms\layout.cpp(88): warning C4244: инициализация: преобразование "T" в "int", возможна потеря данных
-          with
-          [
-              T=float
-          ]
-d:\windows\worms-sfml\worms\worms\layout.cpp(92): warning C4244: инициализация: преобразование "T" в "int", возможна потеря данных
-          with
-          [
-              T=float
-          ]
-  main.cpp
+﻿  Game.cpp
   MainMenuLayout.cpp
 d:\windows\worms-sfml\worms\worms\mainmenulayout.cpp(8): warning C4018: <=: несоответствие типов со знаком и без знака
 d:\windows\worms-sfml\worms\worms\mainmenulayout.cpp(9): warning C4018: <=: несоответствие типов со знаком и без знака
@@ -37,7 +6,7 @@ d:\windows\worms-sfml\worms\worms\mainmenulayout.cpp(25): warning C4244: арг�
 d:\windows\worms-sfml\worms\worms\mainmenulayout.cpp(30): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
 d:\windows\worms-sfml\worms\worms\mainmenulayout.cpp(35): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
 d:\windows\worms-sfml\worms\worms\mainmenulayout.cpp(39): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-  StaticPicture.cpp
   UiState.cpp
+  main.cpp
   Создание кода...
   Worms.vcxproj -> D:\Windows\Worms-SFML\Worms\Debug\Worms.exe
