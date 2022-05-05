@@ -1,4 +1,7 @@
 #pragma once
+
+#include "Configurations.h"
+
 class Singleton
 {
 
@@ -20,5 +23,6 @@ public:
 
 public:
 	bool WindowClosed;
+	Configurations config;
 };
 

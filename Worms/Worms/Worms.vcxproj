@@ -128,11 +128,15 @@
     <ClCompile Include="ChangeGranadeTimeCmd.cpp" />
     <ClCompile Include="ChoosePlaceCmd.cpp" />
     <ClCompile Include="Command.cpp" />
+    <ClCompile Include="Configurations.cpp" />
     <ClCompile Include="DownCmd.cpp" />
     <ClCompile Include="ExplodeCmd.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="ApplicationState.cpp" />
+    <ClCompile Include="GameConfigurations.cpp" />
+    <ClCompile Include="GameMap.cpp" />
     <ClCompile Include="GameSettingsMenuLayout.cpp" />
+    <ClCompile Include="GameState.cpp" />
     <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="JumpCmd.cpp" />
     <ClCompile Include="Layout.cpp" />
@@ -141,6 +145,7 @@
     <ClCompile Include="LoadMenuLayout.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenuLayout.cpp" />
+    <ClCompile Include="MapCanvas.cpp" />
     <ClCompile Include="MapSettingsMenuLayout.cpp" />
     <ClCompile Include="MenuShowCmd.cpp" />
     <ClCompile Include="NewGAmeMenuLayout.cpp" />
@@ -150,9 +155,11 @@
     <ClCompile Include="Singleton.cpp" />
     <ClCompile Include="StateButton.cpp" />
     <ClCompile Include="StaticPicture.cpp" />
+    <ClCompile Include="TeamsConfigurations.cpp" />
     <ClCompile Include="TeamsSettingsMenuLayout.cpp" />
     <ClCompile Include="UpCmd.cpp" />
     <ClCompile Include="UiState.cpp" />
+    <ClCompile Include="WeaponConfigurations.cpp" />
     <ClCompile Include="WeaponSettingsMenuLayout.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -161,11 +168,15 @@
     <ClInclude Include="ChangeGranadeTimeCmd.h" />
     <ClInclude Include="ChoosePlaceCmd.h" />
     <ClInclude Include="Command.h" />
+    <ClInclude Include="Configurations.h" />
     <ClInclude Include="DownCmd.h" />
     <ClInclude Include="ExplodeCmd.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="ApplicationState.h" />
+    <ClInclude Include="GameConfigurations.h" />
+    <ClInclude Include="GameMap.h" />
     <ClInclude Include="GameSettingsMenuLayout.h" />
+    <ClInclude Include="GameState.h" />
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="JumpCmd.h" />
     <ClInclude Include="Layout.h" />
@@ -173,6 +184,7 @@
     <ClInclude Include="LeftCmd.h" />
     <ClInclude Include="LoadMenuLayout.h" />
     <ClInclude Include="MainMenuLayout.h" />
+    <ClInclude Include="MapCanvas.h" />
     <ClInclude Include="MapSettingsMenuLayout.h" />
     <ClInclude Include="MenuShowCmd.h" />
     <ClInclude Include="NewGameMenuLayout.h" />
@@ -182,9 +194,11 @@
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="StateButton.h" />
     <ClInclude Include="StaticPicture.h" />
+    <ClInclude Include="TeamsConfigurations.h" />
     <ClInclude Include="TeamsSettingsMenuLayout.h" />
     <ClInclude Include="UpCmd.h" />
     <ClInclude Include="UiState.h" />
+    <ClInclude Include="WeaponConfigurations.h" />
     <ClInclude Include="WeaponSettingsMenuLayout.h" />
   </ItemGroup>
   <ItemGroup>

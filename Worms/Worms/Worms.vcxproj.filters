@@ -58,6 +58,15 @@
     <Filter Include="GlobalEntities\CPP">
       <UniqueIdentifier>{feb667b5-27bd-4e72-8689-7ec04ff713bd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Configurations">
+      <UniqueIdentifier>{d3e61325-12d7-4ee5-90ea-9877ae900eac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Configurations\H">
+      <UniqueIdentifier>{0a6e566e-3af8-425b-b2a1-4d7df8088002}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Configurations\CPP">
+      <UniqueIdentifier>{042dfb0a-2fa2-43f7-91b6-15a96ca12fdf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -153,6 +162,27 @@
     <ClCompile Include="StaticPicture.cpp">
       <Filter>WindowEntities\CPP</Filter>
     </ClCompile>
+    <ClCompile Include="GameState.cpp">
+      <Filter>Game\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Configurations.cpp">
+      <Filter>Configurations\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="GameConfigurations.cpp">
+      <Filter>Configurations\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMap.cpp">
+      <Filter>Configurations\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="TeamsConfigurations.cpp">
+      <Filter>Configurations\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponConfigurations.cpp">
+      <Filter>Configurations\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="MapCanvas.cpp">
+      <Filter>WindowEntities\CPP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -243,6 +273,27 @@
       <Filter>GlobalEntities\H</Filter>
     </ClInclude>
     <ClInclude Include="StaticPicture.h">
+      <Filter>WindowEntities\H</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>Game\H</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponConfigurations.h">
+      <Filter>Configurations\H</Filter>
+    </ClInclude>
+    <ClInclude Include="TeamsConfigurations.h">
+      <Filter>Configurations\H</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMap.h">
+      <Filter>Configurations\H</Filter>
+    </ClInclude>
+    <ClInclude Include="GameConfigurations.h">
+      <Filter>Configurations\H</Filter>
+    </ClInclude>
+    <ClInclude Include="Configurations.h">
+      <Filter>Configurations\H</Filter>
+    </ClInclude>
+    <ClInclude Include="MapCanvas.h">
       <Filter>WindowEntities\H</Filter>
     </ClInclude>
   </ItemGroup>
