@@ -22,4 +22,5 @@ void LayoutObject::LoadSprite(sf::Texture &texture, sf::Sprite &sprite, std::str
 		return;
 	}
 	sprite.setTexture(texture);
+	sprite.setPosition(Position);
 }

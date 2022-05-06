@@ -13,4 +13,5 @@ StaticPicture::StaticPicture(int id, float pos_x, float pos_y,
 {
 	HidenFromUser = true;
 	LoadSprite(Texture, Picture, PictureFile);
+	Picture.setTextureRect(sf::IntRect(pos_x, pos_y, width, height));
 }

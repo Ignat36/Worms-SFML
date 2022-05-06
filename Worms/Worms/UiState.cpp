@@ -74,5 +74,7 @@ void UiState::UpdateObjects()
 void UiState::RenderObjects(sf::RenderWindow * window)
 {
 	// Show Layout
+	window->clear();
 	CurrentLayout.back()->Show(window);
+	window->display();
 }

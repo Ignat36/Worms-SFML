@@ -12,9 +12,9 @@ void Layout::Show(sf::RenderWindow *window)
 	for (auto i : ObjectsList)
 		i->Show(window);
 
-	sf::Cursor cursor;
+	/*sf::Cursor cursor;
 	if (cursor.loadFromSystem(CursorType))
-		window->setMouseCursor(cursor);
+		window->setMouseCursor(cursor);*/
 }
 
 Layout * Layout::getNextLayout()

@@ -1,6 +1,6 @@
 #include "Configurations.h"
 
-Configurations::Configurations(std::string file = "")
+Configurations::Configurations(std::string file)
 {
 	if (file == "")
 	{

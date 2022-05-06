@@ -18,8 +18,8 @@ Button::Button(int id, float pos_x, float pos_y,
 	LoadSprite(CoveredButtonTexture, CoveredButtonSprite, CoveredButtonFile);
 	
 	Position -= sf::Vector2f(ButtonTexture.getSize().x / 2, ButtonTexture.getSize().y / 2);
-	Rect = sf::FloatRect(Position,
-						 sf::Vector2f(ButtonTexture.getSize().x, ButtonTexture.getSize().y));
+	Size = sf::Vector2f(ButtonTexture.getSize().x, ButtonTexture.getSize().y);
+	Rect = sf::FloatRect(Position, Size);
 	
 	ButtonSprite.setPosition(Position);
 	CoveredButtonSprite.setPosition(Position);

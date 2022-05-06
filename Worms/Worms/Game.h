@@ -28,6 +28,6 @@ private:
 private: // logic functions
 	void GameLoop();
 	void CloseGame();
-	void StateChangeIfPossible();
+	bool StateChangeIfPossible();
 };
 

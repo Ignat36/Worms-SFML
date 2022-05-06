@@ -2,8 +2,8 @@
 
 Game::Game()
 {
-	ScreenWidth = 400;
-	ScreenHeight = 400;
+	ScreenWidth = 1280;
+	ScreenHeight = 794;
 	MKS_PER_UPDATE = 16667;
 	single = Singleton::GetInstance();
 	lag = 0;
@@ -21,6 +21,7 @@ void Game::Start()
 	{
 		auto stop = std::chrono::high_resolution_clock::now();
 		long long elapsed = (std::chrono::duration_cast<std::chrono::microseconds>(stop - start)).count();
+		start = stop;
 		lag += elapsed;
 
 		GameLoop();
@@ -41,7 +42,11 @@ void Game::GameLoop()
 	{
 		CurrentState.back()->UpdateObjects();
 		lag -= MKS_PER_UPDATE;
-		StateChangeIfPossible();
+		
+		if (StateChangeIfPossible())
+			return;
+		
+		//std::cout << lag << "\n";
 	}
 
 	CurrentState.back()->RenderObjects(window);
@@ -52,7 +57,7 @@ void Game::CloseGame()
 	window->close();
 }
 
-void Game::StateChangeIfPossible()
+bool Game::StateChangeIfPossible()
 {
 	if (CurrentState.back()->ChangeState())
 	{
@@ -67,5 +72,8 @@ void Game::StateChangeIfPossible()
 				single->WindowClosed = true;
 			}
 		}
+		return true;
 	}
+
+	return false;
 }
