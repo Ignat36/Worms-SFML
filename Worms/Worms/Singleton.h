@@ -6,10 +6,7 @@ class Singleton
 {
 
 protected:
-	Singleton() : WindowClosed(false)
-	{
-
-	}
+	Singleton() : WindowClosed(false), config(Configurations()) {}
 
 	static Singleton* singleton_;
 

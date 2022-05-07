@@ -23,9 +23,6 @@ private:
 	void load_game_button_pressed();
 	void pass();
 	std::map<int, void (MainMenuLayout::*)()> Slots;
-
-private:
-	void TemporaryFunction() {};
 };
 
 

@@ -1,4 +1,11 @@
 ﻿  Game.cpp
-  main.cpp
+  MainMenuLayout.cpp
+d:\windows\worms-sfml\worms\worms\mainmenulayout.cpp(8): warning C4018: <=: несоответствие типов со знаком и без знака
+d:\windows\worms-sfml\worms\worms\mainmenulayout.cpp(9): warning C4018: <=: несоответствие типов со знаком и без знака
+d:\windows\worms-sfml\worms\worms\mainmenulayout.cpp(25): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+d:\windows\worms-sfml\worms\worms\mainmenulayout.cpp(30): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+d:\windows\worms-sfml\worms\worms\mainmenulayout.cpp(35): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+d:\windows\worms-sfml\worms\worms\mainmenulayout.cpp(39): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+  UiState.cpp
   Создание кода...
   Worms.vcxproj -> D:\Windows\Worms-SFML\Worms\Debug\Worms.exe

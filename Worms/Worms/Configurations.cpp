@@ -5,7 +5,7 @@ Configurations::Configurations(std::string file)
 	if (file == "")
 	{
 		game_config = GameConfigurations();
-		map = GameMap::Random();
+		map = GameMap();
 		teams = TeamsConfigurations();
 		weapons = WeaponConfigurations();
 	}

@@ -3,7 +3,7 @@
 Game::Game()
 {
 	ScreenWidth = 1280;
-	ScreenHeight = 794;
+	ScreenHeight = 800;
 	MKS_PER_UPDATE = 16667;
 	single = Singleton::GetInstance();
 	lag = 0;
