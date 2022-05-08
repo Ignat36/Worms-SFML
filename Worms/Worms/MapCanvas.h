@@ -20,7 +20,7 @@ public:
 	void CreateTunnels(bool value);
 	void DrawPoint(bool value, sf::RenderWindow *window);
 	void DrawPoint(bool value, sf::Vector2i point);
-	void DrawLine(bool value, sf::Vector2i start, sf::RenderWindow *window);
+	void DrawLine(bool value, sf::Vector2i start, sf::Vector2i end);
 
 private:
 	sf::Uint8 *pixels;

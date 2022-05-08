@@ -1,9 +1,8 @@
-﻿  MapSettingsMenuLayout.cpp
-d:\windows\worms-sfml\worms\worms\mapsettingsmenulayout.cpp(8): warning C4018: <=: несоответствие типов со знаком и без знака
-d:\windows\worms-sfml\worms\worms\mapsettingsmenulayout.cpp(9): warning C4018: <=: несоответствие типов со знаком и без знака
-d:\windows\worms-sfml\worms\worms\mapsettingsmenulayout.cpp(51): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\mapsettingsmenulayout.cpp(55): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\mapsettingsmenulayout.cpp(57): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-  UiState.cpp
-  Создание кода...
+﻿  MapCanvas.cpp
+d:\windows\worms-sfml\worms\worms\mapcanvas.cpp(21): warning C4244: инициализация: преобразование "float" в "unsigned int", возможна потеря данных
+d:\windows\worms-sfml\worms\worms\mapcanvas.cpp(118): warning C4244: аргумент: преобразование "T" в "unsigned int", возможна потеря данных
+          with
+          [
+              T=float
+          ]
   Worms.vcxproj -> D:\Windows\Worms-SFML\Worms\Debug\Worms.exe

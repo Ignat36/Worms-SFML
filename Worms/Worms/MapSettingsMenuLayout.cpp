@@ -18,9 +18,9 @@ void MapSettingsMenuLayout::Update(sf::RenderWindow *window)
 
 	if (Canvas->Rect.contains(mousePosF))
 	{
-		/*if (!isButtonReleased)
-			Canvas->DrawLine(PressedMouseButton, PreviousDrawPoint, window);
-		else*/
+		if (!isButtonReleased)
+			Canvas->DrawLine(PressedMouseButton, PreviousDrawPoint, sf::Vector2i(X, Y));
+		else
 			Canvas->DrawPoint(PressedMouseButton, sf::Vector2i(X, Y));
 
 		PreviousDrawPoint = sf::Vector2i(X, Y);
