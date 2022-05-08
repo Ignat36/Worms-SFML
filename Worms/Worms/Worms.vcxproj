@@ -148,7 +148,7 @@
     <ClCompile Include="MapCanvas.cpp" />
     <ClCompile Include="MapSettingsMenuLayout.cpp" />
     <ClCompile Include="MenuShowCmd.cpp" />
-    <ClCompile Include="NewGAmeMenuLayout.cpp" />
+    <ClCompile Include="NewGameMenuLayout.cpp" />
     <ClCompile Include="RightCmd.cpp" />
     <ClCompile Include="RotLedtCmd.cpp" />
     <ClCompile Include="RotRightCmd.cpp" />

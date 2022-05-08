@@ -53,13 +53,14 @@ void Layout::AddCharacterToBuffer(char character)
 		*buffer += character;
 }
 
-Layout::Layout()
+Layout::Layout(sf::RenderWindow *n_window)
 {
 	Next = nullptr;
 	LayoutChangeFlag = false;
 	buffer = nullptr;
 	ObjectsMaxId = 0;
 	CursorType = sf::Cursor::Arrow;
+	this->window = n_window;
 }
 
 int Layout::IncId()

@@ -6,13 +6,14 @@ void MainMenuLayout::Update(sf::RenderWindow *window)
 	int Y = sf::Mouse::getPosition(*window).y;
 
 	if (X >= 0 && X <= window->getSize().x &&
-		Y >= 0 && Y <= window->getSize().y)
+		Y >= 0 && Y <= window->getSize().y &&
+		PressedMouseButton)
 	{
 		(*this.*Slots[ LayoutDescription[X][Y] ])();
 	}
 }
 
-MainMenuLayout::MainMenuLayout(sf::RenderWindow *window) : Layout()
+MainMenuLayout::MainMenuLayout(sf::RenderWindow *window) : Layout(window)
 {
 	int w = window->getSize().x; // width
 	int h = window->getSize().y; // height
@@ -43,7 +44,8 @@ MainMenuLayout::MainMenuLayout(sf::RenderWindow *window) : Layout()
 
 void MainMenuLayout::new_game_button_pressed()
 {
-	std::cout << "new game\n";
+	LayoutChangeFlag = true;
+	Next = new NewGameMenuLayout(window);
 }
 
 void MainMenuLayout::exit_button_pressed()

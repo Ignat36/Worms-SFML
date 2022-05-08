@@ -147,9 +147,6 @@
     <ClCompile Include="MapSettingsMenuLayout.cpp">
       <Filter>WindowEntities\Layouts\CPP</Filter>
     </ClCompile>
-    <ClCompile Include="NewGAmeMenuLayout.cpp">
-      <Filter>WindowEntities\Layouts\CPP</Filter>
-    </ClCompile>
     <ClCompile Include="TeamsSettingsMenuLayout.cpp">
       <Filter>WindowEntities\Layouts\CPP</Filter>
     </ClCompile>
@@ -182,6 +179,9 @@
     </ClCompile>
     <ClCompile Include="MapCanvas.cpp">
       <Filter>WindowEntities\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="NewGameMenuLayout.cpp">
+      <Filter>WindowEntities\Layouts\CPP</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -260,9 +260,6 @@
     <ClInclude Include="MapSettingsMenuLayout.h">
       <Filter>WindowEntities\Layouts\H</Filter>
     </ClInclude>
-    <ClInclude Include="NewGameMenuLayout.h">
-      <Filter>WindowEntities\Layouts\H</Filter>
-    </ClInclude>
     <ClInclude Include="TeamsSettingsMenuLayout.h">
       <Filter>WindowEntities\Layouts\H</Filter>
     </ClInclude>
@@ -295,6 +292,9 @@
     </ClInclude>
     <ClInclude Include="MapCanvas.h">
       <Filter>WindowEntities\H</Filter>
+    </ClInclude>
+    <ClInclude Include="NewGameMenuLayout.h">
+      <Filter>WindowEntities\Layouts\H</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

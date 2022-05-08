@@ -9,7 +9,7 @@ TeamsConfigurations::TeamsConfigurations(int n, int m)
 	TeamANames.resize(n);
 	TeamBNames.resize(m);
 
-	std::ifstream fin("Configurations/Names.txt"); fin.open("r");
+	std::ifstream fin; fin.open("Configurations/Names.txt");
 
 	std::string name; 
 	std::vector<std::string> names(20000); 

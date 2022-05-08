@@ -3,8 +3,7 @@
 #include "Layout.h"
 #include "Button.h"
 #include "StaticPicture.h"
-
-#include <iostream>
+#include "NewGameMenuLayout.h"
 
 class MainMenuLayout : public Layout
 {

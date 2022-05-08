@@ -16,6 +16,8 @@ private:
 
 		bounds(int n_left, int n_right) : 
 			left(n_left), right(n_right) {}
+
+		bounds() : left(1), right(2) {}
 	};
 
 public:

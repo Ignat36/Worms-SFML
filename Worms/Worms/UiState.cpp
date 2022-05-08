@@ -17,11 +17,20 @@ void UiState::ProcessInput(sf::RenderWindow * window)
 			break;
 		}
 
-		if (event.type == sf::Event::MouseButtonPressed &&
-			event.mouseButton.button == sf::Mouse::Left)
+		if (event.type == sf::Event::MouseButtonPressed)
 		{
 			// Search srough layout description and current mouse position 
 			// Update if exists pressed field LayoutObject id
+			CurrentLayout.back()->PressedMouseButton = event.mouseButton.button == sf::Mouse::Left;
+			CurrentLayout.back()->Update(window);
+		}
+
+		if (event.type == sf::Event::MouseMoved &&
+			sf::Mouse::isButtonPressed(event.mouseButton.button))
+		{
+			// Search srough layout description and current mouse position 
+			// Update if exists pressed field LayoutObject id
+			CurrentLayout.back()->PressedMouseButton = event.mouseButton.button == sf::Mouse::Left;
 			CurrentLayout.back()->Update(window);
 		}
 

@@ -20,8 +20,10 @@ public:
 	void EraseLastCharacterFromBuffer();
 	void AddCharacterToBuffer(char character);
 
+	bool PressedMouseButton;
+
 public:
-	Layout();
+	Layout(sf::RenderWindow *n_window);
 
 protected:
 	std::vector<std::vector<int> > LayoutDescription;
@@ -36,6 +38,8 @@ protected:
 	bool LayoutChangeFlag;
 
 	int ObjectsMaxId;
+
+	sf::RenderWindow *window;
 
 protected:
 	int IncId();
