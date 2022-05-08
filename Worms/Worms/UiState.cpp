@@ -3,6 +3,7 @@
 UiState::UiState(sf::RenderWindow *window) : ApplicationState()
 {
 	CurrentLayout.push_back(new MainMenuLayout(window));
+	isButtonPressed = false;
 }
 
 void UiState::ProcessInput(sf::RenderWindow * window)
@@ -21,16 +22,25 @@ void UiState::ProcessInput(sf::RenderWindow * window)
 		{
 			// Search srough layout description and current mouse position 
 			// Update if exists pressed field LayoutObject id
+			isButtonPressed = true;
 			CurrentLayout.back()->PressedMouseButton = event.mouseButton.button == sf::Mouse::Left;
 			CurrentLayout.back()->Update(window);
+			//CurrentLayout.back()->isButtonReleased = false;
+
 		}
 
-		if (event.type == sf::Event::MouseMoved &&
-			sf::Mouse::isButtonPressed(event.mouseButton.button))
+		if (event.type == sf::Event::MouseButtonReleased)
 		{
 			// Search srough layout description and current mouse position 
 			// Update if exists pressed field LayoutObject id
-			CurrentLayout.back()->PressedMouseButton = event.mouseButton.button == sf::Mouse::Left;
+			isButtonPressed = false;
+			//CurrentLayout.back()->isButtonReleased = true;
+		}
+
+		if (event.type == sf::Event::MouseMoved && isButtonPressed)
+		{
+			// Search srough layout description and current mouse position 
+			// Update if exists pressed field LayoutObject id
 			CurrentLayout.back()->Update(window);
 		}
 

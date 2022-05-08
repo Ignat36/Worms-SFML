@@ -12,6 +12,7 @@ class NewGameMenuLayout : public Layout
 {
 public:
 	void Update(sf::RenderWindow *window) override;
+	void Show(sf::RenderWindow *window) override;
 	NewGameMenuLayout(sf::RenderWindow *window);
 
 private:

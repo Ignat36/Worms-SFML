@@ -11,12 +11,30 @@ void MapSettingsMenuLayout::Update(sf::RenderWindow *window)
 		(*this.*Slots[LayoutDescription[X][Y]])();
 	}
 
+	X -= 40; Y -= 40;
+
 	sf::Vector2i mousePos = sf::Mouse::getPosition(*window);
 	sf::Vector2f mousePosF(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y));
 
 	if (Canvas->Rect.contains(mousePosF))
-		Canvas->DrawPoint(PressedMouseButton, window);
+	{
+		/*if (!isButtonReleased)
+			Canvas->DrawLine(PressedMouseButton, PreviousDrawPoint, window);
+		else*/
+			Canvas->DrawPoint(PressedMouseButton, sf::Vector2i(X, Y));
 
+		PreviousDrawPoint = sf::Vector2i(X, Y);
+	}
+}
+
+void MapSettingsMenuLayout::Show(sf::RenderWindow * window)
+{
+	background->Show(window);
+
+	for (auto i : ObjectsList)
+		i->Show(window);
+
+	Canvas->Show(window);
 }
 
 MapSettingsMenuLayout::MapSettingsMenuLayout(sf::RenderWindow *window) : Layout(window)

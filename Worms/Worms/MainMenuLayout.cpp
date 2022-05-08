@@ -13,6 +13,14 @@ void MainMenuLayout::Update(sf::RenderWindow *window)
 	}
 }
 
+void MainMenuLayout::Show(sf::RenderWindow * window)
+{
+	background->Show(window);
+
+	for (auto i : ObjectsList)
+		i->Show(window);
+}
+
 MainMenuLayout::MainMenuLayout(sf::RenderWindow *window) : Layout(window)
 {
 	int w = window->getSize().x; // width

@@ -11,7 +11,7 @@ public:
 
 public:
 	virtual void Update(sf::RenderWindow *window) = 0;
-	void Show(sf::RenderWindow *window);
+	virtual void Show(sf::RenderWindow *window) = 0;
 		
 	Layout *getNextLayout(); // sends next and make it nullptr
 	bool ChangeLayout();
@@ -21,6 +21,7 @@ public:
 	void AddCharacterToBuffer(char character);
 
 	bool PressedMouseButton;
+	bool isButtonReleased;
 
 public:
 	Layout(sf::RenderWindow *n_window);

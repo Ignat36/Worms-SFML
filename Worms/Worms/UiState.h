@@ -17,4 +17,6 @@ public:
 
 private:
 	std::vector<Layout *> CurrentLayout;
+
+	bool isButtonPressed;
 };

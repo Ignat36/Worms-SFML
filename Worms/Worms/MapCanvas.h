@@ -19,11 +19,13 @@ public:
 	void CreateSpheres(bool value);
 	void CreateTunnels(bool value);
 	void DrawPoint(bool value, sf::RenderWindow *window);
+	void DrawPoint(bool value, sf::Vector2i point);
+	void DrawLine(bool value, sf::Vector2i start, sf::RenderWindow *window);
 
 private:
-	std::vector<std::vector<bool> > map;
 	sf::Uint8 *pixels;
 	bool NeedUpdated;
+	sf::Image Image;
 	sf::Sprite Sprite;
 	sf::Texture Texture;
 

@@ -9,7 +9,11 @@ class MapSettingsMenuLayout : public Layout
 {
 public:
 	void Update(sf::RenderWindow *window) override;
+	void Show(sf::RenderWindow *window) override;
 	MapSettingsMenuLayout(sf::RenderWindow *window);
+
+private:
+	sf::Vector2i PreviousDrawPoint;
 
 private:
 	Button *exit_button;
@@ -35,6 +39,7 @@ private:
 	void load_button_pressed();
 	void save_button_pressed();
 	void pass();
+
 	std::map<int, void (MapSettingsMenuLayout::*)()> Slots;
 };
 

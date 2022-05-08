@@ -5,18 +5,6 @@ std::vector<std::vector<int> > Layout::getLayoutInIntArray()
 	return LayoutDescription;
 }
 
-void Layout::Show(sf::RenderWindow *window)
-{
-	background->Show(window);
-
-	for (auto i : ObjectsList)
-		i->Show(window);
-
-	/*sf::Cursor cursor;
-	if (cursor.loadFromSystem(CursorType))
-		window->setMouseCursor(cursor);*/
-}
-
 Layout * Layout::getNextLayout()
 {
 	Layout *result = Next;
@@ -61,6 +49,7 @@ Layout::Layout(sf::RenderWindow *n_window)
 	ObjectsMaxId = 0;
 	CursorType = sf::Cursor::Arrow;
 	this->window = n_window;
+	isButtonReleased = true;
 }
 
 int Layout::IncId()

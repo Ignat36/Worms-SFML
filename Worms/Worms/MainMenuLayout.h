@@ -9,6 +9,7 @@ class MainMenuLayout : public Layout
 {
 public:
 	void Update(sf::RenderWindow *window) override;
+	void Show(sf::RenderWindow *window) override;
 	MainMenuLayout(sf::RenderWindow *window);
 
 private:

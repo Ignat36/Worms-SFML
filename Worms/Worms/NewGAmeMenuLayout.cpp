@@ -12,6 +12,14 @@ void NewGameMenuLayout::Update(sf::RenderWindow *window)
 	}
 }
 
+void NewGameMenuLayout::Show(sf::RenderWindow * window)
+{
+	background->Show(window);
+
+	for (auto i : ObjectsList)
+		i->Show(window);
+}
+
 NewGameMenuLayout::NewGameMenuLayout(sf::RenderWindow *window) : Layout(window)
 {
 	int w = window->getSize().x; // width
