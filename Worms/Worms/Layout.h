@@ -2,6 +2,9 @@
 
 #include <map>
 #include <vector>
+#include <string.h>
+#include <iostream>
+
 #include "LayoutObject.h"
 
 class Layout
@@ -25,6 +28,8 @@ public:
 
 public:
 	Layout(sf::RenderWindow *n_window);
+
+public:
 
 protected:
 	std::vector<std::vector<int> > LayoutDescription;

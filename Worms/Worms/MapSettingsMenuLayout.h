@@ -4,6 +4,7 @@
 #include "MapCanvas.h"
 #include "StaticPicture.h"
 #include "Button.h"
+#include "Singleton.h"
 
 class MapSettingsMenuLayout : public Layout
 {
@@ -27,6 +28,10 @@ private:
 	Button *canvas_reverse;
 
 	MapCanvas *Canvas;
+	sf::Font font;
+	sf::Text Pen;
+	sf::Text Tunels;
+	sf::Text Spheres;
 
 private:
 	void pen_width_pressed();

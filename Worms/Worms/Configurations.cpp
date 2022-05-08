@@ -4,9 +4,9 @@ Configurations::Configurations(std::string file)
 {
 	if (file == "")
 	{
-		game_config = GameConfigurations();
-		map = GameMap();
-		teams = TeamsConfigurations();
-		weapons = WeaponConfigurations();
+		game_config = new GameConfigurations();
+		map = new GameMap();
+		teams = new TeamsConfigurations();
+		weapons = new WeaponConfigurations();
 	}
 }

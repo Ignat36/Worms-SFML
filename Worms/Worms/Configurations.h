@@ -13,9 +13,9 @@ public:
 	Configurations(std::string file = "");
 
 public:
-	GameConfigurations game_config;
-	GameMap map;
-	TeamsConfigurations teams;
-	WeaponConfigurations weapons;
+	GameConfigurations *game_config;
+	GameMap *map;
+	TeamsConfigurations *teams;
+	WeaponConfigurations *weapons;
 };
 

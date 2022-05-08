@@ -113,6 +113,21 @@ void MapCanvas::DrawLine(bool value, sf::Vector2i start, sf::Vector2i end)
 	}
 }
 
+GameMap *MapCanvas::ConvertToGameMap()
+{
+	GameMap *map = new GameMap();
+	map->pixels.resize(Size.x);
+
+	for (int i = 0; i < Size.x; i++)
+	{
+		map->pixels[i].resize(Size.y);
+		for (int j = 0; j < Size.y; j++)
+			map->pixels[i][j] = pixels[i + j * int(Size.x)] == 0;
+	}
+
+	return map;
+}
+
 void MapCanvas::UpdateTexture()
 {
 	Image.create(Size.x, Size.y, pixels);
