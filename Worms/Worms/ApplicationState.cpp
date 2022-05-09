@@ -1,9 +1,10 @@
 #include "ApplicationState.h"
 
-ApplicationState::ApplicationState()
+ApplicationState::ApplicationState(sf::RenderWindow *window)
 {
 	Next = nullptr;
 	StateChangeFlag = false;
+	this->window = window;
 }
 
 ApplicationState * ApplicationState::getNextState()

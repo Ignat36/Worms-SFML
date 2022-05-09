@@ -22,15 +22,6 @@
     <Filter Include="Game\CPP">
       <UniqueIdentifier>{64324044-7e52-4e9f-aa9b-d137bb80ddfc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Command">
-      <UniqueIdentifier>{b734fe95-016f-4520-b6d7-a2e386a1b495}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Command\H">
-      <UniqueIdentifier>{29aca271-a303-4494-b04c-5f31cac951dc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Command\CPP">
-      <UniqueIdentifier>{38ae196f-3998-43c1-af91-1542dfdc5a7a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="WindowEntities">
       <UniqueIdentifier>{ff5ed8d1-8a4c-4b70-b1a1-cd7536f016d5}</UniqueIdentifier>
     </Filter>
@@ -67,6 +58,60 @@
     <Filter Include="Configurations\CPP">
       <UniqueIdentifier>{042dfb0a-2fa2-43f7-91b6-15a96ca12fdf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\TurnState">
+      <UniqueIdentifier>{52274334-0cf9-4e5c-8497-583d6b104ee8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\TurnState\H">
+      <UniqueIdentifier>{169b7cee-8737-4a86-8af4-3f875f206343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\TurnState\CPP">
+      <UniqueIdentifier>{a11657a8-d79f-455b-8ddb-9d4a24154a70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameObjects">
+      <UniqueIdentifier>{0ebe3ec0-d1a2-47fd-80da-3c357e5552f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameObjects\H">
+      <UniqueIdentifier>{df00c5a3-eea0-4192-bba8-5ee3fa1a67f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameObjects\CPP">
+      <UniqueIdentifier>{8eb8a6af-4c20-4705-8e79-ab20d6ba3d3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameObjects\Properties">
+      <UniqueIdentifier>{18ffd83a-a932-4870-9087-26176a3799c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameObjects\Components">
+      <UniqueIdentifier>{93c5d1a1-7a4c-4f31-bb9f-3a52251929cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameObjects\Components\H">
+      <UniqueIdentifier>{fa30e437-f6ea-4ae7-8277-8b6d9f522fb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameObjects\Components\CPP">
+      <UniqueIdentifier>{44595078-2390-4b41-bc4f-abfede40a78c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameObjects\Properties\H">
+      <UniqueIdentifier>{4a5da149-3991-49c9-9568-3bb914b39409}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameObjects\Properties\CPP">
+      <UniqueIdentifier>{51b7e08f-6ef3-43d2-8de0-0ce321f87c02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameObjects\WormStates">
+      <UniqueIdentifier>{4f844f3e-33fd-4369-af34-daae22ff0196}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameObjects\WormStates\H">
+      <UniqueIdentifier>{b6219eb4-11c5-4c75-9ae5-a55c97ec7275}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameObjects\WormStates\CPP">
+      <UniqueIdentifier>{700a3bcf-a403-42ed-8898-a425bf3ece8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameObjects\WeaponStates">
+      <UniqueIdentifier>{7bf4a61a-b1d9-4636-a5ea-0a6aa48b63d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameObjects\WeaponStates\H">
+      <UniqueIdentifier>{05de2181-fce4-4939-bc8c-29434e749720}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameObjects\WeaponStates\CPP">
+      <UniqueIdentifier>{d6174b94-1d33-4d01-a791-51cbe8f05bbb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -74,48 +119,6 @@
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Game\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="InputHandler.cpp">
-      <Filter>Command\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="Command.cpp">
-      <Filter>Command\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="AttackCmd.cpp">
-      <Filter>Command\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="DownCmd.cpp">
-      <Filter>Command\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="JumpCmd.cpp">
-      <Filter>Command\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="LeftCmd.cpp">
-      <Filter>Command\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="RightCmd.cpp">
-      <Filter>Command\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="UpCmd.cpp">
-      <Filter>Command\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="ChangeGranadeTimeCmd.cpp">
-      <Filter>Command\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="ChoosePlaceCmd.cpp">
-      <Filter>Command\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="ExplodeCmd.cpp">
-      <Filter>Command\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuShowCmd.cpp">
-      <Filter>Command\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="RotLedtCmd.cpp">
-      <Filter>Command\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="RotRightCmd.cpp">
-      <Filter>Command\CPP</Filter>
     </ClCompile>
     <ClCompile Include="StateButton.cpp">
       <Filter>WindowEntities\CPP</Filter>
@@ -183,52 +186,64 @@
     <ClCompile Include="NewGameMenuLayout.cpp">
       <Filter>WindowEntities\Layouts\CPP</Filter>
     </ClCompile>
+    <ClCompile Include="WaitingState.cpp">
+      <Filter>Game\TurnState\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="TurnState.cpp">
+      <Filter>Game\TurnState\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayingState.cpp">
+      <Filter>Game\TurnState\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="EndTurnState.cpp">
+      <Filter>Game\TurnState\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="EndGameState.cpp">
+      <Filter>Game\TurnState\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicObject.cpp">
+      <Filter>Game\GameObjects\Properties\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Game\GameObjects\Properties\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="IteractableObject.cpp">
+      <Filter>Game\GameObjects\Properties\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayableObject.cpp">
+      <Filter>Game\GameObjects\Properties\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicsComponent.cpp">
+      <Filter>Game\GameObjects\Components\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="HealthComponent.cpp">
+      <Filter>Game\GameObjects\Components\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponComponent.cpp">
+      <Filter>Game\GameObjects\Components\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="ExplodableObject.cpp">
+      <Filter>Game\GameObjects\Properties\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="AirDrop.cpp">
+      <Filter>Game\GameObjects\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Bomb.cpp">
+      <Filter>Game\GameObjects\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Worm.cpp">
+      <Filter>Game\GameObjects\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectState.cpp">
+      <Filter>Game\GameObjects\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="WaitWormState.cpp">
+      <Filter>Game\GameObjects\WormStates\CPP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
       <Filter>Game\H</Filter>
-    </ClInclude>
-    <ClInclude Include="InputHandler.h">
-      <Filter>Command\H</Filter>
-    </ClInclude>
-    <ClInclude Include="AttackCmd.h">
-      <Filter>Command\H</Filter>
-    </ClInclude>
-    <ClInclude Include="Command.h">
-      <Filter>Command\H</Filter>
-    </ClInclude>
-    <ClInclude Include="DownCmd.h">
-      <Filter>Command\H</Filter>
-    </ClInclude>
-    <ClInclude Include="JumpCmd.h">
-      <Filter>Command\H</Filter>
-    </ClInclude>
-    <ClInclude Include="LeftCmd.h">
-      <Filter>Command\H</Filter>
-    </ClInclude>
-    <ClInclude Include="RightCmd.h">
-      <Filter>Command\H</Filter>
-    </ClInclude>
-    <ClInclude Include="UpCmd.h">
-      <Filter>Command\H</Filter>
-    </ClInclude>
-    <ClInclude Include="RotRightCmd.h">
-      <Filter>Command\H</Filter>
-    </ClInclude>
-    <ClInclude Include="RotLedtCmd.h">
-      <Filter>Command\H</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuShowCmd.h">
-      <Filter>Command\H</Filter>
-    </ClInclude>
-    <ClInclude Include="ExplodeCmd.h">
-      <Filter>Command\H</Filter>
-    </ClInclude>
-    <ClInclude Include="ChoosePlaceCmd.h">
-      <Filter>Command\H</Filter>
-    </ClInclude>
-    <ClInclude Include="ChangeGranadeTimeCmd.h">
-      <Filter>Command\H</Filter>
     </ClInclude>
     <ClInclude Include="StateButton.h">
       <Filter>WindowEntities\H</Filter>
@@ -295,6 +310,60 @@
     </ClInclude>
     <ClInclude Include="NewGameMenuLayout.h">
       <Filter>WindowEntities\Layouts\H</Filter>
+    </ClInclude>
+    <ClInclude Include="EndGameState.h">
+      <Filter>Game\TurnState\H</Filter>
+    </ClInclude>
+    <ClInclude Include="EndTurnState.h">
+      <Filter>Game\TurnState\H</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayingState.h">
+      <Filter>Game\TurnState\H</Filter>
+    </ClInclude>
+    <ClInclude Include="TurnState.h">
+      <Filter>Game\TurnState\H</Filter>
+    </ClInclude>
+    <ClInclude Include="WaitingState.h">
+      <Filter>Game\TurnState\H</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicObject.h">
+      <Filter>Game\GameObjects\Properties\H</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Game\GameObjects\Properties\H</Filter>
+    </ClInclude>
+    <ClInclude Include="IteractableObject.h">
+      <Filter>Game\GameObjects\Properties\H</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayableObject.h">
+      <Filter>Game\GameObjects\Properties\H</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsComponent.h">
+      <Filter>Game\GameObjects\Components\H</Filter>
+    </ClInclude>
+    <ClInclude Include="HealthComponent.h">
+      <Filter>Game\GameObjects\Components\H</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponComponent.h">
+      <Filter>Game\GameObjects\Components\H</Filter>
+    </ClInclude>
+    <ClInclude Include="ExplodableObject.h">
+      <Filter>Game\GameObjects\Properties\H</Filter>
+    </ClInclude>
+    <ClInclude Include="AirDrop.h">
+      <Filter>Game\GameObjects\H</Filter>
+    </ClInclude>
+    <ClInclude Include="Bomb.h">
+      <Filter>Game\GameObjects\H</Filter>
+    </ClInclude>
+    <ClInclude Include="Worm.h">
+      <Filter>Game\GameObjects\H</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectState.h">
+      <Filter>Game\GameObjects\H</Filter>
+    </ClInclude>
+    <ClInclude Include="WaitWormState.h">
+      <Filter>Game\GameObjects\WormStates\H</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

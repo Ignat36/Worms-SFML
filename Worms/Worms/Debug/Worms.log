@@ -1,56 +1,37 @@
-﻿  Game.cpp
-  GameSettingsMenuLayout.cpp
-  Layout.cpp
-d:\windows\worms-sfml\worms\worms\layout.cpp(78): warning C4244: инициализация: преобразование "T" в "int", возможна потеря данных
-          with
-          [
-              T=float
-          ]
-d:\windows\worms-sfml\worms\worms\layout.cpp(82): warning C4244: инициализация: преобразование "T" в "int", возможна потеря данных
-          with
-          [
-              T=float
-          ]
-  LoadMenuLayout.cpp
+﻿  EndGameState.cpp
+d:\windows\worms-sfml\worms\worms\gamestate.h(17): error C2065: TurnState: необъявленный идентификатор
+d:\windows\worms-sfml\worms\worms\gamestate.h(17): error C2059: синтаксическая ошибка: >
+  EndTurnState.cpp
+d:\windows\worms-sfml\worms\worms\gamestate.h(17): error C2065: TurnState: необъявленный идентификатор
+d:\windows\worms-sfml\worms\worms\gamestate.h(17): error C2059: синтаксическая ошибка: >
+  Game.cpp
+d:\windows\worms-sfml\worms\worms\turnstate.h(8): error C2061: синтаксическая ошибка: идентификатор "GameState"
+d:\windows\worms-sfml\worms\worms\turnstate.h(12): error C2143: синтаксическая ошибка: отсутствие ";" перед "*"
+d:\windows\worms-sfml\worms\worms\turnstate.h(12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\windows\worms-sfml\worms\worms\turnstate.h(12): error C2238: непредвиденные лексемы перед ";"
+  GameState.cpp
+d:\windows\worms-sfml\worms\worms\turnstate.h(8): error C2061: синтаксическая ошибка: идентификатор "GameState"
+d:\windows\worms-sfml\worms\worms\turnstate.h(12): error C2143: синтаксическая ошибка: отсутствие ";" перед "*"
+d:\windows\worms-sfml\worms\worms\turnstate.h(12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\windows\worms-sfml\worms\worms\turnstate.h(12): error C2238: непредвиденные лексемы перед ";"
   main.cpp
-  MainMenuLayout.cpp
-d:\windows\worms-sfml\worms\worms\mainmenulayout.cpp(8): warning C4018: <=: несоответствие типов со знаком и без знака
-d:\windows\worms-sfml\worms\worms\mainmenulayout.cpp(9): warning C4018: <=: несоответствие типов со знаком и без знака
-d:\windows\worms-sfml\worms\worms\mainmenulayout.cpp(34): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\mainmenulayout.cpp(39): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\mainmenulayout.cpp(44): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\mainmenulayout.cpp(48): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-  MapSettingsMenuLayout.cpp
-d:\windows\worms-sfml\worms\worms\mapsettingsmenulayout.cpp(8): warning C4018: <=: несоответствие типов со знаком и без знака
-d:\windows\worms-sfml\worms\worms\mapsettingsmenulayout.cpp(9): warning C4018: <=: несоответствие типов со знаком и без знака
-d:\windows\worms-sfml\worms\worms\mapsettingsmenulayout.cpp(55): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\mapsettingsmenulayout.cpp(60): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\mapsettingsmenulayout.cpp(65): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\mapsettingsmenulayout.cpp(70): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\mapsettingsmenulayout.cpp(75): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\mapsettingsmenulayout.cpp(80): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\mapsettingsmenulayout.cpp(85): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\mapsettingsmenulayout.cpp(90): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\mapsettingsmenulayout.cpp(95): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\mapsettingsmenulayout.cpp(99): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\mapsettingsmenulayout.cpp(101): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\mapsettingsmenulayout.cpp(104): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\mapsettingsmenulayout.cpp(105): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\mapsettingsmenulayout.cpp(106): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
-  NewGameMenuLayout.cpp
-d:\windows\worms-sfml\worms\worms\newgamemenulayout.cpp(8): warning C4018: <=: несоответствие типов со знаком и без знака
-d:\windows\worms-sfml\worms\worms\newgamemenulayout.cpp(9): warning C4018: <=: несоответствие типов со знаком и без знака
-d:\windows\worms-sfml\worms\worms\newgamemenulayout.cpp(34): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\newgamemenulayout.cpp(39): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\newgamemenulayout.cpp(44): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\newgamemenulayout.cpp(49): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\newgamemenulayout.cpp(54): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\newgamemenulayout.cpp(59): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\newgamemenulayout.cpp(64): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\newgamemenulayout.cpp(69): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-d:\windows\worms-sfml\worms\worms\newgamemenulayout.cpp(73): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-  TeamsSettingsMenuLayout.cpp
+d:\windows\worms-sfml\worms\worms\turnstate.h(8): error C2061: синтаксическая ошибка: идентификатор "GameState"
+d:\windows\worms-sfml\worms\worms\turnstate.h(12): error C2143: синтаксическая ошибка: отсутствие ";" перед "*"
+d:\windows\worms-sfml\worms\worms\turnstate.h(12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\windows\worms-sfml\worms\worms\turnstate.h(12): error C2238: непредвиденные лексемы перед ";"
+  PlayingState.cpp
+d:\windows\worms-sfml\worms\worms\gamestate.h(17): error C2065: TurnState: необъявленный идентификатор
+d:\windows\worms-sfml\worms\worms\gamestate.h(17): error C2059: синтаксическая ошибка: >
+  TurnState.cpp
+d:\windows\worms-sfml\worms\worms\gamestate.h(17): error C2065: TurnState: необъявленный идентификатор
+d:\windows\worms-sfml\worms\worms\gamestate.h(17): error C2059: синтаксическая ошибка: >
   UiState.cpp
-  WeaponSettingsMenuLayout.cpp
+d:\windows\worms-sfml\worms\worms\turnstate.h(8): error C2061: синтаксическая ошибка: идентификатор "GameState"
+d:\windows\worms-sfml\worms\worms\turnstate.h(12): error C2143: синтаксическая ошибка: отсутствие ";" перед "*"
+d:\windows\worms-sfml\worms\worms\turnstate.h(12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\windows\worms-sfml\worms\worms\turnstate.h(12): error C2238: непредвиденные лексемы перед ";"
+d:\windows\worms-sfml\worms\worms\uistate.cpp(94): error C2512: GameState::GameState: нет подходящего конструктора по умолчанию
+  WaitingState.cpp
+d:\windows\worms-sfml\worms\worms\gamestate.h(17): error C2065: TurnState: необъявленный идентификатор
+d:\windows\worms-sfml\worms\worms\gamestate.h(17): error C2059: синтаксическая ошибка: >
   Создание кода...
-  Worms.vcxproj -> D:\Windows\Worms-SFML\Worms\Debug\Worms.exe

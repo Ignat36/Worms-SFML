@@ -2,8 +2,13 @@
 
 #include <map>
 #include <vector>
-#include <string.h>
 #include <iostream>
+#include <tchar.h>
+#include <string>
+#ifndef NOMINMAX
+#define NOMINMAX
+#endif
+#include <windows.h>
 
 #include "LayoutObject.h"
 
@@ -28,6 +33,8 @@ public:
 
 public:
 	Layout(sf::RenderWindow *n_window);
+	
+	static std::string GetFileName();
 
 public:
 

@@ -115,7 +115,8 @@ void MapCanvas::DrawLine(bool value, sf::Vector2i start, sf::Vector2i end)
 
 GameMap *MapCanvas::ConvertToGameMap()
 {
-	GameMap *map = new GameMap();
+	GameMap *map = new GameMap(); 
+	map->Width = Size.x; map->Height = Size.y;
 	map->pixels.resize(Size.x);
 
 	for (int i = 0; i < Size.x; i++)

@@ -78,6 +78,8 @@ NewGameMenuLayout::NewGameMenuLayout(sf::RenderWindow *window) : Layout(window)
 void NewGameMenuLayout::new_game_button_pressed()
 {
 	std::cout << "new game\n";
+
+	Next = new NewGameMenuLayout(window);
 }
 
 void NewGameMenuLayout::exit_button_pressed()

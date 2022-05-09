@@ -4,6 +4,7 @@
 #include "Layout.h"
 #include "MainMenuLayout.h"
 #include "Singleton.h"
+#include "GameState.h"
 
 class UiState : public ApplicationState
 {

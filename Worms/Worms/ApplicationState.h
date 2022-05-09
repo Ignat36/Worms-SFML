@@ -5,7 +5,7 @@
 class ApplicationState
 {
 public:
-	ApplicationState();
+	ApplicationState(sf::RenderWindow *window);
 
 public:
 	virtual void ProcessInput(sf::RenderWindow *window) = 0;
@@ -18,5 +18,7 @@ public:
 protected:
 	ApplicationState *Next;
 	bool StateChangeFlag;
+
+	sf::RenderWindow *window;
 };
 

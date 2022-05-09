@@ -1,6 +1,6 @@
 #include "UiState.h"
 
-UiState::UiState(sf::RenderWindow *window) : ApplicationState()
+UiState::UiState(sf::RenderWindow *window) : ApplicationState(window)
 {
 	CurrentLayout.push_back(new MainMenuLayout(window));
 	isButtonPressed = false;
@@ -72,10 +72,9 @@ void UiState::ProcessInput(sf::RenderWindow * window)
 void UiState::UpdateObjects()
 {
 	// UI objects don't have phisic part
-	
+	Layout *transition = CurrentLayout.back()->getNextLayout();
 	if (CurrentLayout.back()->ChangeLayout())
 	{
-		Layout *transition = CurrentLayout.back()->getNextLayout();
 		if (transition)
 			CurrentLayout.push_back(transition);
 		else
@@ -86,6 +85,13 @@ void UiState::UpdateObjects()
 				StateChangeFlag = true;
 			}
 		}
+	}
+	else  if (transition)
+	{
+		delete transition;
+
+		StateChangeFlag = true;
+		Next = new GameState();
 	}
 		
 }
