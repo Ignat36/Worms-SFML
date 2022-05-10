@@ -20,6 +20,14 @@ void GameState::UpdateObjects()
 		if (Playables.empty())
 			EndRound();
 	}
+
+	std::vector<GameObject *> tmp;
+	for (auto i : objects)
+	{
+		if (!i->isDead())
+			tmp.push_back(i);
+	}
+	objects = tmp;
 }
 
 void GameState::RenderObjects(sf::RenderWindow * window)

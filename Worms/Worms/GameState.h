@@ -19,6 +19,7 @@ public:
 private:
 
 	std::deque<PlayableObject *> Playables;
+	std::vector<GameObject *> objects;
 	bool isButtonPressed;
 
 	long long *lag;

@@ -58,15 +58,6 @@
     <Filter Include="Configurations\CPP">
       <UniqueIdentifier>{042dfb0a-2fa2-43f7-91b6-15a96ca12fdf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\TurnState">
-      <UniqueIdentifier>{52274334-0cf9-4e5c-8497-583d6b104ee8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\TurnState\H">
-      <UniqueIdentifier>{169b7cee-8737-4a86-8af4-3f875f206343}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\TurnState\CPP">
-      <UniqueIdentifier>{a11657a8-d79f-455b-8ddb-9d4a24154a70}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Game\GameObjects">
       <UniqueIdentifier>{0ebe3ec0-d1a2-47fd-80da-3c357e5552f4}</UniqueIdentifier>
     </Filter>
@@ -186,21 +177,6 @@
     <ClCompile Include="NewGameMenuLayout.cpp">
       <Filter>WindowEntities\Layouts\CPP</Filter>
     </ClCompile>
-    <ClCompile Include="WaitingState.cpp">
-      <Filter>Game\TurnState\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="TurnState.cpp">
-      <Filter>Game\TurnState\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayingState.cpp">
-      <Filter>Game\TurnState\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="EndTurnState.cpp">
-      <Filter>Game\TurnState\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="EndGameState.cpp">
-      <Filter>Game\TurnState\CPP</Filter>
-    </ClCompile>
     <ClCompile Include="DynamicObject.cpp">
       <Filter>Game\GameObjects\Properties\CPP</Filter>
     </ClCompile>
@@ -310,21 +286,6 @@
     </ClInclude>
     <ClInclude Include="NewGameMenuLayout.h">
       <Filter>WindowEntities\Layouts\H</Filter>
-    </ClInclude>
-    <ClInclude Include="EndGameState.h">
-      <Filter>Game\TurnState\H</Filter>
-    </ClInclude>
-    <ClInclude Include="EndTurnState.h">
-      <Filter>Game\TurnState\H</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayingState.h">
-      <Filter>Game\TurnState\H</Filter>
-    </ClInclude>
-    <ClInclude Include="TurnState.h">
-      <Filter>Game\TurnState\H</Filter>
-    </ClInclude>
-    <ClInclude Include="WaitingState.h">
-      <Filter>Game\TurnState\H</Filter>
     </ClInclude>
     <ClInclude Include="DynamicObject.h">
       <Filter>Game\GameObjects\Properties\H</Filter>
