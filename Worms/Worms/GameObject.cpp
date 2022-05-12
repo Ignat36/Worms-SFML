@@ -27,8 +27,9 @@ bool GameObject::AddTexture(std::string file)
 		std::cout << "Can't find the image" << file << std::endl;
 		Singleton *single = Singleton::GetInstance();
 		single->WindowClosed = true;
-		return;
+		return false;
 	}
 	textures.push_back(tmp);
 	sprites.push_back(sf::Sprite(tmp));
+	return true;
 }

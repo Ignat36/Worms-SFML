@@ -9,7 +9,7 @@
 class UiState : public ApplicationState
 {
 public:
-	UiState(sf::RenderWindow *window);
+	UiState(sf::RenderWindow *window, long long *_lag);
 
 public:
 	void ProcessInput(sf::RenderWindow *window) override;
@@ -19,5 +19,6 @@ public:
 private:
 	std::vector<Layout *> CurrentLayout;
 
+	long long *lag;
 	bool isButtonPressed;
 };

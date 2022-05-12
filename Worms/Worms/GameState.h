@@ -3,7 +3,6 @@
 #include <deque>
 
 #include "ApplicationState.h"
-#include "TurnState.h"
 #include "PlayableObject.h"
 
 class GameState : public ApplicationState

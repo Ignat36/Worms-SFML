@@ -1,9 +1,10 @@
 #include "UiState.h"
 
-UiState::UiState(sf::RenderWindow *window) : ApplicationState(window)
+UiState::UiState(sf::RenderWindow *window, long long *_lag) : ApplicationState(window)
 {
 	CurrentLayout.push_back(new MainMenuLayout(window));
 	isButtonPressed = false;
+	lag = _lag;
 }
 
 void UiState::ProcessInput(sf::RenderWindow * window)
@@ -91,7 +92,7 @@ void UiState::UpdateObjects()
 		delete transition;
 
 		StateChangeFlag = true;
-		Next = new GameState();
+		Next = new GameState(window, lag);
 	}
 		
 }

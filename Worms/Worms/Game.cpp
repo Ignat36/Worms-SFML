@@ -10,7 +10,7 @@ Game::Game()
 
 	window = new sf::RenderWindow(sf::VideoMode(ScreenWidth, ScreenHeight), "WORMS");
 
-	CurrentState.push_back(new UiState(window));
+	CurrentState.push_back(new UiState(window, &lag));
 }
 
 void Game::Start()

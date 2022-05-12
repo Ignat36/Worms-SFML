@@ -1,37 +1,30 @@
-﻿  EndGameState.cpp
-d:\windows\worms-sfml\worms\worms\gamestate.h(17): error C2065: TurnState: необъявленный идентификатор
-d:\windows\worms-sfml\worms\worms\gamestate.h(17): error C2059: синтаксическая ошибка: >
-  EndTurnState.cpp
-d:\windows\worms-sfml\worms\worms\gamestate.h(17): error C2065: TurnState: необъявленный идентификатор
-d:\windows\worms-sfml\worms\worms\gamestate.h(17): error C2059: синтаксическая ошибка: >
-  Game.cpp
-d:\windows\worms-sfml\worms\worms\turnstate.h(8): error C2061: синтаксическая ошибка: идентификатор "GameState"
-d:\windows\worms-sfml\worms\worms\turnstate.h(12): error C2143: синтаксическая ошибка: отсутствие ";" перед "*"
-d:\windows\worms-sfml\worms\worms\turnstate.h(12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-d:\windows\worms-sfml\worms\worms\turnstate.h(12): error C2238: непредвиденные лексемы перед ";"
+﻿  Game.cpp
+d:\windows\worms-sfml\worms\worms\objectstate.h(9): error C2061: синтаксическая ошибка: идентификатор "PlayableObject"
+d:\windows\worms-sfml\worms\worms\objectstate.h(12): error C2143: синтаксическая ошибка: отсутствие ";" перед "*"
+d:\windows\worms-sfml\worms\worms\objectstate.h(12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\windows\worms-sfml\worms\worms\objectstate.h(12): error C2238: непредвиденные лексемы перед ";"
   GameState.cpp
-d:\windows\worms-sfml\worms\worms\turnstate.h(8): error C2061: синтаксическая ошибка: идентификатор "GameState"
-d:\windows\worms-sfml\worms\worms\turnstate.h(12): error C2143: синтаксическая ошибка: отсутствие ";" перед "*"
-d:\windows\worms-sfml\worms\worms\turnstate.h(12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-d:\windows\worms-sfml\worms\worms\turnstate.h(12): error C2238: непредвиденные лексемы перед ";"
+d:\windows\worms-sfml\worms\worms\objectstate.h(9): error C2061: синтаксическая ошибка: идентификатор "PlayableObject"
+d:\windows\worms-sfml\worms\worms\objectstate.h(12): error C2143: синтаксическая ошибка: отсутствие ";" перед "*"
+d:\windows\worms-sfml\worms\worms\objectstate.h(12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\windows\worms-sfml\worms\worms\objectstate.h(12): error C2238: непредвиденные лексемы перед ";"
   main.cpp
-d:\windows\worms-sfml\worms\worms\turnstate.h(8): error C2061: синтаксическая ошибка: идентификатор "GameState"
-d:\windows\worms-sfml\worms\worms\turnstate.h(12): error C2143: синтаксическая ошибка: отсутствие ";" перед "*"
-d:\windows\worms-sfml\worms\worms\turnstate.h(12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-d:\windows\worms-sfml\worms\worms\turnstate.h(12): error C2238: непредвиденные лексемы перед ";"
-  PlayingState.cpp
-d:\windows\worms-sfml\worms\worms\gamestate.h(17): error C2065: TurnState: необъявленный идентификатор
-d:\windows\worms-sfml\worms\worms\gamestate.h(17): error C2059: синтаксическая ошибка: >
-  TurnState.cpp
-d:\windows\worms-sfml\worms\worms\gamestate.h(17): error C2065: TurnState: необъявленный идентификатор
-d:\windows\worms-sfml\worms\worms\gamestate.h(17): error C2059: синтаксическая ошибка: >
+d:\windows\worms-sfml\worms\worms\objectstate.h(9): error C2061: синтаксическая ошибка: идентификатор "PlayableObject"
+d:\windows\worms-sfml\worms\worms\objectstate.h(12): error C2143: синтаксическая ошибка: отсутствие ";" перед "*"
+d:\windows\worms-sfml\worms\worms\objectstate.h(12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\windows\worms-sfml\worms\worms\objectstate.h(12): error C2238: непредвиденные лексемы перед ";"
+  ObjectState.cpp
+d:\windows\worms-sfml\worms\worms\playableobject.h(9): error C2143: синтаксическая ошибка: отсутствие ";" перед "*"
+d:\windows\worms-sfml\worms\worms\playableobject.h(9): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\windows\worms-sfml\worms\worms\playableobject.h(9): error C2238: непредвиденные лексемы перед ";"
+  PlayableObject.cpp
+d:\windows\worms-sfml\worms\worms\objectstate.h(9): error C2061: синтаксическая ошибка: идентификатор "PlayableObject"
+d:\windows\worms-sfml\worms\worms\objectstate.h(12): error C2143: синтаксическая ошибка: отсутствие ";" перед "*"
+d:\windows\worms-sfml\worms\worms\objectstate.h(12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\windows\worms-sfml\worms\worms\objectstate.h(12): error C2238: непредвиденные лексемы перед ";"
   UiState.cpp
-d:\windows\worms-sfml\worms\worms\turnstate.h(8): error C2061: синтаксическая ошибка: идентификатор "GameState"
-d:\windows\worms-sfml\worms\worms\turnstate.h(12): error C2143: синтаксическая ошибка: отсутствие ";" перед "*"
-d:\windows\worms-sfml\worms\worms\turnstate.h(12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-d:\windows\worms-sfml\worms\worms\turnstate.h(12): error C2238: непредвиденные лексемы перед ";"
-d:\windows\worms-sfml\worms\worms\uistate.cpp(94): error C2512: GameState::GameState: нет подходящего конструктора по умолчанию
-  WaitingState.cpp
-d:\windows\worms-sfml\worms\worms\gamestate.h(17): error C2065: TurnState: необъявленный идентификатор
-d:\windows\worms-sfml\worms\worms\gamestate.h(17): error C2059: синтаксическая ошибка: >
+d:\windows\worms-sfml\worms\worms\objectstate.h(9): error C2061: синтаксическая ошибка: идентификатор "PlayableObject"
+d:\windows\worms-sfml\worms\worms\objectstate.h(12): error C2143: синтаксическая ошибка: отсутствие ";" перед "*"
+d:\windows\worms-sfml\worms\worms\objectstate.h(12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+d:\windows\worms-sfml\worms\worms\objectstate.h(12): error C2238: непредвиденные лексемы перед ";"
   Создание кода...
