@@ -8,7 +8,52 @@ GameState::GameState(sf::RenderWindow * window, long long *_lag) : ApplicationSt
 
 void GameState::ProcessInput(sf::RenderWindow * window)
 {
-	Playables.back()->State->ProcessInput(window);
+	sf::Event event;
+	while (window->pollEvent(event))
+	{
+		if (event.type == sf::Event::Closed)
+		{
+			Singleton *single = Singleton::GetInstance();
+			single->WindowClosed = true;
+			break;
+		}
+		else
+		if (event.type == sf::Event::MouseButtonPressed)
+		{
+			// Search srough layout description and current mouse position 
+			// Update if exists pressed field LayoutObject id
+
+		}
+		else
+		if (event.type == sf::Event::MouseButtonReleased)
+		{
+			// Search srough layout description and current mouse position 
+			// Update if exists pressed field LayoutObject id
+		}
+		else
+		if (event.type == sf::Event::MouseMoved && isButtonPressed)
+		{
+			// Search srough layout description and current mouse position 
+			// Update if exists pressed field LayoutObject id
+		}
+		else
+		if (event.type == sf::Event::KeyPressed)
+		{
+			switch (event.key.code)
+			{
+			default:
+				break;
+			}
+		}
+		else
+		if (event.type == sf::Event::TextEntered)
+		{
+
+		}
+		else
+		Playables.back()->State->ProcessInput(event);
+	}
+	
 }
 
 void GameState::UpdateObjects()

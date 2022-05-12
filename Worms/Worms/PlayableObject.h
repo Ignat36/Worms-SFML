@@ -16,7 +16,7 @@ public:
 class ObjectState
 {
 public:
-	virtual void ProcessInput(sf::RenderWindow *window) = 0;
+	virtual void ProcessInput(sf::Event event) = 0;
 	ObjectState(PlayableObject *ref);
 
 protected:
