@@ -210,9 +210,6 @@
     <ClCompile Include="Worm.cpp">
       <Filter>Game\GameObjects\CPP</Filter>
     </ClCompile>
-    <ClCompile Include="ObjectState.cpp">
-      <Filter>Game\GameObjects\CPP</Filter>
-    </ClCompile>
     <ClCompile Include="WaitWormState.cpp">
       <Filter>Game\GameObjects\WormStates\CPP</Filter>
     </ClCompile>
@@ -318,9 +315,6 @@
       <Filter>Game\GameObjects\H</Filter>
     </ClInclude>
     <ClInclude Include="Worm.h">
-      <Filter>Game\GameObjects\H</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjectState.h">
       <Filter>Game\GameObjects\H</Filter>
     </ClInclude>
     <ClInclude Include="WaitWormState.h">

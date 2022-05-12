@@ -33,3 +33,15 @@ void GameState::UpdateObjects()
 void GameState::RenderObjects(sf::RenderWindow * window)
 {
 }
+
+void GameState::EndRound()
+{
+}
+
+void GameState::EndGame()
+{
+}
+
+void GameState::EndTurn()
+{
+}

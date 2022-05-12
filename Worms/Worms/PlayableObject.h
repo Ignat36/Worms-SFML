@@ -1,7 +1,8 @@
 #pragma once
 
 #include "DynamicObject.h"
-#include "ObjectState.h"
+
+class ObjectState;
 
 class PlayableObject : public DynamicObject
 {
@@ -12,3 +13,12 @@ public:
 	PlayableObject();
 };
 
+class ObjectState
+{
+public:
+	virtual void ProcessInput(sf::RenderWindow *window) = 0;
+	ObjectState(PlayableObject *ref);
+
+protected:
+	PlayableObject *reference;
+};

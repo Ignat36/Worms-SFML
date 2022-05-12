@@ -147,7 +147,6 @@
     <ClCompile Include="MapCanvas.cpp" />
     <ClCompile Include="MapSettingsMenuLayout.cpp" />
     <ClCompile Include="NewGameMenuLayout.cpp" />
-    <ClCompile Include="ObjectState.cpp" />
     <ClCompile Include="PlayableObject.cpp" />
     <ClCompile Include="Singleton.cpp" />
     <ClCompile Include="StateButton.cpp" />
@@ -185,7 +184,6 @@
     <ClInclude Include="MapCanvas.h" />
     <ClInclude Include="MapSettingsMenuLayout.h" />
     <ClInclude Include="NewGameMenuLayout.h" />
-    <ClInclude Include="ObjectState.h" />
     <ClInclude Include="PlayableObject.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="StateButton.h" />
