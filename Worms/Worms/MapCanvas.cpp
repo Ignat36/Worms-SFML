@@ -155,8 +155,9 @@ GameMap *MapCanvas::ConvertToGameMap()
 					else
 					{
 						int val = abs(y - (l - (j - 1) * 5)) + abs(x - (k - (i - 1) * 5));
-						if (x == y) val++;
-						if (kol > 1 && (kol > 2 || paral || (val <= 5)))
+						if (y == x)
+							val += x == 5 ? -1 : 1;
+						if (kol > 1 && (kol > 2 || paral || (val <= 4)))
 						{
 							map->pixels[k + 1000][l] = true;
 						}

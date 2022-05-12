@@ -15,7 +15,7 @@ d:\windows\worms-sfml\worms\worms\mapcanvas.cpp(122): warning C4244: аргум�
           [
               T=float
           ]
-d:\windows\worms-sfml\worms\worms\mapcanvas.cpp(177): warning C4244: аргумент: преобразование "T" в "unsigned int", возможна потеря данных
+d:\windows\worms-sfml\worms\worms\mapcanvas.cpp(179): warning C4244: аргумент: преобразование "T" в "unsigned int", возможна потеря данных
           with
           [
               T=float
