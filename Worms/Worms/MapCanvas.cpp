@@ -116,16 +116,59 @@ void MapCanvas::DrawLine(bool value, sf::Vector2i start, sf::Vector2i end)
 GameMap *MapCanvas::ConvertToGameMap()
 {
 	GameMap *map = new GameMap(); 
-	map->Width = Size.x; map->Height = Size.y;
-	map->pixels.resize(Size.x);
+	int w = map->Width = Size.x * 5 + 2000; int h = map->Height = Size.y * 5;
+	map->pixels.resize(w);
 
-	for (int i = 0; i < Size.x; i++)
+	std::vector<std::vector<bool> > tmp(Size.x + 2, std::vector<bool>(Size.y + 2, false));
+
+	for (int i = 1; i <= Size.x; i++)
 	{
-		map->pixels[i].resize(Size.y);
-		for (int j = 0; j < Size.y; j++)
-			map->pixels[i][j] = pixels[i + j * int(Size.x)] == 0;
+		for (int j = 1; j <= Size.y; j++)
+		{
+			tmp[i][j] = pixels[(i - 1 + (j - 1) * int(Size.x)) * 4] == 255;
+		}
 	}
 
+	for (int i = 1; i <= Size.x; i++)
+	{
+		map->pixels[i].resize(h);
+		for (int j = 1; j <= Size.y; j++)
+		{
+			int kol = (tmp[i + 1][j] ? 1 : 0) +
+				(tmp[i - 1][j] ? 1 : 0) +
+				(tmp[i][j + 1] ? 1 : 0) +
+				(tmp[i][j - 1] ? 1 : 0);
+
+			int x, y;
+			x = (tmp[i + 1][j] ? 1 : 0) * 5;
+			y = (tmp[i][j + 1] ? 1 : 0) * 5;
+			bool paral = (tmp[i + 1][j] == tmp[i - 1][j] && tmp[i + 1][j] == true) ||
+				(tmp[i + 1][j] == tmp[i - 1][j] && tmp[i + 1][j] == true);
+			///////////////////////////////////////////////////////////////
+			for (int k = i; k < i + 5; k++)
+			{
+				for (int l = j; l < j + 5; l++)
+				{
+					if (pixels[i + j * int(Size.x)] == 255)
+					{
+						map->pixels[k][l] = true;
+					}
+					else
+					{
+						if (kol > 1 && (paral || (abs(y - (l - j)) <= 3 && abs(x - (k - i)) <= 3)))
+						{
+							map->pixels[k][l] = true;
+						}
+						else
+						{
+							map->pixels[k][l] = false;
+						}
+					}
+				}
+			}
+			///////////////////////////////////////////////////////
+		}
+	}
 	return map;
 }
 

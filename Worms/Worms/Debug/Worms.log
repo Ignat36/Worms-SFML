@@ -1,2 +1,13 @@
-﻿  GameState.cpp
+﻿  MapCanvas.cpp
+d:\windows\worms-sfml\worms\worms\mapcanvas.cpp(21): warning C4244: инициализация: преобразование "float" в "unsigned int", возможна потеря данных
+d:\windows\worms-sfml\worms\worms\mapcanvas.cpp(119): warning C4244: =: преобразование "T" в "int", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+d:\windows\worms-sfml\worms\worms\mapcanvas.cpp(164): warning C4244: аргумент: преобразование "T" в "unsigned int", возможна потеря данных
+          with
+          [
+              T=float
+          ]
   Worms.vcxproj -> D:\Windows\Worms-SFML\Worms\Debug\Worms.exe
