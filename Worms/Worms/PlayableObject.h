@@ -10,7 +10,7 @@ public:
 	ObjectState *State;
 
 public:
-	PlayableObject();
+	PlayableObject(float x, float y, std::vector<std::vector<bool> > *n_map);
 };
 
 class ObjectState

@@ -5,7 +5,7 @@
 class DynamicObject : public GameObject
 {
 public:
-	void setMove(float ndx, float ndy);
+	void push(float ndx, float ndy);
 	virtual void Update() = 0;
 	DynamicObject();
 	DynamicObject(float x, float y, std::vector<std::vector<bool> > *n_map);
@@ -15,11 +15,18 @@ protected:
 	float dy;
 
 	float push_x;
+	float push_y;
+
+	float last_stabil_x;
+	float last_stabil_y;
 
 	int collision_x;
 	int collision_y;
 
 	std::vector<std::vector<bool> > *map;
+
+protected:
+	bool PushUp(int possible_pixels);
 
 protected:
 	void Move();

@@ -19,6 +19,8 @@ protected:
 	std::vector< sf::Texture> textures;
 	std::vector< sf::Sprite> sprites;
 
+	int LastSpriteNumber;
+
 	bool isAlive;
 	float window_pos_X;
 	float window_pos_Y;

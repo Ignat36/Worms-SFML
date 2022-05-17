@@ -1,9 +1,9 @@
 #include "DynamicObject.h"
 
-void DynamicObject::setMove(float ndx, float ndy)
+void DynamicObject::push(float ndx, float ndy)
 {
-	dx = ndx;
-	dy = ndy;
+	push_x = ndx;
+	push_y = ndy;
 }
 
 DynamicObject::DynamicObject() : GameObject()
@@ -11,6 +11,7 @@ DynamicObject::DynamicObject() : GameObject()
 	dx = 0;
 	dy = 0;
 	push_x = 0;
+	push_y = 0;
 }
 
 DynamicObject::DynamicObject(float x, float y, std::vector<std::vector<bool> > *n_map) : GameObject(x, y)
@@ -19,6 +20,11 @@ DynamicObject::DynamicObject(float x, float y, std::vector<std::vector<bool> > *
 	dy = 0;
 	push_x = 0;
 	map = n_map;
+}
+
+bool DynamicObject::PushUp(int possible_pixels)
+{
+	return false;
 }
 
 void DynamicObject::Move()
