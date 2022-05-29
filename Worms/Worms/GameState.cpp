@@ -5,19 +5,19 @@ GameState::GameState(sf::RenderWindow * window, long long *_lag) : ApplicationSt
 	// black part of scheme
 	lag = _lag;
 	Singleton *single = Singleton::GetInstance();
-	pixels = single->config.map->pixels;
+	map = single->config.map;
 
-	if (!image.loadFromFile("Maps/Background/Background.png"))
+	if (!map->image.loadFromFile("Maps/Background/Background.png"))
 	{
 		std::cout << "Can not read from file game background\n";
 		single->WindowClosed = true;
 		return;
 	}
 
-	map = (sf::Uint8 *)image.getPixelsPtr();
-	UpdateTexture();
+	map->DefaultMap = (sf::Uint8 *)map->image.getPixelsPtr();
+	map->FullReRender(); map->UpdateSprite();
 
-	Playables.push_back(new Worm(0, 0, &pixels));
+	Playables.push_back(new Worm(0, 0, map));
 }
 
 void GameState::ProcessInput(sf::RenderWindow * window)
@@ -91,14 +91,6 @@ void GameState::UpdateObjects()
 
 void GameState::RenderObjects(sf::RenderWindow * window)
 {
-}
-
-void GameState::UpdateTexture()
-{
-	CurrentMapImage.create(pixels.size(), pixels[0].size(), map);
-	CurrentMapTexture.loadFromImage(CurrentMapImage);
-	CurrentMapSprite.setTexture(CurrentMapTexture);
-	CurrentMapSprite.setPosition(0, 0);
 }
 
 void GameState::EndRound()

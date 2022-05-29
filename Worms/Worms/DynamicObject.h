@@ -8,7 +8,7 @@ public:
 	void push(float ndx, float ndy);
 	virtual void Update() = 0;
 	DynamicObject();
-	DynamicObject(float x, float y, std::vector<std::vector<bool> > *n_map);
+	DynamicObject(float x, float y, GameMap *map);
 
 protected:
 	float dx;
@@ -23,7 +23,7 @@ protected:
 	int collision_x;
 	int collision_y;
 
-	std::vector<std::vector<bool> > *map;
+	GameMap *map;
 
 protected:
 	bool PushUp(int possible_pixels);
@@ -32,6 +32,7 @@ protected:
 	void Move();
 	void CalculateCollisionX(); //col_x
 	void CalculateCollisionY(); //col_y
+	bool isStable();
 	void update_x();
 	void update_y();
 };

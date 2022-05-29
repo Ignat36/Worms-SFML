@@ -14,7 +14,7 @@ DynamicObject::DynamicObject() : GameObject()
 	push_y = 0;
 }
 
-DynamicObject::DynamicObject(float x, float y, std::vector<std::vector<bool> > *n_map) : GameObject(x, y)
+DynamicObject::DynamicObject(float x, float y, GameMap *n_map) : GameObject(x, y)
 {
 	dx = 0;
 	dy = 0;
@@ -39,6 +39,11 @@ void DynamicObject::CalculateCollisionX()
 
 void DynamicObject::CalculateCollisionY()
 {
+}
+
+bool DynamicObject::isStable()
+{
+	return false;
 }
 
 void DynamicObject::update_x()

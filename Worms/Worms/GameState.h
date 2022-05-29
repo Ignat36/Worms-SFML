@@ -24,15 +24,9 @@ private:
 
 	long long *lag;
 
-	std::vector<std::vector<bool> > pixels;
-	sf::Uint8 *map;
-	sf::Image image;
-	sf::Image CurrentMapImage;
-	sf::Texture CurrentMapTexture;
-	sf::Sprite CurrentMapSprite;
+	GameMap *map;
 
 private:
-	void UpdateTexture();
 	void EndRound();
 	void EndGame();
 	void EndTurn();

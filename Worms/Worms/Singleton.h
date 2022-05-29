@@ -6,7 +6,12 @@ class Singleton
 {
 
 protected:
-	Singleton() : WindowClosed(false), config(Configurations()) {}
+	Singleton() : 
+		WindowClosed(false), 
+		config(Configurations()),
+		game_mouse_position_x(0), 
+		game_mouse_position_y(0) 
+	{}
 
 	static Singleton* singleton_;
 
@@ -20,6 +25,8 @@ public:
 
 public:
 	bool WindowClosed;
+	int game_mouse_position_x;
+	int game_mouse_position_y;
 	Configurations config;
 };
 

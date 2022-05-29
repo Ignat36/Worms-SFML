@@ -33,3 +33,20 @@ bool GameObject::AddTexture(std::string file)
 	sprites.push_back(sf::Sprite(tmp));
 	return true;
 }
+
+void GameObject::LoadSprite(std::string file)
+{
+	sf::Texture texture;
+	sf::Sprite sprite;
+	if (!texture.loadFromFile(file))
+	{
+		std::cout << "Can't find the image" << file << std::endl;
+		Singleton *single = Singleton::GetInstance();
+		single->WindowClosed = true;
+		return;
+	}
+	sprite.setTexture(texture);
+
+	textures.push_back(texture);
+	sprites.push_back(sprite);
+}

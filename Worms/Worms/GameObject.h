@@ -19,10 +19,19 @@ protected:
 	std::vector< sf::Texture> textures;
 	std::vector< sf::Sprite> sprites;
 
+	void LoadSprite(std::string file);
+
 	int LastSpriteNumber;
 
 	bool isAlive;
 	float window_pos_X;
 	float window_pos_Y;
+
+	int AnimationSteps;
+
+	int Width;
+	int Height;
+
+	sf::IntRect Rect;
 };
 
