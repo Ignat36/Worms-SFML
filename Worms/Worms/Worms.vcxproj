@@ -124,10 +124,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AirDrop.cpp" />
+    <ClCompile Include="AttackWormState.cpp" />
     <ClCompile Include="Bomb.cpp" />
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="ChoosingWormState.cpp" />
     <ClCompile Include="Configurations.cpp" />
     <ClCompile Include="DynamicObject.cpp" />
+    <ClCompile Include="EndTurnWormState.cpp" />
     <ClCompile Include="ExplodableObject.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="ApplicationState.cpp" />
@@ -147,7 +150,10 @@
     <ClCompile Include="MapCanvas.cpp" />
     <ClCompile Include="MapSettingsMenuLayout.cpp" />
     <ClCompile Include="NewGameMenuLayout.cpp" />
+    <ClCompile Include="NormalWormState.cpp" />
+    <ClCompile Include="NoWeaponWormState.cpp" />
     <ClCompile Include="PlayableObject.cpp" />
+    <ClCompile Include="RopeWormState.cpp" />
     <ClCompile Include="Singleton.cpp" />
     <ClCompile Include="StateButton.cpp" />
     <ClCompile Include="StaticPicture.cpp" />
@@ -162,10 +168,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AirDrop.h" />
+    <ClInclude Include="AttackWormState.h" />
     <ClInclude Include="Bomb.h" />
     <ClInclude Include="Button.h" />
+    <ClInclude Include="ChoosingWormState.h" />
     <ClInclude Include="Configurations.h" />
     <ClInclude Include="DynamicObject.h" />
+    <ClInclude Include="EndTurnWormState.h" />
     <ClInclude Include="ExplodableObject.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="ApplicationState.h" />
@@ -184,7 +193,10 @@
     <ClInclude Include="MapCanvas.h" />
     <ClInclude Include="MapSettingsMenuLayout.h" />
     <ClInclude Include="NewGameMenuLayout.h" />
+    <ClInclude Include="NormalWormState.h" />
+    <ClInclude Include="NoWeaponWormState.h" />
     <ClInclude Include="PlayableObject.h" />
+    <ClInclude Include="RopeWormState.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="StateButton.h" />
     <ClInclude Include="StaticPicture.h" />

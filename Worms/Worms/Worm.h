@@ -1,6 +1,8 @@
 #pragma once
 
 #include "PlayableObject.h"
+#include "NormalWormState.h"
+#include "WaitWormState.h"
 
 class Worm : public PlayableObject
 {

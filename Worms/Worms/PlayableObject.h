@@ -17,8 +17,11 @@ class ObjectState
 {
 public:
 	virtual void ProcessInput(sf::Event event) = 0;
+	virtual void Update() = 0;
 	ObjectState(PlayableObject *ref);
+	ObjectState *GetNext();
 
 protected:
 	PlayableObject *reference;
+	ObjectState *Next;
 };

@@ -2,6 +2,11 @@
 
 void Worm::Update()
 {
+	ObjectState *nxt = State->GetNext();
+	if (nxt)
+	{
+		State = nxt;
+	}
 }
 
 void Worm::Show(sf::RenderWindow * window, long long lag)
@@ -14,6 +19,8 @@ Worm::Worm(float x, float y, GameMap *n_map) : PlayableObject(x, y, n_map)
 	Height = 30;
 
 	GeneratePosition(window_pos_X, window_pos_Y);
+	last_stabil_x = window_pos_X;
+	last_stabil_y = window_pos_Y;
 
 	sf::RectangleShape rectangle(sf::Vector2f(Width, Height));
 	rectangle.setFillColor(sf::Color::Red);
@@ -26,6 +33,8 @@ Worm::Worm(float x, float y, GameMap *n_map) : PlayableObject(x, y, n_map)
 	LoadSprite("Textures/GameObjects/Worm/Jump.png");
 
 	LastSpriteNumber = 0;
+
+	State = new WaitWormState(this);
 }
 
 void Worm::digSpace(int x, int y)

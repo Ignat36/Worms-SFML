@@ -30,5 +30,7 @@ private:
 	void EndRound();
 	void EndGame();
 	void EndTurn();
+
+	void UpdateMapPosition();
 };
 

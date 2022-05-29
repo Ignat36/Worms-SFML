@@ -10,7 +10,8 @@ protected:
 		WindowClosed(false), 
 		config(Configurations()),
 		game_mouse_position_x(0), 
-		game_mouse_position_y(0) 
+		game_mouse_position_y(0),
+		isAnimation(false)
 	{}
 
 	static Singleton* singleton_;
@@ -27,6 +28,7 @@ public:
 	bool WindowClosed;
 	int game_mouse_position_x;
 	int game_mouse_position_y;
+	bool isAnimation;
 	Configurations config;
 };
 

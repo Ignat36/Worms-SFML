@@ -10,13 +10,16 @@ public:
 	DynamicObject();
 	DynamicObject(float x, float y, GameMap *map);
 
-protected:
+public:
 	float dx;
 	float dy;
 
 	float push_x;
 	float push_y;
 
+	float attack_angle;
+
+protected:
 	float last_stabil_x;
 	float last_stabil_y;
 

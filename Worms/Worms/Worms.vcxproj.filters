@@ -213,6 +213,24 @@
     <ClCompile Include="WaitWormState.cpp">
       <Filter>Game\GameObjects\WormStates\CPP</Filter>
     </ClCompile>
+    <ClCompile Include="AttackWormState.cpp">
+      <Filter>Game\GameObjects\WormStates\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="ChoosingWormState.cpp">
+      <Filter>Game\GameObjects\WormStates\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="EndTurnWormState.cpp">
+      <Filter>Game\GameObjects\WormStates\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="NoWeaponWormState.cpp">
+      <Filter>Game\GameObjects\WormStates\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="NormalWormState.cpp">
+      <Filter>Game\GameObjects\WormStates\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="RopeWormState.cpp">
+      <Filter>Game\GameObjects\WormStates\CPP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -318,6 +336,24 @@
       <Filter>Game\GameObjects\H</Filter>
     </ClInclude>
     <ClInclude Include="WaitWormState.h">
+      <Filter>Game\GameObjects\WormStates\H</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackWormState.h">
+      <Filter>Game\GameObjects\WormStates\H</Filter>
+    </ClInclude>
+    <ClInclude Include="ChoosingWormState.h">
+      <Filter>Game\GameObjects\WormStates\H</Filter>
+    </ClInclude>
+    <ClInclude Include="EndTurnWormState.h">
+      <Filter>Game\GameObjects\WormStates\H</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalWormState.h">
+      <Filter>Game\GameObjects\WormStates\H</Filter>
+    </ClInclude>
+    <ClInclude Include="NoWeaponWormState.h">
+      <Filter>Game\GameObjects\WormStates\H</Filter>
+    </ClInclude>
+    <ClInclude Include="RopeWormState.h">
       <Filter>Game\GameObjects\WormStates\H</Filter>
     </ClInclude>
   </ItemGroup>

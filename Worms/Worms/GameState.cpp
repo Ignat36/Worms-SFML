@@ -56,6 +56,7 @@ void GameState::ProcessInput(sf::RenderWindow * window)
 			switch (event.key.code)
 			{
 			default:
+				Playables.back()->State->ProcessInput(event);
 				break;
 			}
 		}
@@ -65,13 +66,15 @@ void GameState::ProcessInput(sf::RenderWindow * window)
 
 		}
 		else
-		Playables.back()->State->ProcessInput(event);
+			Playables.back()->State->ProcessInput(event);
 	}
 	
 }
 
 void GameState::UpdateObjects()
 {
+	UpdateMapPosition();
+
 	Playables.back()->Update();
 	if (!Playables.back()->isDead())
 	{
@@ -103,4 +106,29 @@ void GameState::EndGame()
 
 void GameState::EndTurn()
 {
+}
+
+void GameState::UpdateMapPosition()
+{
+	Singleton *single = Singleton::GetInstance();
+
+	int &g_p_x = single->game_mouse_position_x;
+	int &g_p_y = single->game_mouse_position_y;
+
+	int x = sf::Mouse::getPosition(*window).x;
+	int y = sf::Mouse::getPosition(*window).y;
+
+	int w = window->getSize().x;
+	int h = window->getSize().y;
+
+	sf::Mouse::setPosition(sf::Vector2i(w/2, h/2), *window);
+
+	int ax = x - w / 2;
+	int ay = y - h / 2;
+
+	if (abs(ax) + abs(ay) > 1)
+	{
+		g_p_y += ay;
+		g_p_x += ax;
+	}
 }
