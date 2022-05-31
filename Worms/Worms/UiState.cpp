@@ -101,6 +101,15 @@ void UiState::RenderObjects(sf::RenderWindow * window)
 {
 	// Show Layout
 	window->clear();
+
+	sf::Texture texture; texture.loadFromFile(sing->GlobalPath + "Textures/GameObjects/Worm/Walk1.png");
+	sf::Sprite spr(texture);
+	spr.setPosition(0, 0);
+
 	CurrentLayout.back()->Show(window);
+
+	spr.setOrigin(30, 0);
+	spr.setScale(-1, 1);
+	window->draw(spr);
 	window->display();
 }

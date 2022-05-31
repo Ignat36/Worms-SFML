@@ -1,6 +1,7 @@
 #pragma once
 
 #define UNICODE
+#define sing Singleton::GetInstance() 
 
 #include "Configurations.h"
 #include "windows.h"
@@ -49,6 +50,8 @@ public:
 	void operator=(const Singleton &) = delete;
 
 	static Singleton *GetInstance();
+
+	static void ShowMap(GameMap* m, sf::RenderWindow *window);
 
 public:
 	bool WindowClosed;

@@ -4,22 +4,26 @@ GameState::GameState(sf::RenderWindow * window, long long *_lag) : ApplicationSt
 {
 	// black part of scheme
 	lag = _lag;
-	Singleton *single = Singleton::GetInstance();
+	Singleton *single = Singleton::GetInstance(); 
 	map = single->config.map;
 
-	if (!map->image.loadFromFile("Maps/Background/Background.png"))
+	if (!map->image.loadFromFile(single->GlobalPath + "Maps/Background/Background.png"))
 	{
 		std::cout << "Can not read from file game background\n";
 		single->WindowClosed = true;
 		return;
 	}
 
-	
+	map->pixels = GameMap::Load("D:\\Windows\\Worms-SFML\\Worms\\Worms\\Maps\\Standart\\Map0.txt").pixels;
+	map->Width = 1200; map->Height = 400;
 	map->DefaultMap = (sf::Uint8 *)map->image.getPixelsPtr();
 	map->Expand(); map->FullReRender(); map->UpdateSprite();
-	exit(0);
 
 	Playables.push_back(new Worm(0, 0, map));
+
+	std::cout << "GameState\n";
+
+	window->setMouseCursorVisible(false);
 }
 
 void GameState::ProcessInput(sf::RenderWindow * window)
@@ -57,6 +61,10 @@ void GameState::ProcessInput(sf::RenderWindow * window)
 		{
 			switch (event.key.code)
 			{
+			case sf::Keyboard::Delete:
+				window->setMouseCursorVisible(true);
+				StateChangeFlag = true;
+				break;
 			default:
 				Playables.back()->State->ProcessInput(event);
 				break;
@@ -70,7 +78,7 @@ void GameState::ProcessInput(sf::RenderWindow * window)
 		else
 			Playables.back()->State->ProcessInput(event);
 	}
-	
+	std::cout << "InputProcessed";
 }
 
 void GameState::UpdateObjects()
@@ -78,7 +86,7 @@ void GameState::UpdateObjects()
 	UpdateMapPosition();
 
 	Playables.back()->Update();
-	if (!Playables.back()->isDead())
+	if (Playables.back()->isDead())
 	{
 		Playables.pop_back();
 		if (Playables.empty())
@@ -88,21 +96,31 @@ void GameState::UpdateObjects()
 	std::vector<GameObject *> tmp;
 	for (auto i : objects)
 	{
-		if (!i->isDead())
+		if (i->isDead())
 			tmp.push_back(i);
 	}
 	objects = tmp;
+
+	std::cout << "Objects updates\n";
 }
 
 void GameState::RenderObjects(sf::RenderWindow * window)
 {
-	window->draw(map->CurrentMapSprite);
+	window->clear();
+
+	Singleton::ShowMap(map, window);
 
 	for (auto i : objects)
 		i->Show(window, *lag);
 
 	for (auto i : Playables)
 		i->Show(window, *lag);
+
+	window->display();
+
+	std::cout << "Objects rendered\n";
+	//Sleep(10000);
+	//Singleton::GetInstance()->WindowClosed = true;
 }
 
 void GameState::EndRound()
@@ -135,9 +153,18 @@ void GameState::UpdateMapPosition()
 	int ax = x - w / 2;
 	int ay = y - h / 2;
 
+	int tw = map->Width;
+	int th = map->Height;
+
 	if (abs(ax) + abs(ay) > 1)
 	{
 		g_p_y += ay;
 		g_p_x += ax;
+
+		if (g_p_x > tw - w) g_p_x = tw - w;
+		if (g_p_x < 0) g_p_x = 0;
+
+		if (g_p_y > th - h) g_p_y = th - h;
+		if (g_p_y < 0) g_p_y = 0;
 	}
 }

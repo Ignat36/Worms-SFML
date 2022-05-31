@@ -150,3 +150,4 @@ GameMap GameMap::Load(std::string file)
 
 	return result;
 }
+

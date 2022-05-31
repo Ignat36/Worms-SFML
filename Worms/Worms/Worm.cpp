@@ -6,6 +6,7 @@ void Worm::Update()
 	ObjectState *nxt = State->GetNext();
 	if (nxt)
 	{
+		delete State;
 		State = nxt;
 	}
 
@@ -31,12 +32,17 @@ void Worm::Show(sf::RenderWindow * window, long long lag)
 
 	CurrentSprite = sprites[LastSpriteNumber];
 
-	CurrentSprite.setPosition(
+	CurrentSprite->setPosition(
 		window_pos_X - single->game_mouse_position_x,
 		window_pos_Y - single->game_mouse_position_y
 	);
 
-	window->draw(CurrentSprite);
+	if (direction) CurrentSprite->setOrigin(Width, 0);
+	else		   CurrentSprite->setOrigin(0, 0);
+
+	CurrentSprite->setScale(direction ? -1 : 1, 1);
+
+	window->draw(*CurrentSprite);
 }
 
 Worm::Worm(float x, float y, GameMap *n_map) : PlayableObject(x, y, n_map)
@@ -48,8 +54,8 @@ Worm::Worm(float x, float y, GameMap *n_map) : PlayableObject(x, y, n_map)
 	last_stabil_x = window_pos_X;
 	last_stabil_y = window_pos_Y;
 
-	sf::RectangleShape rectangle(sf::Vector2f(Width, Height));
-	rectangle.setFillColor(sf::Color::Red);
+	sing->game_mouse_position_x = window_pos_X - 640;
+	sing->game_mouse_position_y = window_pos_Y - 400;
 
 	AnimationSteps = 3;
 
@@ -73,7 +79,7 @@ void Worm::digSpace(int x, int y)
 	for (int i = x - Radius; i <= x + Radius; i++)
 		for (int j = y - Radius; j <= y + Radius; j++)
 		{
-			if (i < 0 || j < 0 || i > n || j > m)
+			if (i < 0 || j < 0 || i >= n || j >= m || (i + j * n) * 4 + 3 >= n * m * 4)
 				continue;
 
 			int tx = x - i;
@@ -81,7 +87,7 @@ void Worm::digSpace(int x, int y)
 
 			if (tx*tx + ty * ty < Radius * Radius)
 			{
-				map->pixels[x][y] = false;
+				map->pixels[i][j] = false;
 				map->map[(i + j * int(n)) * 4] = 150; // R?
 				map->map[(i + j * int(n)) * 4 + 1] = 150; // G?
 				map->map[(i + j * int(n)) * 4 + 2] = 255; // B?

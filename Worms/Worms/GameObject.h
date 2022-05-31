@@ -16,10 +16,10 @@ public:
 	bool AddTexture(std::string file);
 
 protected:
-	std::vector< sf::Texture> textures;
-	std::vector< sf::Sprite> sprites;
+	std::vector< sf::Texture *> textures;
+	std::vector< sf::Sprite *> sprites;
 
-	sf::Sprite CurrentSprite;
+	sf::Sprite *CurrentSprite;
 
 	void LoadSprite(std::string file);
 

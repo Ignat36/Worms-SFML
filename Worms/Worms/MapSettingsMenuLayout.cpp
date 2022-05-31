@@ -195,6 +195,8 @@ void MapSettingsMenuLayout::load_button_pressed()
 
 	GameMap res = GameMap::Load(path);
 
+	std::cout << path << "\n";
+
 	Canvas->SetMap(res.pixels);
 }
 
