@@ -15,6 +15,7 @@ public:
 	int TunelsCount;
 
 public:
+	void SetMap(std::vector< std::vector<bool> > &map);
 	void MapReverse();
 	void CreateSpheres(bool value);
 	void CreateTunnels(bool value);

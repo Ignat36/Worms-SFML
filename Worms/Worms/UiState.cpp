@@ -67,11 +67,6 @@ void UiState::ProcessInput(sf::RenderWindow * window)
 			if (event.text.unicode < 128)
 				CurrentLayout.back()->AddCharacterToBuffer(static_cast<char>(event.text.unicode));
 		}
-
-		int X = sf::Mouse::getPosition(*window).x;
-		int Y = sf::Mouse::getPosition(*window).y;
-
-		std::cout << X << " " << Y << "\n";
 	}
 }
 

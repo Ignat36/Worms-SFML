@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <string>
+#include <iostream>
 #include <fstream>
 #include <SFML/Graphics.hpp>
 
@@ -25,5 +26,7 @@ public:
 	void Expand();
 	void UpdateSprite();
 	void FullReRender();
+	void Save(std::string file);
+	static GameMap Load(std::string file);
 };
 

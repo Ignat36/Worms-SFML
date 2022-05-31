@@ -100,7 +100,7 @@ MapSettingsMenuLayout::MapSettingsMenuLayout(sf::RenderWindow *window) : Layout(
 	
 	Canvas = new MapCanvas(IncId(), 40, 40, w - 80, h / 2); 
 
-	font.loadFromFile("Configurations/arial.ttf");
+	font.loadFromFile(Singleton::GetInstance()->GlobalPath + "Configurations/arial.ttf");
 	Pen = sf::Text(std::to_string(Canvas->PenWidth), font);  Pen.setPosition(x * 2.75, y * 8.5); Pen.setFillColor(sf::Color::White);
 	Tunels = sf::Text(std::to_string(Canvas->TunelsCount), font);  Tunels.setPosition(x * 2.75, y * 10.5); Tunels.setFillColor(sf::Color::White);
 	Spheres = sf::Text(std::to_string(Canvas->SpheresCount), font);  Spheres.setPosition(x * 2.75, y * 12.5); Spheres.setFillColor(sf::Color::White);
@@ -190,11 +190,22 @@ void MapSettingsMenuLayout::exit_button_pressed()
 
 void MapSettingsMenuLayout::load_button_pressed()
 {
+	std::string path = Layout::GetFileName();
+	if (path == "") return;
+
+	GameMap res = GameMap::Load(path);
+
+	Canvas->SetMap(res.pixels);
 }
 
 void MapSettingsMenuLayout::save_button_pressed()
 {
-	
+	std::string path = Layout::GetFileName();
+	if (path == "") return;
+
+	GameMap *res = Canvas->ConvertToGameMap();
+
+	res->Save(path);
 }
 
 void MapSettingsMenuLayout::pass() {}

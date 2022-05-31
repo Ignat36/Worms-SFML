@@ -20,7 +20,8 @@ GameMap::GameMap()
 void GameMap::Expand()
 {
 	int w = Width * 5 + 2000; int h = Height * 5;
-	pixels = std::vector<std::vector<bool> >(w, std::vector<bool>(h));
+	
+	map = new sf::Uint8[w * h * 4];
 
 	std::vector<std::vector<bool> > tmp(Width + 2, std::vector<bool>(Height + 2, false));
 
@@ -31,6 +32,8 @@ void GameMap::Expand()
 			tmp[i][j] = pixels[i-1][j-1];
 		}
 	}
+
+	pixels = std::vector<std::vector<bool> >(w, std::vector<bool>(h));
 
 
 	for (int i = 1; i <= Width; i++)
@@ -99,4 +102,51 @@ void GameMap::FullReRender()
 				map[(i + j * Width) * 4 + 2] = DefaultMap[(i + j * Width) * 4 + 2];
 				map[(i + j * Width) * 4 + 3] = DefaultMap[(i + j * Width) * 4 + 3];
 			}
+			else
+			{
+				map[(i + j * Width) * 4] = 0;
+				map[(i + j * Width) * 4 + 1] = 0;
+				map[(i + j * Width) * 4 + 2] = 150;
+				map[(i + j * Width) * 4 + 3] = 255;
+			}
+}
+
+void GameMap::Save(std::string file)
+{
+	std::string path = file;
+	std::ofstream fout; fout.open(path);
+	
+	int kol = 0;
+
+	for (int i = 0; i < Width; i++)
+	{
+		for (int j = 0; j < Height; j++)
+		{
+			fout << pixels[i][j];
+			kol += pixels[i][j];
+		}
+		fout << "\n";
+	}
+
+	fout.close();
+}
+
+GameMap GameMap::Load(std::string file)
+{
+	GameMap result = GameMap();
+	std::string path = file;
+	std::ifstream fin; fin.open(path);
+	std::string str;
+	int i = 0;
+	while (fin >> str)
+	{
+		std::vector<bool> col;
+		col.resize(str.size());
+		for (int j = 0; j < str.size(); j++)
+			col[j] = str[j] == '1';
+
+		result.pixels.push_back(col);
+	}
+
+	return result;
 }

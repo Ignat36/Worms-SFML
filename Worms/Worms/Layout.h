@@ -1,5 +1,8 @@
 #pragma once
 
+#define UNICODE
+#define _UNICODE
+
 #include <map>
 #include <vector>
 #include <iostream>

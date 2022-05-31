@@ -32,6 +32,21 @@ MapCanvas::MapCanvas(int id, float pos_x, float pos_y, float width, float height
 	}
 }
 
+void MapCanvas::SetMap(std::vector<std::vector<bool>> &map)
+{
+	NeedUpdated = true;
+	for (int x = 0; x < map.size(); x++)
+	{
+		for (int y = 0; y < map[0].size(); y++)
+		{
+			pixels[(x + y * int(map.size())) * 4] = map[x][y] ? 255 : 0; // R?
+			pixels[(x + y * int(map.size())) * 4 + 1] = map[x][y] ? 255 : 0; // R?
+			pixels[(x + y * int(map.size())) * 4 + 2] = map[x][y] ? 0 : 255; // R?
+			pixels[(x + y * int(map.size())) * 4 + 3] = 255; // A?
+		}
+	}
+}
+
 void MapCanvas::MapReverse()
 {
 	NeedUpdated = true;
@@ -120,11 +135,13 @@ GameMap *MapCanvas::ConvertToGameMap()
 
 	std::vector<std::vector<bool> > tmp(Size.x, std::vector<bool>(Size.y));
 
+	int kol = 0;
 	for (int i = 0; i < Size.x; i++)
 	{
 		for (int j = 0; j < Size.y; j++)
 		{
 			tmp[i][j] = pixels[(i + j * int(Size.x)) * 4] == 255;
+			if (tmp[i][j]) kol++;
 		}
 	}
 	

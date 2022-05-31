@@ -19,6 +19,8 @@ protected:
 	std::vector< sf::Texture> textures;
 	std::vector< sf::Sprite> sprites;
 
+	sf::Sprite CurrentSprite;
+
 	void LoadSprite(std::string file);
 
 	int LastSpriteNumber;

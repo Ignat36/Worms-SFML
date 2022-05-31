@@ -14,8 +14,10 @@ GameState::GameState(sf::RenderWindow * window, long long *_lag) : ApplicationSt
 		return;
 	}
 
+	
 	map->DefaultMap = (sf::Uint8 *)map->image.getPixelsPtr();
-	map->FullReRender(); map->UpdateSprite();
+	map->Expand(); map->FullReRender(); map->UpdateSprite();
+	exit(0);
 
 	Playables.push_back(new Worm(0, 0, map));
 }
@@ -94,6 +96,13 @@ void GameState::UpdateObjects()
 
 void GameState::RenderObjects(sf::RenderWindow * window)
 {
+	window->draw(map->CurrentMapSprite);
+
+	for (auto i : objects)
+		i->Show(window, *lag);
+
+	for (auto i : Playables)
+		i->Show(window, *lag);
 }
 
 void GameState::EndRound()

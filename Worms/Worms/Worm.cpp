@@ -2,15 +2,41 @@
 
 void Worm::Update()
 {
+	State->Update();
 	ObjectState *nxt = State->GetNext();
 	if (nxt)
 	{
 		State = nxt;
 	}
+
+	// Calc collisions with map
+	CalculateCollisionX();
+	CalculateCollisionY();
+	// move with collisions
+	Move();
+
+	if (collision_y)
+		dy += 1. / 6;
+	else
+		dy = 0;
+	dy = 0;
+
+	direction = dx > 0 ? true : dx < 0 ? false : direction;
+	dx = 0;
 }
 
 void Worm::Show(sf::RenderWindow * window, long long lag)
 {
+	Singleton *single = Singleton::GetInstance();
+
+	CurrentSprite = sprites[LastSpriteNumber];
+
+	CurrentSprite.setPosition(
+		window_pos_X - single->game_mouse_position_x,
+		window_pos_Y - single->game_mouse_position_y
+	);
+
+	window->draw(CurrentSprite);
 }
 
 Worm::Worm(float x, float y, GameMap *n_map) : PlayableObject(x, y, n_map)

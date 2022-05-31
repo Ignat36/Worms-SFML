@@ -26,6 +26,8 @@ protected:
 	int collision_x;
 	int collision_y;
 
+	bool direction;
+
 	GameMap *map;
 
 protected:

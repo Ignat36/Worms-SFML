@@ -14,6 +14,11 @@ DynamicObject::DynamicObject() : GameObject()
 	push_y = 0;
 
 	attack_angle = 0;
+
+	collision_x = 1;
+	collision_y = 1;
+
+	direction = true;
 }
 
 DynamicObject::DynamicObject(float x, float y, GameMap *n_map) : GameObject(x, y)
@@ -24,7 +29,11 @@ DynamicObject::DynamicObject(float x, float y, GameMap *n_map) : GameObject(x, y
 	push_y = 0;
 	map = n_map;
 
+	collision_x = 1;
+	collision_y = 1;
+
 	attack_angle = 0;
+	direction = true;
 }
 
 bool DynamicObject::PushUp(int possible_pixels)
@@ -35,7 +44,10 @@ bool DynamicObject::PushUp(int possible_pixels)
 void DynamicObject::Move()
 {
 	window_pos_X += collision_x * dx;
+	window_pos_X += collision_x * push_x;
+
 	window_pos_Y += collision_y * dy;
+	window_pos_Y += collision_y * push_y;
 
 	if (!PushUp(3))
 	{

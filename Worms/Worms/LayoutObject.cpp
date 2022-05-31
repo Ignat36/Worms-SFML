@@ -12,9 +12,12 @@ LayoutObject::LayoutObject(int id, float pos_x, float pos_y, float width, float 
 
 void LayoutObject::LoadSprite(sf::Texture &texture, sf::Sprite &sprite, std::string &file)
 {
+	Singleton *single = Singleton::GetInstance();
+	std::string path = single->GlobalPath + file;
+
 	sf::Texture exitButton;
 	sf::Sprite exitButtonImage;
-	if (!texture.loadFromFile(file))
+	if (!texture.loadFromFile(path))
 	{
 		std::cout << "Can't find the image" << file << std::endl;
 		Singleton *single = Singleton::GetInstance();

@@ -36,9 +36,12 @@ bool GameObject::AddTexture(std::string file)
 
 void GameObject::LoadSprite(std::string file)
 {
+	Singleton *single = Singleton::GetInstance();
+	std::string path = single->GlobalPath + file;
+
 	sf::Texture texture;
 	sf::Sprite sprite;
-	if (!texture.loadFromFile(file))
+	if (!texture.loadFromFile(path))
 	{
 		std::cout << "Can't find the image" << file << std::endl;
 		Singleton *single = Singleton::GetInstance();

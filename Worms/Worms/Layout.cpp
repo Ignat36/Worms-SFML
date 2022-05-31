@@ -1,4 +1,4 @@
-#include "Layout.h"
+﻿#include "Layout.h"
 
 std::vector<std::vector<int> > Layout::getLayoutInIntArray()
 {
@@ -63,14 +63,14 @@ std::string Layout::GetFileName()
 	ofn.lStructSize = sizeof(ofn);
 	ofn.hwndOwner = NULL;  // If you have a window to center over, put its HANDLE here
 	ofn.lpstrFilter = _T("Text Files\0*.txt\0Any File\0*.*\0");
-	ofn.lpstrFile = LPSTR(filename);
+	ofn.lpstrFile = LPWSTR(filename);
 	ofn.nMaxFile = MAX_PATH;
 	ofn.lpstrTitle = _T("Select a File, yo!");
 	ofn.Flags = OFN_DONTADDTORECENT | OFN_FILEMUSTEXIST;
 
 	if (GetOpenFileName((LPOPENFILENAME)&ofn))
 	{
-		wcscpy_s(filepath, LPWSTR(ofn.lpstrFile));
+		wcscpy_s(filepath, ofn.lpstrFile);
 		wchar_t *f = filepath;
 		std::wstring ws(f);
 		std::string str(ws.begin(), ws.end());
