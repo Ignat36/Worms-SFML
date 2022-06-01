@@ -65,6 +65,9 @@ void GameState::ProcessInput(sf::RenderWindow * window)
 				window->setMouseCursorVisible(true);
 				StateChangeFlag = true;
 				break;
+			case sf::Keyboard::RControl:
+				Playables.back()->SetScreenCenter();
+				break;
 			default:
 				Playables.back()->State->ProcessInput(event);
 				break;

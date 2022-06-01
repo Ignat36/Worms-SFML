@@ -11,6 +11,7 @@ public:
 
 public:
 	PlayableObject(float x, float y, GameMap *map);
+	void SetScreenCenter();
 };
 
 class ObjectState
@@ -20,6 +21,7 @@ public:
 	virtual void Update() = 0;
 	ObjectState(PlayableObject *ref);
 	ObjectState *GetNext();
+
 
 protected:
 	PlayableObject *reference;

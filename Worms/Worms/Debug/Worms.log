@@ -1,4 +1,17 @@
-﻿  Worm.cpp
+﻿  AttackWormState.cpp
+  ChoosingWormState.cpp
+  EndTurnWormState.cpp
+  Game.cpp
+  GameState.cpp
+  NoWeaponWormState.cpp
+  NormalWormState.cpp
+  PlayableObject.cpp
+d:\windows\worms-sfml\worms\worms\playableobject.cpp(10): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+d:\windows\worms-sfml\worms\worms\playableobject.cpp(11): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+  RopeWormState.cpp
+  UiState.cpp
+  WaitWormState.cpp
+  Worm.cpp
 d:\windows\worms-sfml\worms\worms\worm.cpp(20): warning C4305: +=: усечение из "double" в "float"
 d:\windows\worms-sfml\worms\worms\worm.cpp(40): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
 d:\windows\worms-sfml\worms\worms\worm.cpp(43): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
@@ -7,4 +20,7 @@ d:\windows\worms-sfml\worms\worms\worm.cpp(58): warning C4244: =: преобра
 d:\windows\worms-sfml\worms\worms\worm.cpp(104): warning C4244: =: преобразование "int" в "float", возможна потеря данных
 d:\windows\worms-sfml\worms\worms\worm.cpp(119): warning C4244: =: преобразование "int" в "float", возможна потеря данных
 d:\windows\worms-sfml\worms\worms\worm.cpp(120): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+  main.cpp
+  Создание кода...
+  LINK : эх эрщфхэ шыш эх т√яюыэхэр ёсюЁър D:\Windows\Worms-SFML\Worms\Debug\Worms.exe яЁш яюёыхфэхщ шэъЁхьхэЄэющ ъюьяюэютъх; т√яюыэ хЄё  яюыэр  ъюьяюэютър
   Worms.vcxproj -> D:\Windows\Worms-SFML\Worms\Debug\Worms.exe
