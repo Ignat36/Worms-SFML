@@ -25,18 +25,20 @@ protected:
 
 	int collision_x;
 	int collision_y;
+	int collisionVariable;
 
 	bool direction;
 
 	GameMap *map;
 
 protected:
-	bool PushUp(int possible_pixels);
+	bool Push(int possible_pixels);
 
 protected:
-	void Move();
+	void Move(int pixelsPush);
 	void CalculateCollisionX(); //col_x
 	void CalculateCollisionY(); //col_y
+	void CalculateCollision(); //col_y
 	bool isStable();
 	void update_x();
 	void update_y();

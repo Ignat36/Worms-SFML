@@ -36,12 +36,34 @@ DynamicObject::DynamicObject(float x, float y, GameMap *n_map) : GameObject(x, y
 	direction = true;
 }
 
-bool DynamicObject::PushUp(int possible_pixels)
+bool DynamicObject::Push(int possible_pixels)
 {
-	return true;
+	int i = possible_pixels;
+	while (i--)
+	{
+		if (isStable())
+			return true;
+
+		window_pos_Y--;
+	}
+
+	window_pos_Y = last_stabil_y;
+
+	i = possible_pixels;
+	while (i--)
+	{
+		if (isStable())
+			return true;
+
+		window_pos_Y++;
+	}
+
+	
+	window_pos_X = last_stabil_x;
+	window_pos_Y = last_stabil_y;
 }
 
-void DynamicObject::Move()
+void DynamicObject::Move(int pixelsPush)
 {
 	window_pos_X += collision_x * dx;
 	window_pos_X += collision_x * push_x;
@@ -49,10 +71,18 @@ void DynamicObject::Move()
 	window_pos_Y += collision_y * dy;
 	window_pos_Y += collision_y * push_y;
 
-	if (!PushUp(3))
+	CalculateCollisionY(); if (collision_y <= 0) window_pos_Y = last_stabil_y;
+	CalculateCollisionX();
+
+	if (!Push(pixelsPush))
 	{
 		window_pos_X = last_stabil_x;
 		window_pos_Y = last_stabil_y;
+		collisionVariable = 0;
+	}
+	else
+	{
+		collisionVariable = 1;
 	}
 }
 
@@ -63,12 +93,92 @@ void DynamicObject::CalculateCollisionX()
 
 void DynamicObject::CalculateCollisionY()
 {
+	if (window_pos_X < 0 || window_pos_X + Width >= map->Width ||
+		window_pos_Y < 0) {
+		collision_y = 1;
+		return;
+	}
+
+	if (window_pos_Y + Height >= sing->config.game_config->WaterLevel) {
+		collision_y = 0; // —табильно фиксируем дауна, чтобы он потом утанул.
+		return;
+	}
+
+	for (int x = window_pos_X; x < window_pos_X + Width; x++)
+	{
+		for (int y = window_pos_Y; y < window_pos_Y + Height; y++)
+		{
+			int tx = x - window_pos_X - Width / 2;
+			int ty = y - window_pos_Y - Height / 2;
+
+			float a = Width * Width / 4.;
+			float b = Height * Height / 4.;
+
+			if ((tx * tx) / a + (ty * ty) / b > 1)
+				continue;
+
+			if (map->pixels[x][y] && (y - window_pos_Y) >= Height * 9. / 10.)
+			{
+				collision_y = 0;
+				return;
+			}
+
+			if (map->pixels[x][y] && (y - window_pos_Y) <= Height * 1. / 4.)
+			{
+				collision_y = -1;
+				return;
+			}
+		}
+	}
+
 	collision_y = 1;
+}
+
+void DynamicObject::CalculateCollision()
+{
+	if (!isStable())
+	{
+		collisionVariable = 0;
+		window_pos_X = last_stabil_x;
+		window_pos_Y = last_stabil_y;
+		return;
+	}
+	
+	collisionVariable = 1;
 }
 
 bool DynamicObject::isStable()
 {
-	return false;
+	if (window_pos_X < 0 || window_pos_X >= map->Width ||
+		window_pos_Y < 0) {
+		return true;
+	}
+
+	if (window_pos_Y >= sing->config.game_config->WaterLevel) {
+		return true; // —табильно фиксируем дауна, чтобы он потом утанул.
+	}
+
+	for (int x = window_pos_X; x < window_pos_X + Width; x++)
+	{
+		for (int y = window_pos_Y; y < window_pos_Y + Height; y++)
+		{
+			int tx = x - window_pos_X - Width / 2;
+			int ty = y - window_pos_Y - Height / 2;
+
+			float a = Width * Width / 4.;
+			float b = Height * Height / 4.;
+
+			if ((tx * tx) / a + (ty * ty) / b > 1)
+				continue;
+
+			if (map->pixels[x][y])
+			{
+				return false;
+			}
+		}
+	}
+
+	return true;
 }
 
 void DynamicObject::update_x()

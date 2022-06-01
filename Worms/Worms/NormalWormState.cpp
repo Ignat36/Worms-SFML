@@ -1,4 +1,6 @@
 #include "NormalWormState.h"
+#include "WaitWormState.h"
+#include "Singleton.h"
 
 void NormalWormState::ProcessInput(sf::Event event)
 {
@@ -15,12 +17,19 @@ void NormalWormState::ProcessInput(sf::Event event)
 			break;
 
 		case sf::Keyboard::Left:
-			reference->dx = -3;
+			reference->dx = -2;
 			break;
 
 		case sf::Keyboard::Right:
-			reference->dx = 3;
+			reference->dx = 2;
 			break;
+
+		case sf::Keyboard::Enter:
+			reference->dy = -10;
+			sing->isAnimation = true;
+			Next = new WaitWormState(reference);
+			break;
+
 		default:
 			break;
 		}

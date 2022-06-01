@@ -20,6 +20,7 @@ public:
 	int WormHealth;
 	int RoundsCount;
 	bool Wind;
+	int WaterLevel;
 
 public:
 	GameConfigurations();

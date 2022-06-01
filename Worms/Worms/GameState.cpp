@@ -17,13 +17,15 @@ GameState::GameState(sf::RenderWindow * window, long long *_lag) : ApplicationSt
 	map->pixels = GameMap::Load("D:\\Windows\\Worms-SFML\\Worms\\Worms\\Maps\\Standart\\Map0.txt").pixels;
 	map->Width = 1200; map->Height = 400;
 	map->DefaultMap = (sf::Uint8 *)map->image.getPixelsPtr();
-	map->Expand(); map->FullReRender(); map->UpdateSprite();
+	map->Expand(); 
 
 	Playables.push_back(new Worm(0, 0, map));
 
-	std::cout << "GameState\n";
+
+	map->FullReRender(); map->UpdateSprite();
 
 	window->setMouseCursorVisible(false);
+	Playables.back()->SetScreenCenter();
 }
 
 void GameState::ProcessInput(sf::RenderWindow * window)
@@ -81,7 +83,6 @@ void GameState::ProcessInput(sf::RenderWindow * window)
 		else
 			Playables.back()->State->ProcessInput(event);
 	}
-	std::cout << "InputProcessed";
 }
 
 void GameState::UpdateObjects()
@@ -104,7 +105,6 @@ void GameState::UpdateObjects()
 	}
 	objects = tmp;
 
-	std::cout << "Objects updates\n";
 }
 
 void GameState::RenderObjects(sf::RenderWindow * window)
@@ -120,10 +120,6 @@ void GameState::RenderObjects(sf::RenderWindow * window)
 		i->Show(window, *lag);
 
 	window->display();
-
-	std::cout << "Objects rendered\n";
-	//Sleep(10000);
-	//Singleton::GetInstance()->WindowClosed = true;
 }
 
 void GameState::EndRound()

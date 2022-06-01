@@ -15,4 +15,5 @@ GameConfigurations::GameConfigurations()
 	WormHealth = 200;
 	RoundsCount = 1;
 	Wind = false;
+	WaterLevel = 1990;
 }

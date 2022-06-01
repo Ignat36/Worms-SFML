@@ -10,17 +10,22 @@ void Worm::Update()
 		State = nxt;
 	}
 
-	// Calc collisions with map
-	CalculateCollisionX();
-	CalculateCollisionY();
 	// move with collisions
-	Move();
+	Move(15);
 
-	if (collision_y)
-		dy += 1. / 6;
+	last_stabil_x = window_pos_X;
+	last_stabil_y = window_pos_Y;
+
+	std::cout << collision_y << " " << window_pos_X << " " << window_pos_Y << " " << dy << " " << last_stabil_y << "\n";
+
+	if (collision_y == 1)
+		dy += 1. / 6.;
 	else
+	{
 		dy = 0;
-	dy = 0;
+		if(collision_y == 0) sing->isAnimation = false;
+		collision_y = 0;
+	}
 
 	direction = dx > 0 ? true : dx < 0 ? false : direction;
 	dx = 0;
@@ -98,21 +103,24 @@ void Worm::digSpace(int x, int y)
 
 void Worm::GeneratePosition(float & x, float & y)
 {
+	srand(time(NULL));
+
 	int n = map->Width;
 	int m = map->Height;
 
-	x = rand() % n;
+	x = rand() % (n - 2100) + 1030;
+	y = rand() % (m/2) + 10;
+
+	int add = -3;
 
 	bool find = false;
 
-	for (y = 10; y <= m - 40; y++)
-	{
+	for(; y > Height + 1 && y < m - 1; y+=add)
 		if (isStable())
 		{
 			find = true;
-			break;
+			return;
 		}
-	}
 
 	if (!find)
 	{
