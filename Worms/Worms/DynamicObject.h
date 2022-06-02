@@ -26,7 +26,6 @@ protected:
 	int collision_x;
 	int collision_y;
 	int collisionVariable;
-	int slideColision;
 
 	bool direction;
 
@@ -37,7 +36,6 @@ protected:
 
 protected:
 	void Move(int pixelsPush);
-	void CalculateSlideColision();
 	void CalculateCollisionX(); //col_x
 	void CalculateCollisionY(); //col_y
 	void CalculateCollision(); //col_y

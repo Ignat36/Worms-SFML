@@ -19,7 +19,9 @@ void Worm::Update()
 	std::cout << collision_y << " " << window_pos_X << " " << window_pos_Y << " " << dy << " " << last_stabil_y << "\n";
 
 	if (collision_y == 1)
-		dy += 1. / 6.;
+	{
+			dy += 1. / 6.;
+	}
 	else
 	{
 		dy = 0;
