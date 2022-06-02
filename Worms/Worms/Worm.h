@@ -18,7 +18,6 @@ private:
 	sf::Text Name;
 	int HealthPoints;
 
-
 private:
 	void digSpace(int x, int y);
 	void GeneratePosition(float &x, float &y);

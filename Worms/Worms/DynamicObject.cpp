@@ -73,6 +73,7 @@ void DynamicObject::Move(int pixelsPush)
 
 	CalculateCollisionY(); if (collision_y <= 0) window_pos_Y = last_stabil_y;
 	CalculateCollisionX();
+	CalculateSlideColision();
 
 	if (!Push(pixelsPush))
 	{
@@ -84,6 +85,49 @@ void DynamicObject::Move(int pixelsPush)
 	{
 		collisionVariable = 1;
 	}
+}
+
+void DynamicObject::CalculateSlideColision()
+{
+	if (window_pos_X < 0 || window_pos_X + Width >= map->Width ||
+		window_pos_Y < 0) {
+		slideColision = 0;
+		return;
+	}
+
+	if (window_pos_Y + Height >= sing->config.game_config->WaterLevel) {
+		slideColision = 0; // —табильно фиксируем дауна, чтобы он потом утанул.
+		return;
+	}
+
+	for (int x = window_pos_X; x < window_pos_X + Width; x++)
+	{
+		for (int y = window_pos_Y; y < window_pos_Y + Height; y++)
+		{
+			int tx = x - window_pos_X - Width / 2;
+			int ty = y - window_pos_Y - Height / 2;
+
+			float a = Width * Width / 4.;
+			float b = Height * Height / 4.;
+
+			if ((tx * tx) / a + (ty * ty) / b > 1)
+				continue;
+
+			if (map->pixels[x][y] && (x - window_pos_X) >= Width * 15. / 16.)
+			{
+				slideColision = 1;
+				return;
+			}
+
+			if (map->pixels[x][y] && (x - window_pos_X) <= Width * 1. / 16.)
+			{
+				slideColision = -1;
+				return;
+			}
+		}
+	}
+
+	slideColision = 0;
 }
 
 void DynamicObject::CalculateCollisionX()
