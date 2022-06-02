@@ -39,6 +39,8 @@ protected:
 		res += "Worms\\";
 
 		GlobalPath = res;
+
+		GlobalFont.loadFromFile(GlobalPath + "Configurations/arial.ttf");
 	}
 
 	static Singleton* singleton_;
@@ -59,6 +61,7 @@ public:
 	int game_mouse_position_y;
 	bool isAnimation;
 	std::string GlobalPath;
+	sf::Font GlobalFont;
 	Configurations config;
 };
 

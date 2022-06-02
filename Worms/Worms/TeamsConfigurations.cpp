@@ -1,4 +1,5 @@
 #include "TeamsConfigurations.h"
+#include "Singleton.h"
 
 TeamsConfigurations::TeamsConfigurations(int n, int m)
 {

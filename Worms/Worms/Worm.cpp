@@ -18,7 +18,7 @@ void Worm::Update()
 
 	//std::cout << collision_y << " " << window_pos_X << " " << window_pos_Y << " " << dy << " " << last_stabil_y << "\n";
 
-	std::cout << push_x << "\n";
+	//std::cout << push_x << "\n";
 
 	if (collision_y == 1)
 	{
@@ -79,6 +79,25 @@ void Worm::Show(sf::RenderWindow * window, long long lag)
 
 	CurrentSprite->setScale(direction ? -1 : 1, 1);
 
+	Name.setPosition(
+		window_pos_X - single->game_mouse_position_x + Width / 2 - Name.getGlobalBounds().width / 2,
+		window_pos_Y - single->game_mouse_position_y - Name.getGlobalBounds().height - 4
+	);
+
+	sf::Text health; 
+	health.setFont(sing->GlobalFont);
+	health.setString(std::to_string(HealthPoints)); 
+	health.setFillColor(Name.getFillColor());
+	health.setCharacterSize(Name.getCharacterSize());
+	health.setPosition(
+		window_pos_X - single->game_mouse_position_x + Width / 2 - health.getGlobalBounds().width / 2,
+		window_pos_Y - single->game_mouse_position_y - Name.getGlobalBounds().height - health.getGlobalBounds().height - 8
+	);
+
+	std::cout << Name.getGlobalBounds().height << " " << health.getGlobalBounds().height << "\n";
+
+	window->draw(health);
+	window->draw(Name);
 	window->draw(*CurrentSprite);
 }
 
@@ -100,6 +119,8 @@ Worm::Worm(float x, float y, GameMap *n_map) : PlayableObject(x, y, n_map)
 	LoadSprite("Textures/GameObjects/Worm/Walk2.png");
 	LoadSprite("Textures/GameObjects/Worm/Walk3.png");
 	LoadSprite("Textures/GameObjects/Worm/Jump.png");
+
+	GetName();
 
 	LastSpriteNumber = 0;
 
@@ -165,4 +186,26 @@ void Worm::GeneratePosition(float & x, float & y)
 	}
 
 	return;
+}
+
+void Worm::GetName()
+{
+	srand(time(NULL));
+
+	std::string path = sing->GlobalPath + "Configurations/Names.txt";
+	std::ifstream fin; fin.open(path);
+	std::vector<std::string> names;
+	std::string name;
+	int i = 0;
+	while (fin >> name)
+	{
+		i++;
+		names.push_back(name);
+	}
+
+	Name.setFont(sing->GlobalFont);
+	Name.setString(sf::String(names[rand() % names.size()]));
+	Name.setFillColor(sf::Color(247, 121, 89)); // light Red
+	Name.setCharacterSize(20);
+	//Name.setColor(sf::Color(128, 229, 255)); // light Blue
 }

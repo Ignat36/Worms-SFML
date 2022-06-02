@@ -21,5 +21,6 @@ private:
 private:
 	void digSpace(int x, int y);
 	void GeneratePosition(float &x, float &y);
+	void GetName();
 };
 
