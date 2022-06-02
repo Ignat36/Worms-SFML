@@ -30,6 +30,9 @@ protected:
 	float window_pos_Y;
 
 	int AnimationSteps;
+	int ChangesPerSecond;
+	int CurrentFrame;
+	int FPS;
 
 	int Width;
 	int Height;

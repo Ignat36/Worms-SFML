@@ -19,6 +19,8 @@ public:
 
 	float attack_angle;
 
+	bool direction;
+
 protected:
 	float last_stabil_x;
 	float last_stabil_y;
@@ -26,8 +28,6 @@ protected:
 	int collision_x;
 	int collision_y;
 	int collisionVariable;
-
-	bool direction;
 
 	GameMap *map;
 

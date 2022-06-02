@@ -16,18 +16,48 @@ void Worm::Update()
 	last_stabil_x = window_pos_X;
 	last_stabil_y = window_pos_Y;
 
-	std::cout << collision_y << " " << window_pos_X << " " << window_pos_Y << " " << dy << " " << last_stabil_y << "\n";
+	//std::cout << collision_y << " " << window_pos_X << " " << window_pos_Y << " " << dy << " " << last_stabil_y << "\n";
+
+	std::cout << push_x << "\n";
 
 	if (collision_y == 1)
 	{
-			dy += 1. / 6.;
+		dy += 1. / 6.;
+
+		if (dy > 2 && sing->isAnimation == false)
+		{
+			sing->isAnimation = true;
+			push_x = dx;
+		}
 	}
 	else
 	{
 		dy = 0;
 		if(collision_y == 0) sing->isAnimation = false;
 		collision_y = 0;
+
+		push_x = 0;
 	}
+
+	if (!(sing->isAnimation) && dx)
+	{
+		LastSpriteNumber += CurrentFrame / (FPS / ChangesPerSecond);
+		LastSpriteNumber %= AnimationSteps;
+		CurrentFrame %= (FPS / ChangesPerSecond + 1);
+	}
+	
+	if (sing->isAnimation && abs(dy) > 2. / 3.)
+	{
+		LastSpriteNumber = AnimationSteps;
+	}
+
+	if (!dx && !dy && CurrentFrame >= 10)
+	{
+		LastSpriteNumber = 0;
+	}
+
+	CurrentFrame++;
+	CurrentFrame %= FPS;
 
 	direction = dx > 0 ? true : dx < 0 ? false : direction;
 	dx = 0;
@@ -72,6 +102,10 @@ Worm::Worm(float x, float y, GameMap *n_map) : PlayableObject(x, y, n_map)
 	LoadSprite("Textures/GameObjects/Worm/Jump.png");
 
 	LastSpriteNumber = 0;
+
+	FPS = 60;
+	CurrentFrame = 0;
+	ChangesPerSecond = 6;
 
 	State = new WaitWormState(this);
 }
