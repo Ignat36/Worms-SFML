@@ -103,6 +103,15 @@
     <Filter Include="Game\GameObjects\WeaponStates\CPP">
       <UniqueIdentifier>{d6174b94-1d33-4d01-a791-51cbe8f05bbb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\GameObjects\Weapons">
+      <UniqueIdentifier>{1c54db58-0cf0-4d89-9a3a-8b5823db9993}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameObjects\Weapons\CPP">
+      <UniqueIdentifier>{8282a919-1656-42c6-8a1e-c750226c2358}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameObjects\Weapons\H">
+      <UniqueIdentifier>{efda16df-a28e-4b96-87bd-810b5e8900e3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -231,6 +240,15 @@
     <ClCompile Include="RopeWormState.cpp">
       <Filter>Game\GameObjects\WormStates\CPP</Filter>
     </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>Game\GameObjects\Weapons\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Ammo.cpp">
+      <Filter>Game\GameObjects\Weapons\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Rocket.cpp">
+      <Filter>Game\GameObjects\Weapons\CPP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -355,6 +373,15 @@
     </ClInclude>
     <ClInclude Include="RopeWormState.h">
       <Filter>Game\GameObjects\WormStates\H</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>Game\GameObjects\Weapons\H</Filter>
+    </ClInclude>
+    <ClInclude Include="Ammo.h">
+      <Filter>Game\GameObjects\Weapons\H</Filter>
+    </ClInclude>
+    <ClInclude Include="Rocket.h">
+      <Filter>Game\GameObjects\Weapons\H</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

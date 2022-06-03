@@ -3,6 +3,7 @@
 #include "PlayableObject.h"
 #include "NormalWormState.h"
 #include "WaitWormState.h"
+#include "Weapon.h"
 
 class Worm : public PlayableObject
 {
@@ -17,6 +18,8 @@ public:
 private:
 	sf::Text Name;
 	int HealthPoints;
+	int CurrentWeaponId;
+	Weapon *CurrentWeapon;
 
 private:
 	void digSpace(int x, int y);

@@ -19,6 +19,13 @@ public:
 private:
 
 	std::deque<PlayableObject *> Playables;
+
+	std::deque<PlayableObject *> TeamA;
+	std::deque<PlayableObject *> TeamB;
+
+	WeaponConfigurations InventoryA;
+	WeaponConfigurations InventoryB;
+
 	std::vector<GameObject *> objects;
 	bool isButtonPressed;
 

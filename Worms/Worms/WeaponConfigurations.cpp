@@ -9,19 +9,12 @@ WeaponConfigurations::WeaponConfigurations()
 	TurnLimit.resize(Count);
 	BoxAdditionalUses.resize(Count);
 
-	for (auto i : Power) 
-		i = 1;
-	
-	for (auto i : BoxChance)
-		i = 1;
-	
-	for (auto i : Uses)
-		i = 4;
-	
-	for (auto i : TurnLimit)
-		i = 0;
-	
-	for (auto i : BoxAdditionalUses)
-		i = bounds(1, 2);
-	
+	for (int i = 0; i < Count; i++)
+	{
+		Power[i] = 10;
+		BoxChance[i] = (100 / Count);
+		Uses[i] = 4;
+		TurnLimit[i] = 0;
+		BoxAdditionalUses[i] = bounds(1, 2);
+	}
 }

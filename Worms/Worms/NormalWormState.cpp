@@ -42,6 +42,19 @@ void NormalWormState::ProcessInput(sf::Event event)
 		}
 	}
 
+	if (event.type == sf::Event::MouseWheelScrolled)
+	{
+		if (event.mouseWheelScroll.wheel == sf::Mouse::VerticalWheel)
+			std::cout << "wheel type: vertical" << std::endl;
+		else if (event.mouseWheelScroll.wheel == sf::Mouse::HorizontalWheel)
+			std::cout << "wheel type: horizontal" << std::endl;
+		else
+			std::cout << "wheel type: unknown" << std::endl;
+		std::cout << "wheel movement: " << event.mouseWheelScroll.delta << std::endl;
+		std::cout << "mouse x: " << event.mouseWheelScroll.x << std::endl;
+		std::cout << "mouse y: " << event.mouseWheelScroll.y << std::endl;
+	}
+
 	if (sing->isAnimation == true)
 		Next = new WaitWormState(reference);
 }

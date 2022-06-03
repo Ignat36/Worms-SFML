@@ -16,10 +16,6 @@ void Worm::Update()
 	last_stabil_x = window_pos_X;
 	last_stabil_y = window_pos_Y;
 
-	//std::cout << collision_y << " " << window_pos_X << " " << window_pos_Y << " " << dy << " " << last_stabil_y << "\n";
-
-	//std::cout << push_x << "\n";
-
 	if (collision_y == 1)
 	{
 		dy += 1. / 6.;
@@ -94,7 +90,8 @@ void Worm::Show(sf::RenderWindow * window, long long lag)
 		window_pos_Y - single->game_mouse_position_y - Name.getGlobalBounds().height - health.getGlobalBounds().height - 8
 	);
 
-	std::cout << Name.getGlobalBounds().height << " " << health.getGlobalBounds().height << "\n";
+	if (CurrentWeapon && dx == 0 && dy <= 1. / 5.) 
+		CurrentWeapon->Show(window, CurrentSprite->getGlobalBounds(), attack_angle, direction);
 
 	window->draw(health);
 	window->draw(Name);
@@ -129,6 +126,9 @@ Worm::Worm(float x, float y, GameMap *n_map) : PlayableObject(x, y, n_map)
 	ChangesPerSecond = 6;
 
 	State = new WaitWormState(this);
+
+	CurrentWeaponId = 0;
+	CurrentWeapon = nullptr;
 }
 
 void Worm::digSpace(int x, int y)

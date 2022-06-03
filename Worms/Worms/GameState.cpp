@@ -26,6 +26,9 @@ GameState::GameState(sf::RenderWindow * window, long long *_lag) : ApplicationSt
 
 	window->setMouseCursorVisible(false);
 	Playables.back()->SetScreenCenter();
+
+	InventoryA = *(single->config.weapons);
+	InventoryB = *(single->config.weapons);
 }
 
 void GameState::ProcessInput(sf::RenderWindow * window)
