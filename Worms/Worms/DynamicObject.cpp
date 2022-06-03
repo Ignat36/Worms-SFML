@@ -19,6 +19,7 @@ DynamicObject::DynamicObject() : GameObject()
 	collision_y = 1;
 
 	direction = true;
+	NoActionFrames = 0;
 }
 
 DynamicObject::DynamicObject(float x, float y, GameMap *n_map) : GameObject(x, y)
@@ -34,6 +35,7 @@ DynamicObject::DynamicObject(float x, float y, GameMap *n_map) : GameObject(x, y
 
 	attack_angle = 0;
 	direction = true;
+	NoActionFrames = 0;
 }
 
 bool DynamicObject::Push(int possible_pixels)

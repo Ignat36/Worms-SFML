@@ -9,11 +9,13 @@ void NormalWormState::ProcessInput(sf::Event event)
 		switch (event.key.code)
 		{
 		case sf::Keyboard::Up:
-			reference->attack_angle += 1;
+			if (reference->attack_angle < 90) 
+				reference->attack_angle += 5;
 			break;
 
 		case sf::Keyboard::Down:
-			reference->attack_angle -= 1;
+			if (reference->attack_angle > -90)
+				reference->attack_angle -= 5;
 			break;
 
 		case sf::Keyboard::Left:
@@ -44,15 +46,55 @@ void NormalWormState::ProcessInput(sf::Event event)
 
 	if (event.type == sf::Event::MouseWheelScrolled)
 	{
-		if (event.mouseWheelScroll.wheel == sf::Mouse::VerticalWheel)
-			std::cout << "wheel type: vertical" << std::endl;
-		else if (event.mouseWheelScroll.wheel == sf::Mouse::HorizontalWheel)
-			std::cout << "wheel type: horizontal" << std::endl;
+		int add = event.mouseWheelScroll.delta;
+
+		std::vector<int> &uses = reference->inventory->Uses;
+
+		int i = reference->CurrentWeaponId;
+
+		if (i == -1)
+		{
+			i = 0;
+			for(; i < reference->inventory->Count; i++)
+				if (uses[i])
+				{
+					reference->CurrentWeaponId = i;
+					reference->CurrentWeapon = new Weapon(i);
+					break;
+				}
+
+			if (i == reference->inventory->Count)
+				i = -1;
+		}
 		else
-			std::cout << "wheel type: unknown" << std::endl;
-		std::cout << "wheel movement: " << event.mouseWheelScroll.delta << std::endl;
-		std::cout << "mouse x: " << event.mouseWheelScroll.x << std::endl;
-		std::cout << "mouse y: " << event.mouseWheelScroll.y << std::endl;
+		{
+			i += add;
+
+			while (true)
+			{
+				if (i == reference->inventory->Count)
+					i = 0;
+
+				if (i == -1)
+					i = reference->inventory->Count - 1;
+
+				if (i == reference->CurrentWeaponId)
+				{
+					reference->CurrentWeaponId = -1;
+					reference->CurrentWeapon = nullptr;
+					break;
+				}
+
+				if (uses[i])
+				{
+					reference->CurrentWeaponId = i;
+					reference->CurrentWeapon = new Weapon(i);
+					break;
+				}
+
+				i += add;
+			}
+		}
 	}
 
 	if (sing->isAnimation == true)

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "DynamicObject.h"
+#include "Weapon.h"
 
 class ObjectState;
 
@@ -8,6 +9,11 @@ class PlayableObject : public DynamicObject
 {
 public:
 	ObjectState *State;
+
+public:
+	int CurrentWeaponId;
+	Weapon *CurrentWeapon;
+	WeaponConfigurations *inventory;
 
 public:
 	PlayableObject(float x, float y, GameMap *map);

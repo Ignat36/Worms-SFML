@@ -56,6 +56,10 @@ void Worm::Update()
 	CurrentFrame %= FPS;
 
 	direction = dx > 0 ? true : dx < 0 ? false : direction;
+
+	if (dx || dy > 2) NoActionFrames = 0;
+	else NoActionFrames++;
+
 	dx = 0;
 }
 
@@ -90,12 +94,12 @@ void Worm::Show(sf::RenderWindow * window, long long lag)
 		window_pos_Y - single->game_mouse_position_y - Name.getGlobalBounds().height - health.getGlobalBounds().height - 8
 	);
 
-	if (CurrentWeapon && dx == 0 && dy <= 1. / 5.) 
-		CurrentWeapon->Show(window, CurrentSprite->getGlobalBounds(), attack_angle, direction);
-
 	window->draw(health);
 	window->draw(Name);
 	window->draw(*CurrentSprite);
+
+	if (!sing->isAnimation && CurrentWeapon && NoActionFrames > FPS)
+		CurrentWeapon->Show(window, CurrentSprite->getGlobalBounds(), attack_angle, direction);
 }
 
 Worm::Worm(float x, float y, GameMap *n_map) : PlayableObject(x, y, n_map)
@@ -123,11 +127,11 @@ Worm::Worm(float x, float y, GameMap *n_map) : PlayableObject(x, y, n_map)
 
 	FPS = 60;
 	CurrentFrame = 0;
-	ChangesPerSecond = 6;
+	ChangesPerSecond = 3;
 
 	State = new WaitWormState(this);
 
-	CurrentWeaponId = 0;
+	CurrentWeaponId = -1;
 	CurrentWeapon = nullptr;
 }
 

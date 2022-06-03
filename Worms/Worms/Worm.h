@@ -4,6 +4,7 @@
 #include "NormalWormState.h"
 #include "WaitWormState.h"
 #include "Weapon.h"
+#include "WeaponConfigurations.h"
 
 class Worm : public PlayableObject
 {
@@ -14,12 +15,9 @@ public:
 public:
 	Worm(float x, float y, GameMap *n_map);
 
-
 private:
 	sf::Text Name;
 	int HealthPoints;
-	int CurrentWeaponId;
-	Weapon *CurrentWeapon;
 
 private:
 	void digSpace(int x, int y);

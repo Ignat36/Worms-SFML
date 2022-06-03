@@ -5,7 +5,7 @@ Weapon::Weapon(int id) : WeaponId(id)
 {
 	switch (id)
 	{
-	case 1:
+	case 0:
 		LoadSprite("Textures/Weapons/Launcher.png");
 		ammo = new Rocket();
 		break;
@@ -18,17 +18,35 @@ Weapon::Weapon(int id) : WeaponId(id)
 
 void Weapon::Show(sf::RenderWindow * window, sf::FloatRect worm, int AttackAngle, bool direction)
 {
-	InHandsSprite.setPosition(
-		worm.left/* + worm.width / 2 - InHandsTexture.getSize.x / 2*/,
-		worm.top + worm.height / 2 - InHandsTexture.getSize().y / 2
-	);
+	if (direction)
+	{
+		InHandsSprite.setPosition(
+			worm.left + worm.width / 2,
+			worm.top + worm.height - InHandsTexture.getSize().y / 2
+		);
 
-	if (direction) InHandsSprite.setOrigin(InHandsTexture.getSize().x, 0);
-	else		   InHandsSprite.setOrigin(0, 0);
+		InHandsSprite.setOrigin(
+			InHandsTexture.getSize().x / 2,
+			InHandsTexture.getSize().y / 2
+		);
 
-	InHandsSprite.setScale(direction ? -1 : 1, 1);
+		InHandsSprite.setScale(-1, 1);
+		InHandsSprite.setRotation(-AttackAngle);
+	}
+	else
+	{
+		InHandsSprite.setPosition(
+			worm.left + worm.width / 2,
+			worm.top + worm.height - InHandsTexture.getSize().y / 2
+		);
+		InHandsSprite.setOrigin(
+			InHandsTexture.getSize().x / 2,
+			InHandsTexture.getSize().y / 2
+		);
 
-	InHandsSprite.setRotation(AttackAngle);
+		InHandsSprite.setScale(1, 1);
+		InHandsSprite.setRotation(AttackAngle);
+	}
 
 	window->draw(InHandsSprite);
 }

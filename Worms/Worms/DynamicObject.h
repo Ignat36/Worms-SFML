@@ -20,6 +20,8 @@ public:
 	float attack_angle;
 
 	bool direction;
+	
+	int NoActionFrames;
 
 protected:
 	float last_stabil_x;

@@ -5,6 +5,10 @@ GameState::GameState(sf::RenderWindow * window, long long *_lag) : ApplicationSt
 	// black part of scheme
 	lag = _lag;
 	Singleton *single = Singleton::GetInstance(); 
+
+	InventoryA = *(single->config.weapons);
+	InventoryB = *(single->config.weapons);
+
 	map = single->config.map;
 
 	if (!map->image.loadFromFile(single->GlobalPath + "Maps/Background/Background.png"))
@@ -20,15 +24,13 @@ GameState::GameState(sf::RenderWindow * window, long long *_lag) : ApplicationSt
 	map->Expand(); 
 
 	Playables.push_back(new Worm(0, 0, map));
+	Playables.back()->inventory = &InventoryA;
 
 
 	map->FullReRender(); map->UpdateSprite();
 
 	window->setMouseCursorVisible(false);
 	Playables.back()->SetScreenCenter();
-
-	InventoryA = *(single->config.weapons);
-	InventoryB = *(single->config.weapons);
 }
 
 void GameState::ProcessInput(sf::RenderWindow * window)
