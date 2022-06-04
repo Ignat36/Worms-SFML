@@ -95,10 +95,14 @@ void GameState::UpdateObjects()
 {
 	UpdateMapPosition();
 
+	UpdateMap();
 
 	for (auto i : sing->que)
 	{
 		objects.push_back(i);
+		objects.back()->SetGameMap(map);
+
+		std::cout << i->window_pos_X << " " << i->window_pos_Y << "\n";
 	}
 
 	sing->que.resize(0);
@@ -115,8 +119,12 @@ void GameState::UpdateObjects()
 	std::vector<DynamicObject *> tmp;
 	for (auto i : objects)
 	{
+		i->Update();
 		if (!i->isDead())
+		{
+			std::cout << i->window_pos_X << " " << i->window_pos_Y << "\n";
 			tmp.push_back(i);
+		}
 		else
 			delete i;
 	}
@@ -182,5 +190,14 @@ void GameState::UpdateMapPosition()
 
 		if (g_p_y > th - h) g_p_y = th - h;
 		if (g_p_y < 0) g_p_y = 0;
+	}
+}
+
+void GameState::UpdateMap()
+{
+	if (sing->MapUpdate)
+	{
+		sing->MapUpdate = false;
+		map->UpdateSprite();
 	}
 }

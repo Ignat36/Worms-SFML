@@ -1,14 +1,17 @@
 #include "Rocket.h"
 #include "Singleton.h"
+#include <cmath>
 
 void Rocket::Update()
 {
 	Move(1);
 
+	dy += 1. / 6.;
+
 	last_stabil_x = window_pos_X;
 	last_stabil_y = window_pos_Y;
 
-	if (collisionVariable)
+	if (!collisionVariable)
 	{
 		isAlive = false;
 		push_x = 0;
@@ -19,6 +22,19 @@ void Rocket::Update()
 
 void Rocket::Show(sf::RenderWindow * window, long long lag)
 {
+
+	float alpha = atan(abs(dy) / abs(push_x));
+
+	alpha = alpha * 180 / 3.1415;
+
+	if (push_x < 0)
+		alpha = 180 - alpha;
+
+	if (dy <= 0)
+		alpha = -alpha;
+
+	std::cout << alpha << "\n";
+
 	Singleton *single = Singleton::GetInstance();
 
 	CurrentSprite = sprites[LastSpriteNumber];
@@ -28,18 +44,17 @@ void Rocket::Show(sf::RenderWindow * window, long long lag)
 		window_pos_Y - single->game_mouse_position_y
 	);
 
-	if (direction) CurrentSprite->setOrigin(Width, 0);
-	else		   CurrentSprite->setOrigin(0, 0);
+	CurrentSprite->setOrigin(Width / 2., Height / 2.);
 
-	CurrentSprite->setScale(direction ? -1 : 1, 1);
+	CurrentSprite->setRotation(alpha);
 
 	window->draw(*CurrentSprite);
 }
 
 Rocket::Rocket()
 {
-	Width = 30;
-	Height = 20;
+	Width = 5;
+	Height = 5;
 
 	AnimationSteps = 1;
 

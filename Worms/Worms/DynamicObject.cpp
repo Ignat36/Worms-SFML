@@ -39,6 +39,11 @@ DynamicObject::DynamicObject(float x, float y, GameMap *n_map) : GameObject(x, y
 	NoActionFrames = 0;
 }
 
+void DynamicObject::SetGameMap(GameMap * nmp)
+{
+	map = nmp;
+}
+
 bool DynamicObject::Push(int possible_pixels)
 {
 	int i = possible_pixels;
@@ -64,6 +69,8 @@ bool DynamicObject::Push(int possible_pixels)
 	
 	window_pos_X = last_stabil_x;
 	window_pos_Y = last_stabil_y;
+
+	return false;
 }
 
 void DynamicObject::Move(int pixelsPush)
@@ -74,6 +81,7 @@ void DynamicObject::Move(int pixelsPush)
 	window_pos_Y += collision_y * dy;
 	window_pos_Y += collision_y * push_y;
 
+	CalculateCollision();
 	CalculateCollisionY(); if (collision_y <= 0) window_pos_Y = last_stabil_y;
 	CalculateCollisionX();
 
@@ -81,11 +89,6 @@ void DynamicObject::Move(int pixelsPush)
 	{
 		window_pos_X = last_stabil_x;
 		window_pos_Y = last_stabil_y;
-		collisionVariable = 0;
-	}
-	else
-	{
-		collisionVariable = 1;
 	}
 }
 
@@ -142,8 +145,6 @@ void DynamicObject::CalculateCollision()
 	if (!isStable())
 	{
 		collisionVariable = 0;
-		window_pos_X = last_stabil_x;
-		window_pos_Y = last_stabil_y;
 		return;
 	}
 	

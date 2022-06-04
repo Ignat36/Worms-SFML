@@ -39,5 +39,6 @@ private:
 	void EndTurn();
 
 	void UpdateMapPosition();
+	void UpdateMap();
 };
 

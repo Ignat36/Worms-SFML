@@ -38,12 +38,13 @@ void AttackWormState::ProcessInput(sf::Event event)
 
 void AttackWormState::Update()
 {
-	std::cout << Attack.Elapsed() << "\n";
-
 	if (Attack.Elapsed() > MaxPowerWait || !Attack.Active())
 	{
-		Next = new NormalWormState(reference);
-		reference->CurrentWeapon->Launch(reference, Attack.Elapsed() / MaxPowerWait);
+        Next = new NormalWormState(reference);
+
+		float part = Attack.Elapsed();
+
+		reference->CurrentWeapon->Launch(reference, part);
 		Attack.Stop();
 	}
 }
@@ -51,5 +52,5 @@ void AttackWormState::Update()
 AttackWormState::AttackWormState(PlayableObject * ref) : ObjectState(ref)
 {
 	Attack.Start();
-	MaxPowerWait = 1;
+	MaxPowerWait = 1.;
 }

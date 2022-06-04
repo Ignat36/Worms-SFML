@@ -86,8 +86,8 @@ void Weapon::Launch(PlayableObject *worm, float PowerPart)
 	ammo->SetStrength(PowerPart);
 	sing->que.push_back(ammo);
 
-	worm->CurrentWeapon = nullptr;
-	worm->CurrentWeaponId = -1;
+	worm->CurrentWeapon = new Weapon(0);
+	worm->CurrentWeaponId = 0;
 }
 
 void Weapon::LoadSprite(std::string file)

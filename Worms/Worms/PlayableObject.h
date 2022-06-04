@@ -38,11 +38,11 @@ protected:
 class Weapon
 {
 public:
+	void Launch(PlayableObject *worm, float PowerPart);
+
 	Weapon(int id);
 
 	void Show(sf::RenderWindow *window, sf::FloatRect worm, int AttackAngle, bool direction);
-
-	void Launch(PlayableObject *worm, float PowerPart);
 
 private:
 	Ammo *ammo;

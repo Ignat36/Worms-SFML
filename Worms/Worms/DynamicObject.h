@@ -11,6 +11,8 @@ public:
 	DynamicObject();
 	DynamicObject(float x, float y, GameMap *map);
 
+	void SetGameMap(GameMap *nmp);
+
 public:
 	float dx;
 	float dy;

@@ -24,7 +24,6 @@ float Timer::Elapsed()
 
 	long long elapsed = (std::chrono::duration_cast<std::chrono::microseconds>(current - start)).count();
 
-	if (!isActive) return 0;
 	return elapsed / MKS_PER_SECOND;
 }
 
