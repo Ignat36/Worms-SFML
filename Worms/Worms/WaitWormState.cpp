@@ -1,4 +1,5 @@
 #include "WaitWormState.h"
+#include "Singleton.h"
 
 void WaitWormState::ProcessInput(sf::Event event)
 {

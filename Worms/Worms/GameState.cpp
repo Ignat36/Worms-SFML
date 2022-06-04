@@ -1,4 +1,5 @@
 #include "GameState.h"
+#include "Singleton.h"
 
 GameState::GameState(sf::RenderWindow * window, long long *_lag) : ApplicationState(window)
 {
@@ -94,6 +95,15 @@ void GameState::UpdateObjects()
 {
 	UpdateMapPosition();
 
+
+	for (auto i : sing->que)
+	{
+		objects.push_back(i);
+	}
+
+	sing->que.resize(0);
+
+
 	Playables.back()->Update();
 	if (Playables.back()->isDead())
 	{
@@ -102,11 +112,13 @@ void GameState::UpdateObjects()
 			EndRound();
 	}
 
-	std::vector<GameObject *> tmp;
+	std::vector<DynamicObject *> tmp;
 	for (auto i : objects)
 	{
-		if (i->isDead())
+		if (!i->isDead())
 			tmp.push_back(i);
+		else
+			delete i;
 	}
 	objects = tmp;
 

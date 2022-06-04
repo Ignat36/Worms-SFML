@@ -6,6 +6,7 @@
 #include "Configurations.h"
 #include "windows.h"
 #include <tchar.h>
+#include "DynamicObject.h"
 
 class Singleton
 {
@@ -16,7 +17,8 @@ protected:
 		config(Configurations()),
 		game_mouse_position_x(0), 
 		game_mouse_position_y(0),
-		isAnimation(false)
+		isAnimation(false),
+		MapUpdate(false)
 	{
 		std::vector<wchar_t> pathBuf;
 		DWORD copied = 0;
@@ -60,8 +62,11 @@ public:
 	int game_mouse_position_x;
 	int game_mouse_position_y;
 	bool isAnimation;
+	bool MapUpdate;
 	std::string GlobalPath;
 	sf::Font GlobalFont;
 	Configurations config;
+
+	std::vector<DynamicObject*> que;
 };
 

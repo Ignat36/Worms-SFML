@@ -3,8 +3,6 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-#include "Singleton.h"
-
 class GameObject
 {
 public:
@@ -26,14 +24,18 @@ protected:
 	int LastSpriteNumber;
 
 	bool isAlive;
+
+public:
 	float window_pos_X;
 	float window_pos_Y;
 
+protected:
 	int AnimationSteps;
 	int ChangesPerSecond;
 	int CurrentFrame;
 	int FPS;
 
+public:
 	int Width;
 	int Height;
 

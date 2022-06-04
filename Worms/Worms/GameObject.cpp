@@ -1,4 +1,5 @@
 #include "GameObject.h"
+#include "Singleton.h"
 
 GameObject::GameObject()
 {

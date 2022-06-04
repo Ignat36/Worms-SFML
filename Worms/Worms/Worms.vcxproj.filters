@@ -240,14 +240,14 @@
     <ClCompile Include="RopeWormState.cpp">
       <Filter>Game\GameObjects\WormStates\CPP</Filter>
     </ClCompile>
-    <ClCompile Include="Weapon.cpp">
-      <Filter>Game\GameObjects\Weapons\CPP</Filter>
-    </ClCompile>
     <ClCompile Include="Ammo.cpp">
       <Filter>Game\GameObjects\Weapons\CPP</Filter>
     </ClCompile>
     <ClCompile Include="Rocket.cpp">
       <Filter>Game\GameObjects\Weapons\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>GlobalEntities\CPP</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -374,14 +374,14 @@
     <ClInclude Include="RopeWormState.h">
       <Filter>Game\GameObjects\WormStates\H</Filter>
     </ClInclude>
-    <ClInclude Include="Weapon.h">
-      <Filter>Game\GameObjects\Weapons\H</Filter>
-    </ClInclude>
     <ClInclude Include="Ammo.h">
       <Filter>Game\GameObjects\Weapons\H</Filter>
     </ClInclude>
     <ClInclude Include="Rocket.h">
       <Filter>Game\GameObjects\Weapons\H</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>GlobalEntities\H</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

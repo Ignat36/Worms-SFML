@@ -3,7 +3,6 @@
 #include "PlayableObject.h"
 #include "NormalWormState.h"
 #include "WaitWormState.h"
-#include "Weapon.h"
 #include "WeaponConfigurations.h"
 
 class Worm : public PlayableObject

@@ -161,9 +161,9 @@
     <ClCompile Include="StaticPicture.cpp" />
     <ClCompile Include="TeamsConfigurations.cpp" />
     <ClCompile Include="TeamsSettingsMenuLayout.cpp" />
+    <ClCompile Include="Timer.cpp" />
     <ClCompile Include="UiState.cpp" />
     <ClCompile Include="WaitWormState.cpp" />
-    <ClCompile Include="Weapon.cpp" />
     <ClCompile Include="WeaponComponent.cpp" />
     <ClCompile Include="WeaponConfigurations.cpp" />
     <ClCompile Include="WeaponSettingsMenuLayout.cpp" />
@@ -207,9 +207,9 @@
     <ClInclude Include="StaticPicture.h" />
     <ClInclude Include="TeamsConfigurations.h" />
     <ClInclude Include="TeamsSettingsMenuLayout.h" />
+    <ClInclude Include="Timer.h" />
     <ClInclude Include="UiState.h" />
     <ClInclude Include="WaitWormState.h" />
-    <ClInclude Include="Weapon.h" />
     <ClInclude Include="WeaponComponent.h" />
     <ClInclude Include="WeaponConfigurations.h" />
     <ClInclude Include="WeaponSettingsMenuLayout.h" />

@@ -1,5 +1,6 @@
 #include "NormalWormState.h"
 #include "WaitWormState.h"
+#include "AttackWormState.h"
 #include "Singleton.h"
 
 void NormalWormState::ProcessInput(sf::Event event)
@@ -37,6 +38,12 @@ void NormalWormState::ProcessInput(sf::Event event)
 			reference->dy = -8;
 			reference->push_x = 2 * (reference->direction ? -1 : 1);
 			sing->isAnimation = true;
+			break;
+
+
+		case sf::Keyboard::Space:
+			if (reference->CurrentWeapon)
+				Next = new AttackWormState(reference);
 			break;
 
 		default:
@@ -96,13 +103,12 @@ void NormalWormState::ProcessInput(sf::Event event)
 			}
 		}
 	}
-
-	if (sing->isAnimation == true)
-		Next = new WaitWormState(reference);
 }
 
 void NormalWormState::Update()
 {
+	if (sing->isAnimation == true)
+		Next = new WaitWormState(reference);
 }
 
 NormalWormState::NormalWormState(PlayableObject * ref) : ObjectState(ref)

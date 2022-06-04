@@ -1,4 +1,5 @@
 #include "Worm.h"
+#include "Singleton.h"
 
 void Worm::Update()
 {

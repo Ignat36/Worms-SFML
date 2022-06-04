@@ -1,4 +1,5 @@
 #include "DynamicObject.h"
+#include "Singleton.h"
 
 void DynamicObject::push(float ndx, float ndy)
 {

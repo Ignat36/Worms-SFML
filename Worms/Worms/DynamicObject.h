@@ -1,6 +1,7 @@
 #pragma once
 
 #include "GameObject.h"
+#include "GameMap.h"
 
 class DynamicObject : public GameObject
 {

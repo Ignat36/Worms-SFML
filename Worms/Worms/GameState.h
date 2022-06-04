@@ -26,7 +26,7 @@ private:
 	WeaponConfigurations InventoryA;
 	WeaponConfigurations InventoryB;
 
-	std::vector<GameObject *> objects;
+	std::vector<DynamicObject *> objects;
 	bool isButtonPressed;
 
 	long long *lag;

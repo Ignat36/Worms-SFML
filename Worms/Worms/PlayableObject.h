@@ -1,9 +1,10 @@
 #pragma once
 
-#include "DynamicObject.h"
-#include "Weapon.h"
+#include "WeaponConfigurations.h"
+#include "Ammo.h"
 
 class ObjectState;
+class Weapon;
 
 class PlayableObject : public DynamicObject
 {
@@ -32,4 +33,23 @@ public:
 protected:
 	PlayableObject *reference;
 	ObjectState *Next;
+};
+
+class Weapon
+{
+public:
+	Weapon(int id);
+
+	void Show(sf::RenderWindow *window, sf::FloatRect worm, int AttackAngle, bool direction);
+
+	void Launch(PlayableObject *worm, float PowerPart);
+
+private:
+	Ammo *ammo;
+	int WeaponId;
+	sf::Texture InHandsTexture;
+	sf::Sprite InHandsSprite;
+
+private:
+	void LoadSprite(std::string file);
 };

@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "Timer.h"
 
 Game::Game()
 {
@@ -16,6 +17,7 @@ Game::Game()
 void Game::Start()
 {
 	auto start = std::chrono::high_resolution_clock::now();
+	Timer t; t.Start();
 
 	while (window->isOpen())
 	{
@@ -29,6 +31,9 @@ void Game::Start()
 		if (single->WindowClosed)
 			CloseGame();
 	}
+
+	std::cout << t.Elapsed() << "\n";
+	t.Stop();
 }
 
 
