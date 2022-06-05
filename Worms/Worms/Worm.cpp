@@ -29,6 +29,16 @@ void Worm::Update()
 	}
 	else
 	{
+		if (dy > 10)
+		{
+			TakeDamage(dy / 7. * 10.);
+
+			CurrentWeapon = nullptr;
+			CurrentWeaponId = -1;
+
+			sing->EndTurn = true;
+		}
+
 		dy = 0;
 		if(collision_y == 0) isAnimated = false;
 		collision_y = 0;

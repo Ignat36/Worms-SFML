@@ -17,7 +17,7 @@ void Rocket::Update()
 		push_x = 0;
 		push_y = 0;
 		Explode(window_pos_X, window_pos_Y);
-		sing->explosions.push_back({ {window_pos_X, window_pos_Y}, sing->config.weapons->Power[id] * 5 });
+		sing->explosions.push_back({ {window_pos_X, window_pos_Y}, sing->config.weapons->Power[id] * 10 });
 	}
 
 	if (push_x || abs(dy) > 2) NoActionFrames = 0;

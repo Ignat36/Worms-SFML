@@ -16,7 +16,6 @@ public:
 
 private:
 	sf::Text Name;
-	int HealthPoints;
 
 private:
 	void digSpace(int x, int y);

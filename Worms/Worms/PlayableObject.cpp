@@ -13,6 +13,16 @@ void PlayableObject::SetScreenCenter()
 	sing->game_mouse_position_y = window_pos_Y - 400;
 }
 
+void PlayableObject::TakeDamage(int hp)
+{
+	HealthPoints -= hp;
+	if (HealthPoints < 0)
+	{
+		HealthPoints = 0;
+		isAlive = false;
+	}
+}
+
 ObjectState::ObjectState(PlayableObject * ref)
 {
 	reference = ref;

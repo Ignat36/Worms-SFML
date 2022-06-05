@@ -35,7 +35,7 @@ void Ammo::Explode(int x, int y)
 	int n = map->Width;
 	int m = map->Height;
 
-	int Radius = sing->config.weapons->Power[id] * 5;
+	int Radius = sing->config.weapons->Power[id] * 10;
 
 	for (int i = x - Radius; i <= x + Radius; i++)
 		for (int j = y - Radius; j <= y + Radius; j++)

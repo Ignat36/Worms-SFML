@@ -47,6 +47,7 @@ GameState::GameState(sf::RenderWindow * window, long long *_lag) :
 
 	window->setMouseCursorVisible(false);
 	CurrentTeam->back()->SetScreenCenter();
+	UpdateMapPosition();
 }
 
 void GameState::ProcessInput(sf::RenderWindow * window)
@@ -90,6 +91,7 @@ void GameState::ProcessInput(sf::RenderWindow * window)
 				break;
 			case sf::Keyboard::RControl:
 				CurrentTeam->back()->SetScreenCenter();
+				UpdateMapPosition();
 				break;
 			default:
 				CurrentTeam->back()->State->ProcessInput(event);
@@ -122,6 +124,7 @@ void GameState::UpdateObjects()
 	UpdateDynamicObjects();
 
 	EndTurn();
+	EndGame();
 }
 
 void GameState::RenderObjects(sf::RenderWindow * window)
@@ -139,6 +142,8 @@ void GameState::RenderObjects(sf::RenderWindow * window)
 	for (auto i : TeamB)
 		i->Show(window, *lag);
 
+	ShowMask(window);
+
 	window->display();
 }
 
@@ -148,6 +153,11 @@ void GameState::EndRound()
 
 void GameState::EndGame()
 {
+	if (TeamA.empty() || TeamB.empty())
+	{
+		window->setMouseCursorVisible(true);
+		StateChangeFlag = true;
+	}
 }
 
 void GameState::EndTurn()
@@ -160,10 +170,12 @@ void GameState::EndTurn()
 			return;
 		}
 
-		if (EndTurnTime.Elapsed() < 4)
+		if (EndTurnTime.Elapsed() < 3)
 		{
 			return;
 		}
+
+		EndTurnTime.Stop();
 
 		sing->EndTurn = false;
 		PlayableObject *tmp = CurrentTeam->back();
@@ -174,6 +186,7 @@ void GameState::EndTurn()
 		EndGame();
 
 		CurrentTeam->back()->SetScreenCenter();
+		UpdateMapPosition();
 	}
 }
 
@@ -278,6 +291,7 @@ void GameState::ProcessExplosion(float x, float y, int radius, std::deque<Playab
 			ndy = -ndy;
 
 		i->push(ndx, ndy);
+		i->TakeDamage(strength * 5);
 	}
 }
 
@@ -306,7 +320,7 @@ void GameState::UpateTeamesPh(std::deque<PlayableObject*> &t)
 	for (auto i : t)
 	{
 		i->Update();
-		if (!i->isDead())
+		if (!i->isDead() && i->window_pos_Y < map->Height)
 			UpTeam.push_back(i);
 	}
 
@@ -348,4 +362,41 @@ bool GameState::CheckEnd()
 			return false;
 
 	return true;
+}
+
+void GameState::ShowMask(sf::RenderWindow * window)
+{
+	sf::RectangleShape TeamACountBack(sf::Vector2f(80, 80));
+	sf::RectangleShape TeamBCountBack(sf::Vector2f(80, 80));
+
+	TeamACountBack.setFillColor(sf::Color(255, 255, 255, 255)); TeamBCountBack.setFillColor(sf::Color(255, 255, 255, 255));
+	TeamACountBack.setOutlineColor(sf::Color(0, 0, 0, 255));	TeamBCountBack.setOutlineColor(sf::Color(0, 0, 0, 255));
+	TeamACountBack.setOutlineThickness(5);						TeamBCountBack.setOutlineThickness(5);
+
+	float dx = window->getSize().x / 20;
+	float dy = window->getSize().y / 15;
+
+	TeamACountBack.setPosition(dx, dy * 13);
+	TeamBCountBack.setPosition(dx * 18, dy * 13);
+
+	sf::Text TALeftWorms, TBLeftWorms; 
+	TALeftWorms.setString(std::to_string(TeamA.size())); TBLeftWorms.setString(std::to_string(TeamB.size()));
+	TALeftWorms.setFont(sing->GlobalFont);				 TBLeftWorms.setFont(sing->GlobalFont);
+	TALeftWorms.setCharacterSize(80);					 TBLeftWorms.setCharacterSize(80);
+	TALeftWorms.setFillColor(sf::Color(247, 121, 89));   TBLeftWorms.setFillColor(sf::Color(70, 150, 255));
+
+	TALeftWorms.setPosition(
+		TeamACountBack.getGlobalBounds().left + TeamACountBack.getGlobalBounds().width / 2. - TALeftWorms.getGlobalBounds().width / 2.,
+		TeamACountBack.getGlobalBounds().top + TeamACountBack.getGlobalBounds().height / 2. - TALeftWorms.getGlobalBounds().height + 5
+	);
+
+	TBLeftWorms.setPosition(
+		TeamBCountBack.getGlobalBounds().left + TeamBCountBack.getGlobalBounds().width / 2. - TBLeftWorms.getGlobalBounds().width / 2.,
+		TeamBCountBack.getGlobalBounds().top + TeamBCountBack.getGlobalBounds().height / 2. - TBLeftWorms.getGlobalBounds().height + 5
+	);
+
+	window->draw(TeamACountBack);
+	window->draw(TeamBCountBack);
+	window->draw(TALeftWorms);
+	window->draw(TBLeftWorms);
 }

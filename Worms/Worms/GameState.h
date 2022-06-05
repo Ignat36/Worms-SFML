@@ -53,5 +53,7 @@ private:
 	void UpateTeamesPh(std::deque<PlayableObject*> &t);
 	void UpdateDynamicObjects();
 	bool CheckEnd();
+
+	void ShowMask(sf::RenderWindow *window);
 };
 

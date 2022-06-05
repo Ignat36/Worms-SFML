@@ -16,10 +16,12 @@ public:
 	Weapon *CurrentWeapon;
 	WeaponConfigurations *inventory;
 	bool isAnimated;
+	int HealthPoints;
 
 public:
 	PlayableObject(float x, float y, GameMap *map);
 	void SetScreenCenter();
+	void TakeDamage(int hp);
 };
 
 class ObjectState
