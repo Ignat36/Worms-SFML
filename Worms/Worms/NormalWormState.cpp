@@ -5,6 +5,9 @@
 
 void NormalWormState::ProcessInput(sf::Event event)
 {
+	if (sing->EndTurn)
+		return;
+
 	if (event.type == sf::Event::KeyPressed)
 	{
 		switch (event.key.code)
@@ -30,14 +33,14 @@ void NormalWormState::ProcessInput(sf::Event event)
 		case sf::Keyboard::Enter:
 			reference->dy = -6;
 			reference->push_x = 3 * (reference->direction ? 1 : -1);
-			sing->isAnimation = true;
+			reference->isAnimated = true;
 			break;
 
 
 		case sf::Keyboard::BackSpace:
 			reference->dy = -8;
 			reference->push_x = 2 * (reference->direction ? -1 : 1);
-			sing->isAnimation = true;
+			reference->isAnimated = true;
 			break;
 
 
@@ -107,7 +110,7 @@ void NormalWormState::ProcessInput(sf::Event event)
 
 void NormalWormState::Update()
 {
-	if (sing->isAnimation == true)
+	if (reference->isAnimated == true)
 		Next = new WaitWormState(reference);
 }
 

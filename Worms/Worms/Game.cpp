@@ -3,6 +3,7 @@
 
 Game::Game()
 {
+	srand(time(NULL));
 	ScreenWidth = 1280;
 	ScreenHeight = 800;
 	MKS_PER_UPDATE = 16667;

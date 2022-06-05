@@ -18,7 +18,8 @@ protected:
 		game_mouse_position_x(0), 
 		game_mouse_position_y(0),
 		isAnimation(false),
-		MapUpdate(false)
+		MapUpdate(false),
+		EndTurn(false)
 	{
 		std::vector<wchar_t> pathBuf;
 		DWORD copied = 0;
@@ -63,6 +64,7 @@ public:
 	int game_mouse_position_y;
 	bool isAnimation;
 	bool MapUpdate;
+	bool EndTurn;
 	std::string GlobalPath;
 	sf::Font GlobalFont;
 	Configurations config;

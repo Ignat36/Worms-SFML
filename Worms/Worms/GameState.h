@@ -5,6 +5,7 @@
 #include "ApplicationState.h"
 #include "PlayableObject.h"
 #include "Worm.h"
+#include "Timer.h"
 
 class GameState : public ApplicationState
 {
@@ -18,7 +19,12 @@ public:
 
 private:
 
-	std::deque<PlayableObject *> Playables;
+	bool team;
+
+	std::deque<PlayableObject *> *CurrentTeam;
+	WeaponConfigurations *CurrentInventory;
+
+	Timer EndTurnTime;
 
 	std::deque<PlayableObject *> TeamA;
 	std::deque<PlayableObject *> TeamB;
@@ -42,6 +48,10 @@ private:
 	void UpdateMap();
 	void GetNewObjects();
 	void ProcessExplosions();
-	void ProcessExplosion(float x, float y, int radius);
+	void ProcessExplosion(float x, float y, int radius, std::deque<PlayableObject *> &v);
+	void UpdateTeam();
+	void UpateTeamesPh(std::deque<PlayableObject*> &t);
+	void UpdateDynamicObjects();
+	bool CheckEnd();
 };
 

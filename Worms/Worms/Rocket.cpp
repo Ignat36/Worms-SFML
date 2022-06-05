@@ -19,6 +19,9 @@ void Rocket::Update()
 		Explode(window_pos_X, window_pos_Y);
 		sing->explosions.push_back({ {window_pos_X, window_pos_Y}, sing->config.weapons->Power[id] * 5 });
 	}
+
+	if (push_x || abs(dy) > 2) NoActionFrames = 0;
+	else NoActionFrames++;
 }
 
 void Rocket::Show(sf::RenderWindow * window, long long lag)
@@ -64,6 +67,7 @@ Rocket::Rocket()
 	FPS = 60;
 	CurrentFrame = 0;
 	ChangesPerSecond = 0;
+	NoActionFrames = 0;
 
 	id = 0;
 }

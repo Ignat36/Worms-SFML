@@ -21,29 +21,29 @@ void Worm::Update()
 	{
 		dy += 1. / 6.;
 
-		if (dy > 2 && sing->isAnimation == false)
+		if (abs(dy) > 2 && isAnimated == false)
 		{
-			sing->isAnimation = true;
+			isAnimated = true;
 			push_x += dx;
 		}
 	}
 	else
 	{
 		dy = 0;
-		if(collision_y == 0) sing->isAnimation = false;
+		if(collision_y == 0) isAnimated = false;
 		collision_y = 0;
 
 		push_x = 0;
 	}
 
-	if (!(sing->isAnimation) && dx)
+	if (!isAnimated && dx)
 	{
 		LastSpriteNumber += CurrentFrame / (FPS / ChangesPerSecond);
 		LastSpriteNumber %= AnimationSteps;
 		CurrentFrame %= (FPS / ChangesPerSecond + 1);
 	}
 	
-	if (sing->isAnimation && abs(dy) > 2. / 3.)
+	if (isAnimated && abs(dy) > 2)
 	{
 		LastSpriteNumber = AnimationSteps;
 	}
@@ -58,7 +58,7 @@ void Worm::Update()
 
 	direction = dx > 0 ? true : dx < 0 ? false : direction;
 
-	if (dx || dy > 2) NoActionFrames = 0;
+	if (dx || abs(dy) > 2) NoActionFrames = 0;
 	else NoActionFrames++;
 
 	dx = 0;
@@ -103,8 +103,11 @@ void Worm::Show(sf::RenderWindow * window, long long lag)
 		CurrentWeapon->Show(window, CurrentSprite->getGlobalBounds(), attack_angle, direction);
 }
 
-Worm::Worm(float x, float y, GameMap *n_map) : PlayableObject(x, y, n_map)
+Worm::Worm(float x, float y, GameMap *n_map, bool team) : PlayableObject(x, y, n_map)
 {
+	direction = abs(rand()) % 2;
+	isAnimated = false;
+
 	Width = 30;
 	Height = 30;
 
@@ -122,7 +125,7 @@ Worm::Worm(float x, float y, GameMap *n_map) : PlayableObject(x, y, n_map)
 	LoadSprite("Textures/GameObjects/Worm/Walk3.png");
 	LoadSprite("Textures/GameObjects/Worm/Jump.png");
 
-	GetName();
+	GetName(team);
 
 	LastSpriteNumber = 0;
 
@@ -131,6 +134,8 @@ Worm::Worm(float x, float y, GameMap *n_map) : PlayableObject(x, y, n_map)
 	ChangesPerSecond = 6;
 
 	State = new WaitWormState(this);
+
+	HealthPoints = sing->config.game_config->WormHealth;
 
 	CurrentWeaponId = -1;
 	CurrentWeapon = nullptr;
@@ -165,8 +170,6 @@ void Worm::digSpace(int x, int y)
 
 void Worm::GeneratePosition(float & x, float & y)
 {
-	srand(time(NULL));
-
 	int n = map->Width;
 	int m = map->Height;
 
@@ -193,10 +196,8 @@ void Worm::GeneratePosition(float & x, float & y)
 	return;
 }
 
-void Worm::GetName()
+void Worm::GetName(bool team)
 {
-	srand(time(NULL));
-
 	std::string path = sing->GlobalPath + "Configurations/Names.txt";
 	std::ifstream fin; fin.open(path);
 	std::vector<std::string> names;
@@ -210,7 +211,7 @@ void Worm::GetName()
 
 	Name.setFont(sing->GlobalFont);
 	Name.setString(sf::String(names[rand() % names.size()]));
-	Name.setFillColor(sf::Color(247, 121, 89)); // light Red
+	if(team) Name.setFillColor(sf::Color(247, 121, 89)); // light Red
+	else	 Name.setFillColor(sf::Color(128, 229, 255));
 	Name.setCharacterSize(20);
-	//Name.setColor(sf::Color(128, 229, 255)); // light Blue
 }

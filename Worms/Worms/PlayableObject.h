@@ -15,6 +15,7 @@ public:
 	int CurrentWeaponId;
 	Weapon *CurrentWeapon;
 	WeaponConfigurations *inventory;
+	bool isAnimated;
 
 public:
 	PlayableObject(float x, float y, GameMap *map);
@@ -28,7 +29,7 @@ public:
 	virtual void Update() = 0;
 	ObjectState(PlayableObject *ref);
 	ObjectState *GetNext();
-
+	int id;
 
 protected:
 	PlayableObject *reference;

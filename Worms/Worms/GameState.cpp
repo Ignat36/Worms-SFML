@@ -1,7 +1,10 @@
 #include "GameState.h"
 #include "Singleton.h"
 
-GameState::GameState(sf::RenderWindow * window, long long *_lag) : ApplicationState(window)
+GameState::GameState(sf::RenderWindow * window, long long *_lag) : 
+	ApplicationState(window),
+	CurrentInventory(&InventoryA),
+	CurrentTeam(&TeamA)
 {
 	// black part of scheme
 	lag = _lag;
@@ -24,14 +27,26 @@ GameState::GameState(sf::RenderWindow * window, long long *_lag) : ApplicationSt
 	map->DefaultMap = (sf::Uint8 *)map->image.getPixelsPtr();
 	map->Expand(); 
 
-	Playables.push_back(new Worm(0, 0, map));
-	Playables.back()->inventory = &InventoryA;
+	for (int i = 0; i < single->config.teams->TeamACount; i++)
+	{
+		TeamA.push_back(new Worm(0, 0, map, true));
+		TeamA.back()->inventory = &InventoryA;
+	}
+
+	for (int i = 0; i < single->config.teams->TeamBCount; i++)
+	{
+		TeamB.push_back(new Worm(0, 0, map, false));
+		TeamB.back()->inventory = &InventoryB;
+	}
+
+	team = abs(rand()) % 2;
+	UpdateTeam();
 
 
 	map->FullReRender(); map->UpdateSprite();
 
 	window->setMouseCursorVisible(false);
-	Playables.back()->SetScreenCenter();
+	CurrentTeam->back()->SetScreenCenter();
 }
 
 void GameState::ProcessInput(sf::RenderWindow * window)
@@ -74,10 +89,10 @@ void GameState::ProcessInput(sf::RenderWindow * window)
 				StateChangeFlag = true;
 				break;
 			case sf::Keyboard::RControl:
-				Playables.back()->SetScreenCenter();
+				CurrentTeam->back()->SetScreenCenter();
 				break;
 			default:
-				Playables.back()->State->ProcessInput(event);
+				CurrentTeam->back()->State->ProcessInput(event);
 				break;
 			}
 		}
@@ -87,7 +102,7 @@ void GameState::ProcessInput(sf::RenderWindow * window)
 
 		}
 		else
-			Playables.back()->State->ProcessInput(event);
+			CurrentTeam->back()->State->ProcessInput(event);
 	}
 }
 
@@ -101,28 +116,12 @@ void GameState::UpdateObjects()
 
 	ProcessExplosions();
 
-	Playables.back()->Update();
-	if (Playables.back()->isDead())
-	{
-		Playables.pop_back();
-		if (Playables.empty())
-			EndRound();
-	}
+	UpateTeamesPh(TeamA);
+	UpateTeamesPh(TeamB);
 
-	std::vector<DynamicObject *> tmp;
-	for (auto i : objects)
-	{
-		i->Update();
-		if (!i->isDead())
-		{
-			std::cout << i->window_pos_X << " " << i->window_pos_Y << "\n";
-			tmp.push_back(i);
-		}
-		else
-			delete i;
-	}
-	objects = tmp;
+	UpdateDynamicObjects();
 
+	EndTurn();
 }
 
 void GameState::RenderObjects(sf::RenderWindow * window)
@@ -134,7 +133,10 @@ void GameState::RenderObjects(sf::RenderWindow * window)
 	for (auto i : objects)
 		i->Show(window, *lag);
 
-	for (auto i : Playables)
+	for (auto i : TeamA)
+		i->Show(window, *lag);
+
+	for (auto i : TeamB)
 		i->Show(window, *lag);
 
 	window->display();
@@ -150,6 +152,29 @@ void GameState::EndGame()
 
 void GameState::EndTurn()
 {
+	if (CheckEnd())
+	{
+		if (!EndTurnTime.Active())
+		{
+			EndTurnTime.Start();
+			return;
+		}
+
+		if (EndTurnTime.Elapsed() < 4)
+		{
+			return;
+		}
+
+		sing->EndTurn = false;
+		PlayableObject *tmp = CurrentTeam->back();
+		CurrentTeam->pop_back();
+		CurrentTeam->push_front(tmp);
+		UpdateTeam();
+
+		EndGame();
+
+		CurrentTeam->back()->SetScreenCenter();
+	}
 }
 
 void GameState::UpdateMapPosition()
@@ -212,15 +237,16 @@ void GameState::ProcessExplosions()
 {
 	for (auto i : sing->explosions)
 	{
-		ProcessExplosion(i.first.first, i.first.second, i.second);
+		ProcessExplosion(i.first.first, i.first.second, i.second, TeamA);
+		ProcessExplosion(i.first.first, i.first.second, i.second, TeamB);
 	}
 
 	sing->explosions.resize(0);
 }
 
-void GameState::ProcessExplosion(float x, float y, int radius)
+void GameState::ProcessExplosion(float x, float y, int radius, std::deque<PlayableObject *> &v)
 {
-	for (auto i : Playables)
+	for (auto i : v)
 	{
 		float wx = i->window_pos_X + i->Width / 2.;
 		float wy = i->window_pos_Y + i->Height / 2.;
@@ -253,4 +279,73 @@ void GameState::ProcessExplosion(float x, float y, int radius)
 
 		i->push(ndx, ndy);
 	}
+}
+
+void GameState::UpdateTeam()
+{
+	if (team)
+		team = false;
+	else
+		team = true;
+
+	if (team)
+	{
+		CurrentTeam = &TeamA;
+		CurrentInventory = &InventoryA;
+	}
+	else
+	{
+		CurrentTeam = &TeamB;
+		CurrentInventory = &InventoryB;
+	}
+}
+
+void GameState::UpateTeamesPh(std::deque<PlayableObject*> &t)
+{
+	std::deque<PlayableObject*> UpTeam;
+	for (auto i : t)
+	{
+		i->Update();
+		if (!i->isDead())
+			UpTeam.push_back(i);
+	}
+
+	t = UpTeam;
+}
+
+void GameState::UpdateDynamicObjects()
+{
+	std::vector<DynamicObject *> tmp;
+	for (auto i : objects)
+	{
+		i->Update();
+		if (!i->isDead())
+		{
+			std::cout << i->window_pos_X << " " << i->window_pos_Y << "\n";
+			tmp.push_back(i);
+		}
+		else
+			delete i;
+	}
+	objects = tmp;
+}
+
+bool GameState::CheckEnd()
+{
+	if (!sing->EndTurn)
+		return false;
+
+	for (auto i : TeamA)
+		if (i->NoActionFrames < 240)
+			return false;
+
+	for (auto i : TeamB)
+		if (i->NoActionFrames < 240)
+			return false;
+
+	for (auto i : objects)
+		if (i->NoActionFrames < 240)
+			return false;
+
+	return true;
 }

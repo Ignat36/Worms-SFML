@@ -1,5 +1,6 @@
 #include "AttackWormState.h"
 #include "NormalWormState.h"
+#include "Singleton.h"
 
 void AttackWormState::ProcessInput(sf::Event event)
 {
@@ -49,6 +50,8 @@ void AttackWormState::Update()
 
 		reference->CurrentWeaponId = -1;
 		reference->CurrentWeapon = nullptr;
+
+		sing->EndTurn = true;
 	}
 }
 

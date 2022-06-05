@@ -107,6 +107,7 @@ void DynamicObject::CalculateCollisionY()
 
 	if (window_pos_Y + Height >= sing->config.game_config->WaterLevel) {
 		collision_y = 0; // —табильно фиксируем дауна, чтобы он потом утанул.
+		isAlive = false;
 		return;
 	}
 
