@@ -368,16 +368,49 @@ void GameState::ShowMask(sf::RenderWindow * window)
 {
 	sf::RectangleShape TeamACountBack(sf::Vector2f(80, 80));
 	sf::RectangleShape TeamBCountBack(sf::Vector2f(80, 80));
+	sf::RectangleShape TeamAHPBack(sf::Vector2f(20, 160));
+	sf::RectangleShape TeamBHPBack(sf::Vector2f(20, 160));
+	sf::RectangleShape TeamAHP(sf::Vector2f(20, 160));
+	sf::RectangleShape TeamBHP(sf::Vector2f(20, 160));
 
 	TeamACountBack.setFillColor(sf::Color(255, 255, 255, 255)); TeamBCountBack.setFillColor(sf::Color(255, 255, 255, 255));
 	TeamACountBack.setOutlineColor(sf::Color(0, 0, 0, 255));	TeamBCountBack.setOutlineColor(sf::Color(0, 0, 0, 255));
 	TeamACountBack.setOutlineThickness(5);						TeamBCountBack.setOutlineThickness(5);
 
+	TeamAHPBack.setFillColor(sf::Color(255, 255, 255, 255)); TeamBHPBack.setFillColor(sf::Color(255, 255, 255, 255));
+	TeamAHPBack.setOutlineColor(sf::Color(0, 0, 0, 255));	 TeamBHPBack.setOutlineColor(sf::Color(0, 0, 0, 255));
+	TeamAHPBack.setOutlineThickness(3);						 TeamBHPBack.setOutlineThickness(3);
+
+	TeamAHP.setFillColor(sf::Color(247, 121, 89));			 TeamBHP.setFillColor(sf::Color(70, 150, 255));
+
 	float dx = window->getSize().x / 20;
 	float dy = window->getSize().y / 15;
 
+	float Apart = 0;
+	float Bpart = 0;
+
+	for (auto i : TeamA)
+		Apart += i->HealthPoints;
+	Apart /= (sing->config.teams->TeamACount * sing->config.game_config->WormHealth);
+
+	for (auto i : TeamB)
+		Bpart += i->HealthPoints;
+	Bpart /= (sing->config.teams->TeamBCount * sing->config.game_config->WormHealth);
+
+	TeamAHP.setSize(sf::Vector2f(20, 160 * Apart));
+	TeamBHP.setSize(sf::Vector2f(20, 160 * Bpart));
+
 	TeamACountBack.setPosition(dx, dy * 13);
 	TeamBCountBack.setPosition(dx * 18, dy * 13);
+
+	TeamAHPBack.setPosition(
+		dx + 100,
+		dy * 13 - 80
+	);
+	TeamBHPBack.setPosition(
+		dx * 18 - 40, 
+		dy * 13 - 80
+	);
 
 	sf::Text TALeftWorms, TBLeftWorms; 
 	TALeftWorms.setString(std::to_string(TeamA.size())); TBLeftWorms.setString(std::to_string(TeamB.size()));
@@ -389,14 +422,26 @@ void GameState::ShowMask(sf::RenderWindow * window)
 		TeamACountBack.getGlobalBounds().left + TeamACountBack.getGlobalBounds().width / 2. - TALeftWorms.getGlobalBounds().width / 2.,
 		TeamACountBack.getGlobalBounds().top + TeamACountBack.getGlobalBounds().height / 2. - TALeftWorms.getGlobalBounds().height + 5
 	);
-
 	TBLeftWorms.setPosition(
 		TeamBCountBack.getGlobalBounds().left + TeamBCountBack.getGlobalBounds().width / 2. - TBLeftWorms.getGlobalBounds().width / 2.,
 		TeamBCountBack.getGlobalBounds().top + TeamBCountBack.getGlobalBounds().height / 2. - TBLeftWorms.getGlobalBounds().height + 5
 	);
 
+	TeamAHP.setPosition(
+		TeamAHPBack.getPosition().x,
+		TeamAHPBack.getPosition().y + 160 * (1 - Apart)
+	);
+	TeamBHP.setPosition(
+		TeamBHPBack.getPosition().x,
+		TeamBHPBack.getPosition().y + 160 * (1 - Bpart)
+	);
+
 	window->draw(TeamACountBack);
 	window->draw(TeamBCountBack);
+	window->draw(TeamAHPBack);
+	window->draw(TeamBHPBack);
+	window->draw(TeamAHP);
+	window->draw(TeamBHP);
 	window->draw(TALeftWorms);
 	window->draw(TBLeftWorms);
 }
