@@ -14,7 +14,6 @@ class Singleton
 protected:
 	Singleton() : 
 		WindowClosed(false), 
-		config(Configurations()),
 		game_mouse_position_x(0), 
 		game_mouse_position_y(0),
 		isAnimation(false),
@@ -44,6 +43,10 @@ protected:
 		GlobalPath = res;
 
 		GlobalFont.loadFromFile(GlobalPath + "Configurations/arial.ttf");
+
+		config = Configurations();
+
+		config.map->pixels = GameMap::Load(GlobalPath + "/Maps/Standart/Map0.txt").pixels;
 	}
 
 	static Singleton* singleton_;

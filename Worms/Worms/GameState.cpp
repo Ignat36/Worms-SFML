@@ -22,7 +22,7 @@ GameState::GameState(sf::RenderWindow * window, long long *_lag) :
 		return;
 	}
 
-	map->pixels = GameMap::Load("D:\\Windows\\Worms-SFML\\Worms\\Worms\\Maps\\Standart\\Map0.txt").pixels;
+	//map->pixels = GameMap::Load("D:\\Windows\\Worms-SFML\\Worms\\Worms\\Maps\\Standart\\Map0.txt").pixels;
 	map->Width = 1200; map->Height = 400;
 	map->DefaultMap = (sf::Uint8 *)map->image.getPixelsPtr();
 	map->Expand(); 

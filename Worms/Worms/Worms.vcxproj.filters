@@ -210,12 +210,6 @@
     <ClCompile Include="ExplodableObject.cpp">
       <Filter>Game\GameObjects\Properties\CPP</Filter>
     </ClCompile>
-    <ClCompile Include="AirDrop.cpp">
-      <Filter>Game\GameObjects\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="Bomb.cpp">
-      <Filter>Game\GameObjects\CPP</Filter>
-    </ClCompile>
     <ClCompile Include="Worm.cpp">
       <Filter>Game\GameObjects\CPP</Filter>
     </ClCompile>
@@ -343,12 +337,6 @@
     </ClInclude>
     <ClInclude Include="ExplodableObject.h">
       <Filter>Game\GameObjects\Properties\H</Filter>
-    </ClInclude>
-    <ClInclude Include="AirDrop.h">
-      <Filter>Game\GameObjects\H</Filter>
-    </ClInclude>
-    <ClInclude Include="Bomb.h">
-      <Filter>Game\GameObjects\H</Filter>
     </ClInclude>
     <ClInclude Include="Worm.h">
       <Filter>Game\GameObjects\H</Filter>

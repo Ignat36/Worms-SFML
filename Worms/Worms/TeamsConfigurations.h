@@ -15,6 +15,6 @@ public:
 	std::vector<std::string> TeamBNames;
 
 public:
-	TeamsConfigurations(int n = 5, int m = 5);
+	TeamsConfigurations(int n = 8, int m = 8);
 };
 

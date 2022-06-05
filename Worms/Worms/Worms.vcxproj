@@ -123,10 +123,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AirDrop.cpp" />
     <ClCompile Include="Ammo.cpp" />
     <ClCompile Include="AttackWormState.cpp" />
-    <ClCompile Include="Bomb.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="ChoosingWormState.cpp" />
     <ClCompile Include="Configurations.cpp" />
@@ -170,10 +168,8 @@
     <ClCompile Include="Worm.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AirDrop.h" />
     <ClInclude Include="Ammo.h" />
     <ClInclude Include="AttackWormState.h" />
-    <ClInclude Include="Bomb.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="ChoosingWormState.h" />
     <ClInclude Include="Configurations.h" />

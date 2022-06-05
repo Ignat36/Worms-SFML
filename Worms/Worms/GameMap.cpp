@@ -1,4 +1,5 @@
 #include "GameMap.h"
+#include "Singleton.h"
 
 GameMap::GameMap()
 {
