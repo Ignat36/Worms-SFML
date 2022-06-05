@@ -3,8 +3,8 @@
 
 void DynamicObject::push(float ndx, float ndy)
 {
-	push_x = ndx;
-	push_y = ndy;
+	push_x += ndx;
+	dy += ndy;
 }
 
 DynamicObject::DynamicObject() : GameObject()

@@ -97,16 +97,9 @@ void GameState::UpdateObjects()
 
 	UpdateMap();
 
-	for (auto i : sing->que)
-	{
-		objects.push_back(i);
-		objects.back()->SetGameMap(map);
+	GetNewObjects();
 
-		std::cout << i->window_pos_X << " " << i->window_pos_Y << "\n";
-	}
-
-	sing->que.resize(0);
-
+	ProcessExplosions();
 
 	Playables.back()->Update();
 	if (Playables.back()->isDead())
@@ -199,5 +192,65 @@ void GameState::UpdateMap()
 	{
 		sing->MapUpdate = false;
 		map->UpdateSprite();
+	}
+}
+
+void GameState::GetNewObjects()
+{
+	for (auto i : sing->que)
+	{
+		objects.push_back(i);
+		objects.back()->SetGameMap(map);
+
+		std::cout << i->window_pos_X << " " << i->window_pos_Y << "\n";
+	}
+
+	sing->que.resize(0);
+}
+
+void GameState::ProcessExplosions()
+{
+	for (auto i : sing->explosions)
+	{
+		ProcessExplosion(i.first.first, i.first.second, i.second);
+	}
+
+	sing->explosions.resize(0);
+}
+
+void GameState::ProcessExplosion(float x, float y, int radius)
+{
+	for (auto i : Playables)
+	{
+		float wx = i->window_pos_X + i->Width / 2.;
+		float wy = i->window_pos_Y + i->Height / 2.;
+		float wr = i->Height / 2.;
+
+		float dist = sqrt(
+			(x - wx) * (x - wx) +
+			(y - wy) * (y - wy)
+		);
+
+		if (dist >= wr + radius)
+			continue;
+
+		float strength = sqrt(wr + radius - dist) * 2;
+		strength = strength > 20 ? 20: strength;
+		strength = strength < 5 ? 5: strength;
+
+		float alpha = atan(abs(y - wy) / abs(x - wx));
+
+		//alpha = alpha * 180 / 3.1415;
+
+		float ndx = strength * cos(alpha);
+		float ndy = strength * sin(alpha);
+
+		if (x > wx)
+			ndx = -ndx;
+
+		if (y > wy)
+			ndy = -ndy;
+
+		i->push(ndx, ndy);
 	}
 }

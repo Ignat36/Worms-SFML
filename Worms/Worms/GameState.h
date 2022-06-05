@@ -40,5 +40,8 @@ private:
 
 	void UpdateMapPosition();
 	void UpdateMap();
+	void GetNewObjects();
+	void ProcessExplosions();
+	void ProcessExplosion(float x, float y, int radius);
 };
 

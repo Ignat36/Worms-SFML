@@ -46,6 +46,9 @@ void AttackWormState::Update()
 
 		reference->CurrentWeapon->Launch(reference, part);
 		Attack.Stop();
+
+		reference->CurrentWeaponId = -1;
+		reference->CurrentWeapon = nullptr;
 	}
 }
 

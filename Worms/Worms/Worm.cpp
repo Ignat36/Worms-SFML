@@ -24,7 +24,7 @@ void Worm::Update()
 		if (dy > 2 && sing->isAnimation == false)
 		{
 			sing->isAnimation = true;
-			push_x = dx;
+			push_x += dx;
 		}
 	}
 	else
@@ -128,7 +128,7 @@ Worm::Worm(float x, float y, GameMap *n_map) : PlayableObject(x, y, n_map)
 
 	FPS = 60;
 	CurrentFrame = 0;
-	ChangesPerSecond = 3;
+	ChangesPerSecond = 6;
 
 	State = new WaitWormState(this);
 

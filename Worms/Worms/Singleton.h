@@ -68,5 +68,6 @@ public:
 	Configurations config;
 
 	std::vector<DynamicObject*> que;
+	std::vector<std::pair<std::pair<float, float>, int> > explosions;
 };
 
